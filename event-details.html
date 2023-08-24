@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Event Details - OZDD</title>
+    <title>Course Grid 03 - MaxCoach</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
                                     </li>
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -154,236 +157,212 @@
         </div>
         <!-- Header Section End -->
 
-        <!-- Full Screen Search Start -->
-        <div id="fullscreen-search" class="fullscreen-search">
-            <div class="fullscreen-search-close">
-                <button class="toggle">
-                    <i class="icon-top"></i>
-                    <i class="icon-bottom"></i>
-                </button>
-            </div>
-            <div class="fullscreen-search-form">
-                <form action="#">
-                    <input type="text" placeholder="Recherche...">
-                </form>
-            </div>
-        </div>
-        <!-- Full Screen Search End -->
-
-        <!-- Event Page Banner Start -->
-        <div class="event-page-banner section overlay section-padding-top-200 section-padding-bottom-180" data-bg-image="./assets/images/courses/banner1.jpg">
-            <div class="container">
-                <div class="col-12">
-                    <div class="event-hero-content">
-                        <div class="entry-date"> Novembre 23</div>
-                        <h1 class="entry-title">Fournir plus qu'un service, une expérience 2023</h1>
-                        <div class="entry-countdown">
-                            <div class="pro-countdown-1" data-countdown="2023/10/30"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Event Page Banner End -->
-
         <!-- Page Title Section Start -->
         <div class="page-title-section section">
+            <div class="page-title">
+                <div class="container">
+                    <h1 class="title">Les articles offerts par le fournisseur</h1>
+                </div>
+            </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="current">Fournisseurs</li>
+                        <li class="current">articles</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Page Title Section End -->
 
-        <!-- About Event Section Start -->
-        <div class="about-event-section section section-padding">
+        <!-- Course Section Start -->
+        <div class="section section-padding-bottom">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Section Title Start -->
-                        <div class="section-title text-center" data-aos="fade-up">
-                            <h2 class="title fz-48 heading-color">Fournisseurs</h2>
-                            <div class="event-entry-meta">
-                                <div class="meta-item">
-                                    <i class="meta-icon fa fa-map-marker-alt"></i>
-                                    <span>Hamburg, Germany</span>
-                                   
-                                </div>
 
-                                <div class="meta-item">
-                                    <i class="meta-icon fal fa-calendar"></i>
-                                    <span>Nov 23, 2022</span>
-                                </div>
+                <!-- Courses Wrapper Start -->
+                <div class="row row-cols-lg-2 row-cols-1 max-mb-n30">
 
-                                <div class="meta-item">
-                                    <i class="meta-icon fa fa-clock"></i>
-                                    <span>2:00 pm - 4:00 pm</span>
-                                </div>
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-1.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Learning to Write as a Professional Author</a></h3>                              
                             </div>
                         </div>
-                        <!-- Section Title End -->
                     </div>
-                </div>              
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-2.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Customer-centric Info-Tech Strategies</a></h3>                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-3.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Open Programming Courses for Everyone: Python</a></h3>                      
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-4.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Academic Listening and Note-taking</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-5.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <<span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Master jQuery in a Short Period of Time</a></h3>                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-6.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Introduction to Javascript for Beginners</a></h3>                  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-7.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Problem-solving Skills for Better Success</a></h3>                          
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-8.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Speed Reading Techniques in University</a></h3>                       
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-9.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Database & SQL for Computer Science</a></h3>                       
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-10.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Intermediate English Speaking Practice</a></h3>                            
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-11.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Complete Fitness Trainer: Beginner to Advanced</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-3">
+                            <div class="thumbnail">
+                                <a href="formation-details.html" class="image"><img src="assets/images/courses/170/course-12.jpg" alt="Course Image"></a>
+                            </div>
+                            <div class="info">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="formation-details.html">Lazy Dancer Ballet Burn – 30 days programme</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                </div>
+                <!-- Courses Wrapper End -->
+
+                <div class="row max-mt-50">
+                    <div class="col text-center">
+                        <a href="JavaScript:Void(0);" class="btn btn-outline-primary load-more-btn">Load More <i class="fa fa-redo ms-3"></i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <!-- About Event Section End -->
-
-        <!-- Speaker Section Start -->
-        <div class="speaker-section section section-padding-bottom">
-            <div class="container section-border-bottom section-padding-bottom-90">
-                <div class="row">
-                </div>
-                <div class="speaker-slider swiper-container" data-aos="fade-up">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-6.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Solomon</h6>
-                                    <div class="speaker-description">/ Designer</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-1.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Emerson</h6>
-                                    <div class="speaker-description">/ Developer</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-2.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Bellezza</h6>
-                                    <div class="speaker-description">/ Content Writer</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-3.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Lilybelle</h6>
-                                    <div class="speaker-description">/ Office Manager</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-4.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Lucinda</h6>
-                                    <div class="speaker-description">/ Manager</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="single-speaker">
-                                <div class="image">
-                                    <img src="assets/images/speaker/speaker-5.jpg" alt="speaker">
-                                </div>
-                                <div class="content">
-                                    <h6 class="speaker-name">Orabelle</h6>
-                                    <div class="speaker-description">/ Art Director</div>
-                                    <ul class="event-location">
-                                        <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="event-speakers-description">
-                    Register online, get your ticket, meet up with our inspirational speakers and specialists in the field to share your ideas.
-                </div>
-            </div>
-        </div>
-        <!-- Speaker Section End -->
-
-        <!-- Event Comment Section Start -->
-        <div class="event-comment-section section section-padding-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Section Title Start -->
-                        <div class="section-title text-center mb-50" data-aos="fade-up">
-                            <h2 class="title fz-48 heading-color">Laissez votre avis ici</h2>
-                        </div>
-                        <!-- Section Title End -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="offset-lg-2 col-lg-8">
-                        <div class="event-form">
-                            <form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-12 max-mb-30">
-                                        <input type="text" placeholder="Nom *" name="name">
-                                    </div>
-                                    <div class="col-md-6 col-12 max-mb-30">
-                                        <input type="email" placeholder="Email *" name="email">
-                                    </div>
-                                    <div class="col-12 max-mb-30">
-                                        <textarea name="message" placeholder="Commentaire"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <p class="comment-form-cookies-consent">
-                                            <input id="comment-cookies-consent" name="comment-cookies-consent" type="checkbox" value="yes">
-                                            <label for="comment-cookies-consent">Enregistrer mon nom, mon adresse électronique et mon site web dans ce navigateur pour la prochaine fois que je ferai un commentaire.</label>
-                                        </p>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button class="btn btn-primary btn-hover-secondary btn-width-180 btn-height-60">Envoyer</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Event Comment Section End -->
-
-
+        <!-- Course Section End -->
+ 
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
 
@@ -485,16 +464,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

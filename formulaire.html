@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Produit - OZDD</title>
+    <title>Checkout - MaxCoach</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
-                                    </li>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
+                                    </li>                                   
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -174,198 +177,214 @@
         <div class="page-title-section section">
             <div class="page-title">
                 <div class="container">
-                    <h1 class="title">PRODUITS OZDD</h1>
+                    <h1 class="title">Formulaire Fournisseur</h1>
                 </div>
             </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="current">Produit</li>
+                        <li class="current"></li>Formulaire Fournisseur</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Page Title Section End -->
 
-        <!-- Course Section Start -->
-        <div class="section section-padding-bottom">
+        <!--Checkout section start-->
+        <div class="checkout-section section section-padding-bottom">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
 
-                <!-- Course Top Bar Start -->
-                <div class="row justify-content-between align-items-center max-mb-20">
-                    <!-- <div class="col-sm-auto col-12 max-mb-10">
-                        <p class="result-count">We found <span>22</span> courses available for you</p>
-                    </div> -->
-                    <div class="col-sm-auto col-12 max-mb-10">
-                        <select class="sort-by">
-                            <option selected="selected">Engrais Naturels</option>
-                            <option value="popularity">Améliorants du Sol</option>
-                            <option value="date">Aménagement du Jardin</option>
-                            <option value="price">Matériels et Accessoires de Culture</option>
-                            <option value="price-desc">compostage</option>
-                            <option value="price-desc">Désherbage écollogique</option>
-                            <option value="price-desc">Equipements et outils</option>
-                        </select>
+                        <!-- Checkout Form Start-->
+                        <form action="#" class="checkout-form">
+                            <div class="row row-40">
+
+                                <div class="col-lg-7">
+
+                                    <!-- Billing Address -->
+                                    <div id="billing-form" class="mb-10">
+                                        <h4 class="checkout-title">Enregistrement du Compte</h4>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Prénoms*</label>
+                                                <input type="text" placeholder="Prénoms">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Nom*</label>
+                                                <input type="text" placeholder="Nom">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Email*</label>
+                                                <input type="email" placeholder="Adresse email">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>N° de téléphone*</label>
+                                                <input type="text" placeholder="N° de téléphone">
+                                            </div>
+
+                                            <div class="col-12 mb-20">
+                                                <label>Nom de l'entreprise</label>
+                                                <input type="text" placeholder="Nom de l'entreprise">
+                                            </div>
+
+                                            <div class="col-12 mb-20">
+                                                <label>Adresse*</label>
+                                                <input type="text" placeholder="Adresse ligne">
+                                            </div>
+
+                                            <div class="col-12 mb-20">
+                                                <label for="formFileLg" class="form-label">Saisie votre pièce d'identité*</label>
+                                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                              </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label for="formFileLg" class="form-label">Logo de l'entreprise*</label>
+                                                <input class="form-control form-control-lg" type="file" accept="image/*" placeholder="Insérer le logo">
+                                            </div>
+                                            
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>catégories*</label>
+                                                <select>
+                                                    <option>Engrais naturels</option>
+                                                    <option>Equipements et outils</option>
+                                                    <option>Compostage</option>
+                                                    <option>Désherbage écollogique</option>
+                                                    <option>Matériels et accessoires de culture</option>                                                                                             
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Pays*</label>
+                                                <input type="text" placeholder="Pays">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Ville/Commune*</label>
+                                                <input type="text" placeholder="Ville/Commune">
+                                            </div>  
+                                                                               
+                                            <div class="col-12 text-center max-mb-30">
+                                                <button class="btn btn-primary btn-hover-secondary btn-width-180 btn-height-60">Créer un compte</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Shipping Address -->
+                                    <div id="shipping-form">
+                                        <h4 class="checkout-title">Shipping Address</h4>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>First Name*</label>
+                                                <input type="text" placeholder="First Name">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Last Name*</label>
+                                                <input type="text" placeholder="Last Name">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Email Address*</label>
+                                                <input type="email" placeholder="Email Address">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Phone no*</label>
+                                                <input type="text" placeholder="Phone number">
+                                            </div>
+
+                                            <div class="col-12 mb-20">
+                                                <label>Company Name</label>
+                                                <input type="text" placeholder="Company Name">
+                                            </div>
+
+                                            <div class="col-12 mb-20">
+                                                <label>Address*</label>
+                                                <input type="text" placeholder="Address line 1">
+                                                <input type="text" placeholder="Address line 2">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Country*</label>
+                                                <select class="nice-select">
+                                                    <option>Bangladesh</option>
+                                                    <option>China</option>
+                                                    <option>country</option>
+                                                    <option>India</option>
+                                                    <option>Japan</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Town/City*</label>
+                                                <input type="text" placeholder="Town/City">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>State*</label>
+                                                <input type="text" placeholder="State">
+                                            </div>
+
+                                            <div class="col-md-6 col-12 mb-20">
+                                                <label>Zip Code*</label>
+                                                <input type="text" placeholder="Zip Code">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-12 order-lg-2 max-mb-50">
+                                            <!-- Début du cadre du guide d'achat -->
+                                            <div class="purchase-guide-wrapper">
+                                                <div class="content">                                                
+                                                    <h3 class="title">Informations</h3>
+                                                    <p>Pour bénéficier des services de notre fournisseur, les clients doivent d'abord créer un compte personnel en fournissant les détails suivants :</p>
+                                                    <ul>
+                                                        <li>Nom (obligatoire)</li>
+                                                        <li>Adresse email (obligatoire)</li>
+                                                        <li>Date de naissance (obligatoire)</li>
+                                                        <li>Numéro de passeport/ID (obligatoire)</li>
+                                                        <li>catégories (obligatoire)</li>
+                                                        <li>Numéros de téléphone portable (obligatoire)</li>
+                                                        <li>Adresse (obligatoire)</li>
+                                                        <li>Ville/Commune (obligatoire)</li>                           
+                                                        <li>Nom de l'entreprise (obligatoire)</li>
+                                                    </ul>
+                                                    <h3 class="title">Politique d'adhésion</h3>
+                                                    <p>Une fois qu'ils se sont inscrits avec succès en tant que membres de notre plateforme, les utilisateurs ont la possibilité de se connecter à leur compte à tout moment, afin de bénéficier d'un accès illimité à des centaines de produits. En plus de cela, seront capables de vous contacter directement avec vos coordonnées. </p>
+                                                    <p>Vous pouvez vérifier votre niveau d'adhésion <strong><a href="#">ici</a>.</strong></p>
+                                                </div>
+                                            </div>
+                                            <!-- Fin du cadre du guide d'achat -->
+                                        </div>
+                                    </div>
+                                </div>
+                                  
+                            </div>
+                        </form>
+
                     </div>
                 </div>
-                <!-- Course Top Bar End -->
-
-                <!-- Course Wrapper Start -->
-                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 max-mb-n30">
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a1.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">
-                                <h3 class="title"><a href="product-details.html">concept-jardinage-main-tenant-vaporisateur</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a2.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">
-                                <h3 class="title"><a href="product-details.html">Purin-de-consoude-naturel-1-litre</a></h3>                              
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a3.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                               
-                                <h3 class="title"><a href="product-details.html">Engrais-complet-Solabiol-1-kg</a></h3>                             
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a4.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                                
-                                <h3 class="title"><a href="product-details.html">Engrais-foliaire-bio-pulverisateur</a></h3>                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a5.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                              
-                                <h3 class="title"><a href="product-details.html">Basalte-pour-jardin-5kg</a></h3>                              
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a6.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                               
-                                <h3 class="title"><a href="product-details.html">lombricompost-extra-pur-uab-20-kg</a></h3>                               
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a7.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                              
-                                <h3 class="title"><a href="product-details.html">Sac-en-jute-naturel-jardin</a></h3>                               
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                    <!-- Course Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image">
-                                    <img src="assets/images/courses/330/a8.jpg" alt="Course Image">
-                                </a>
-                            </div>
-                            <div class="info text-center">                               
-                                <h3 class="title"><a href="product-details.html">Composteur traditionnel en bois</a></h3>                               
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Course End -->
-
-                </div>
-                <!-- Course Wrapper End -->
-
-                <!-- Pagination Start -->
-                <div class="d-flex justify-content-center mt-5">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item active active-page" aria-current="page">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Pagination End -->
-
-
             </div>
         </div>
-        <!-- Course Section End -->
+        <!--Checkout section end-->
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
 
@@ -438,7 +457,6 @@
 
             </div>
         </div>
-
         <!-- Scroll Top Start -->
         <a href="#" class="scroll-top" id="scroll-top">
             <i class="arrow-top fal fa-long-arrow-up"></i>
@@ -467,16 +485,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

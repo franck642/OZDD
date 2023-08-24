@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Course Details Standard Sidebar - MaxCoach</title>
+    <title>Produit - OZDD</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="courses-grid-1.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
-                                    </li>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
+                                    </li>                                  
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -170,229 +173,210 @@
         </div>
         <!-- Full Screen Search End -->
 
-        <!-- Page Banner Section Start -->
-        <div class="page-banner-section section overlay section-padding" data-bg-image="./assets/images/courses/formation-bg.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-banner-title course-banner-title">
-                            <h1 class="title">Acquérir une Expertise en Gestion des Déchets Organiques Rapidement et Efficacement</h1>
-                        </div>
-
-                        <div class="page-title-bar-meta">
-                            <div class="course-duration">
-                                <span class="meta-icon fas fa-clock"></span>
-                                <span class="meta-value">5 Jours</span>
-                            </div>
-                            <div class="course-students">
-                                <span class="meta-icon fas fa-user-alt"></span>
-                                <span class="meta-value">49 Utilisateurs</span>
-                            </div>
-
-                        </div>
-                    </div>
+        <!-- Page Title Section Start -->
+        <div class="page-title-section section">
+            <div class="page-title">
+                <div class="container">
+                    <h1 class="title">PRODUITS OZDD</h1>
                 </div>
             </div>
-        </div>
-        <!-- Page Banner Section End -->
-
-        <!-- Page Title Section Start -->
-        <div class="page-title-section section section-padding-top-0 section-padding-bottom-120">
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="current">Détaille Formation</li>
+                        <li class="current">Produit</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Page Title Section End -->
 
-        <!-- Course Details Section Start -->
-        <div class="section">
-            <div class="container">
-                <div class="row max-mb-n50">
-
-                    <div class="col-lg-8 col-12 order-lg-1 max-mb-50">
-                        <!-- Course Details Wrapper Start -->
-                        <div class="course-details-wrapper">
-                            <div class="course-nav-tab">
-                                <ul class="nav">
-                                    <li><a class="active" data-bs-toggle="tab" href="#overview">Aperçu</a></li>                                                                      
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div id="overview" class="tab-pane fade show active">
-                                    <div class="course-overview">
-                                        <h3 class="title">Description de la Formation</h3>
-                            
-                                        <p>L'objectif de cette formation est de vous emmener, vous, magnifique développeur front-end, de quelqu'un ayant très peu ou pas du tout de connaissances en jQuery ou en JavaScript, à quelqu'un qui se sent à l'aise de travailler avec et d'écrire du jQuery et du JavaScript.</p>
-                            
-                                        <p>Il existe d'autres cours disponibles, mais celui-ci est le mien. Nous ferons des erreurs en cours de route. Nous les corrigerons. Nous parlerons de théorie. Nous construirons des choses pratiques et réelles.</p>
-                            
-                                        <div class="overview-course-video">
-                                            <iframe title="Tutoriel jQuery n°1 - Tutoriel jQuery pour les débutants" src="https://www.youtube.com/embed/hMxGhHNOkCU?feature=oembed"></iframe>
-                                        </div>
-                            
-                                        <p>jQuery est monstrueusement populaire et omniprésent sur le web. Il ne fait pas tout, mais ce qu'il fait, il le fait très bien, ce qui en fait une partie intégrante de la boîte à outils de presque tous les principaux sites web.</p>
-                            
-                                        <p>Il excelle dans tout ce qui concerne le "DOM" - la sélection et la manipulation des éléments de la page. Il est excellent pour la gestion des événements. Il dispose d'une API pratique pour toutes sortes de choses - l'idée de la "chaîne" est très agréable. Il aide énormément avec Ajax. Il facilite les animations. Le monde des plugins qui l'entourent est vaste. Tout en faisant tout cela, peut-être la caractéristique la plus convaincante est qu'il gère les problèmes de compatibilité entre navigateurs pour vous.</p>
-                            
-                                        <p>Nous parlerons de tout cela et plus encore dans ce cours.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-
-                            <div class="lp-course-buttons">
-                                <!-- <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Buy Membership</a>
-                                <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Buy this course</a> -->
-                                <div class="entry-course-share mt-0">
-                                    <div class="share-media">
-                                        <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">
-                                            <div class="share-label">Partager</div>
-                                            <span class="share-icon fas fa-share-alt"></span>
-                                        </a>
-
-                                        <div class="share-list">
-                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Facebook" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-facebook-f"></i></a>
-
-                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Twitter" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-twitter"></i></a>
-
-                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Linkedin" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-linkedin"></i></a>
-
-                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Tumblr" target="_blank" href="JavaScript:Void(0);"><i class="fa fa-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course Details Wrapper End -->
-                    </div>
-
-                    <div class="col-lg-4 col-12 order-lg-2 max-mb-50">
-                        <div class="sidebar-widget-wrapper pl-30 pl-md-0 pl-sm-0 pl-xs-0">
-                            <div class="sidebar-widget">
-                                <h3 class="sidebar-widget-title">Recherche</h3>
-                                <div class="sidebar-widget-content">
-                                    <div class="sidebar-widget-search">
-                                        <form action="#">
-                                            <input type="text" placeholder="Recherche...">
-                                            <button><i class="fas fa-search"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="sidebar-widget">
-                                <h3 class="sidebar-widget-title">Formations Récentes</h3>
-                                <div class="sidebar-widget-content">
-                                    <ul class="sidebar-widget-course">
-                                        <li class="widget-course">
-                                            <div class="thumbnail">
-                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-4.jpg" alt="Course Image"></a>
-                                            </div>
-                                            <div class="info">
-                                                <span class="price">Gratuit</span>
-                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Learning to Write as a Professional Author</a></h6>
-                                            </div>
-                                        </li>
-                                        <li class="widget-course">
-                                            <div class="thumbnail">
-                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/courses/170/course-2.jpg" alt="Course Image"></a>
-                                            </div>
-                                            <div class="info">
-                                                <span class="price">Gratuit</span>
-                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Customer-centric Info-Tech Strategies</a></h6>
-                                            </div>
-                                        </li>
-                                        <li class="widget-course">
-                                            <div class="thumbnail">
-                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-5.jpg" alt="Course Image"></a>
-                                            </div>
-                                            <div class="info">
-                                                <span class="price">Gratuit</span>
-                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Open Programming Courses for Everyone: Python</a></h6>
-                                            </div>
-                                        </li>                                      
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- Course Details Section End -->
-
-        <!-- Related Courses Section Start -->
-        <div class="related-courses-section section section-padding">
+        <!-- Course Section Start -->
+        <div class="section section-padding-bottom">
             <div class="container">
 
-                <!-- Section Title Start -->
-                <div class="section-title text-center mb-35" data-aos="fade-up">
-                    <h3 class="title">Formations Compostages​</h3>
-                </div>
-                <!-- Section Title End -->
-
-                <!-- Courses Wrapper Start -->
-                <div class="courses-slider swiper-container" data-aos="fade-up">
-
-                    <div class="swiper-wrapper">
-
-                        <!-- Course Start -->
-                        <div class="swiper-slide mb-30">
-                            <div class="course box-shadow">
-                                <div class="thumbnail">
-                                    <span class="badge">Gratuit</span>
-                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-4.jpg" alt="Course Image"></a>
-                                </div>
-                                <div class="info text-center">                                   
-                                    <h3 class="title"><a href="course-details-standard-sidebar.html">Guide définitif du programmeur autodidacte</a></h3>                                   
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course End -->
-
-                        <!-- Course Start -->
-                        <div class="swiper-slide mb-30">
-                            <div class="course box-shadow">
-                                <div class="thumbnail">
-                                    <span class="badge">Gratuit</span>
-                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-8.jpg" alt="Course Image"></a>
-                                </div>
-                                <div class="info text-center">
-                                    <h3 class="title"><a href="course-details-standard-sidebar.html">La source de l'apprentissage et du développement</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course End -->
-
-                        <!-- Course Start -->
-                        <div class="swiper-slide mb-30">
-                            <div class="course box-shadow">
-                                <div class="thumbnail">
-                                    <span class="badge">Gratuit</span>
-                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-5.jpg" alt="Course Image"></a>
-                                </div>
-                                <div class="info text-center">                                 
-                                    <h3 class="title"><a href="course-details-standard-sidebar.html">L'informatique au service des décisions humaines</a></h3>                                  
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course End -->
-
+                <!-- Course Top Bar Start -->
+                <div class="row justify-content-between align-items-center max-mb-20">
+                    <!-- <div class="col-sm-auto col-12 max-mb-10">
+                        <p class="result-count">We found <span>22</span> courses available for you</p>
+                    </div> -->
+                    <div class="col-sm-auto col-12 max-mb-10">
+                        <select class="sort-by">
+                            <option selected="selected">Engrais Naturels</option>
+                            <option value="popularity">Améliorants du Sol</option>
+                            <option value="date">Aménagement du Jardin</option>
+                            <option value="price">Matériels et Accessoires de Culture</option>
+                            <option value="price-desc">compostage</option>
+                            <option value="price-desc">Désherbage écollogique</option>
+                            <option value="price-desc">Equipements et outils</option>
+                        </select>
                     </div>
-                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+                <!-- Course Top Bar End -->
+
+                <!-- Course Wrapper Start -->
+                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 max-mb-n30">
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a1.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="product-details.html">concept-jardinage-main-tenant-vaporisateur</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a2.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">
+                                <span class="price">4000 XOF</span>
+                                <h3 class="title"><a href="product-details.html">Purin-de-consoude-naturel-1-litre</a></h3>                              
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a3.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">  
+                                <span class="price">4000 XOF</span>                             
+                                <h3 class="title"><a href="product-details.html">Engrais-complet-Solabiol-1-kg</a></h3>                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a4.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">  
+                                <span class="price">4000 XOF</span>                              
+                                <h3 class="title"><a href="product-details.html">Engrais-foliaire-bio-pulverisateur</a></h3>                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a5.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">
+                                <span class="price">4000 XOF</span>                              
+                                <h3 class="title"><a href="product-details.html">Basalte-pour-jardin-5kg</a></h3>                              
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a6.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center">
+                                <span class="price">4000 XOF</span>                               
+                                <h3 class="title"><a href="product-details.html">lombricompost-extra-pur-uab-20-kg</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a7.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center"> 
+                                <span class="price">4000 XOF</span>                             
+                                <h3 class="title"><a href="product-details.html">Sac-en-jute-naturel-jardin</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
+
+                    <!-- Course Start -->
+                    <div class="col max-mb-30" data-aos="fade-up">
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image">
+                                    <img src="assets/images/courses/330/a8.jpg" alt="Course Image">
+                                </a>
+                            </div>
+                            <div class="info text-center"> 
+                                <span class="price">4000 XOF</span>                              
+                                <h3 class="title"><a href="product-details.html">Composteur traditionnel en bois</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Course End -->
 
                 </div>
-                <!-- Courses Wrapper End -->
+                <!-- Course Wrapper End -->
+
+                <!-- Pagination Start -->
+                <div class="d-flex justify-content-center mt-5">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active active-page" aria-current="page">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Pagination End -->
+
+
             </div>
         </div>
-        <!-- Related Courses Section End -->
-
+        <!-- Course Section End -->
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
 
@@ -465,6 +449,7 @@
 
             </div>
         </div>
+
         <!-- Scroll Top Start -->
         <a href="#" class="scroll-top" id="scroll-top">
             <i class="arrow-top fal fa-long-arrow-up"></i>
@@ -493,16 +478,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="courses-grid-1.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

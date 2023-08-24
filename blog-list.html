@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    
 
     <!-- CSS
 	============================================ -->
@@ -17,6 +18,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +90,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
                                     </li>
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +128,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                          
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -211,7 +215,7 @@
                                         <li><i class="fas fa-eye"></i>70 views</li>
                                     </ul>
                                     <div class="desc">
-                                        <p>Essential bodyweight exercises are crucial to a well-rounded training routine because they’re versatile and can be done anywhere. …</p>
+                                        <p>Les palmiers sont des plantes emblématiques qui évoquent souvent des images de paysages tropicaux et exotiques. Ils se distinguent par leurs feuilles en éventail ou en plume, qui sont généralement disposées en une forme de couronne au sommet d'un tronc lisse ou texturé. …</p>
                                     </div>
                                     <div class="row justify-content-between max-mt-30">
                                         <div class="col-auto">
@@ -253,7 +257,7 @@
                                         <li><i class="fas fa-eye"></i>64 views</li>
                                     </ul>
                                     <div class="desc">
-                                        <p>Instead, begin the new year by considering four simple ways to refresh your classes that will prove equally beneficial for you, your faithful front row, and your fresh-faced resolutioners. …</p>
+                                        <p>Le lombricomposteur, un véritable super héros du recyclage, incarne une approche innovante et respectueuse de l'environnement pour gérer les déchets organiques. Tel un gardien de la planète, ce système ingénieux transforme les déchets de cuisine en un trésor précieux pour la terre. …</p>
                                     </div>
                                     <div class="row justify-content-between max-mt-30">
                                         <div class="col-auto">
@@ -295,7 +299,7 @@
                                         <li><i class="fas fa-eye"></i>47 views</li>
                                     </ul>
                                     <div class="desc">
-                                        <p>While quality sleep, regular exercise, proper hand-washing and social distancing are all important factors that contribute to a healthy immune system, the foods you eat can also play a key role. …</p>
+                                        <p>En août, le jardin prend vie sous le chaud baiser du soleil estival. C'est une période où la nature offre un spectacle généreux de couleurs, de formes et de fragrances. Les journées s'étirent doucement, offrant aux jardiniers passionnés un moment précieux pour cultiver, soigner et profiter de leur coin de paradis verdoyant. …</p>
                                     </div>
                                     <div class="row justify-content-between max-mt-30">
                                         <div class="col-auto">
@@ -337,7 +341,7 @@
                                         <li><i class="fas fa-eye"></i>51 views</li>
                                     </ul>
                                     <div class="desc">
-                                        <p>On the upside, there are still plenty of ways that you and your clients can practice self-care during these troubling times, even if you’re under orders to stay at home as much as possible. …</p>
+                                        <p>La question de la gestion des déchets se pose comme un défi omniprésent dans notre société moderne. Elle soulève des enjeux cruciaux pour la préservation de notre environnement et de nos écosystèmes fragiles. …</p>
                                     </div>
                                     <div class="row justify-content-between max-mt-30">
                                         <div class="col-auto">
@@ -487,16 +491,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

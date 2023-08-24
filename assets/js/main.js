@@ -861,21 +861,21 @@
 
 
 // Supposons que cette variable est définie en fonction de l'état de connexion de l'utilisateur
-var isUserLoggedIn = false; // Changez cette valeur selon l'état de connexion de l'utilisateur
+// var isUserLoggedIn = false; // Changez cette valeur selon l'état de connexion de l'utilisateur
 
-// Cachez ou affichez les éléments en fonction de l'état de connexion de l'utilisateur
-function updateUI() {
-    if (isUserLoggedIn) {
-        document.getElementById('loginButton').style.display = 'none';
-        document.getElementById('userIcon').style.display = 'block';
-    } else {
-        document.getElementById('loginButton').style.display = 'block';
-        document.getElementById('userIcon').style.display = 'none';
-    }
-}
+// // Cachez ou affichez les éléments en fonction de l'état de connexion de l'utilisateur
+// function updateUI() {
+//     if (isUserLoggedIn) {
+//         document.getElementById('loginButton').style.display = 'none';
+//         document.getElementById('userIcon').style.display = 'block';
+//     } else {
+//         document.getElementById('loginButton').style.display = 'block';
+//         document.getElementById('userIcon').style.display = 'none';
+//     }
+// }
 
-// Appelez la fonction pour mettre à jour l'interface utilisateur lorsque la page est chargée
-updateUI();
+// // Appelez la fonction pour mettre à jour l'interface utilisateur lorsque la page est chargée
+// updateUI();
 
 // Votre fonction toggleDropdown() existante
 function toggleDropdown() {

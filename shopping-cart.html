@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
-                                    </li>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
+                                    </li>                                  
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -174,14 +177,14 @@
         <div class="page-title-section section">
             <div class="page-title">
                 <div class="container">
-                    <h1 class="title">Cart</h1>
+                    <h1 class="title">Panier</h1>
                 </div>
             </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="current">Cart</li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li class="current">Panier</li>
                     </ul>
                 </div>
             </div>
@@ -201,42 +204,42 @@
                                 <thead>
                                     <tr>
                                         <th class="pro-thumbnail">Image</th>
-                                        <th class="pro-title">Product</th>
-                                        <th class="pro-price">Price</th>
-                                        <th class="pro-quantity">Quantity</th>
+                                        <th class="pro-title">Produit</th>
+                                        <th class="pro-price">Prix</th>
+                                        <th class="pro-quantity">Quantité</th>
                                         <th class="pro-subtotal">Total</th>
-                                        <th class="pro-remove">Remove</th>
+                                        <th class="pro-remove">Retirer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="pro-thumbnail"><a href="#"><img src="assets/images/products/shopping-cart/product-1.jpg" alt="Product"></a></td>
                                         <td class="pro-title"><a href="#">Early Field Experience: Teach Well</a></td>
-                                        <td class="pro-price"><span>$59.00</span></td>
+                                        <td class="pro-price"><span>5900 XOF</span></td>
                                         <td class="pro-quantity">
                                             <div class="pro-qty"><input type="number" value="1"></div>
                                         </td>
-                                        <td class="pro-subtotal"><span>$59.00</span></td>
+                                        <td class="pro-subtotal"><span>5900 XOF</span></td>
                                         <td class="pro-remove"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td class="pro-thumbnail"><a href="#"><img src="assets/images/products/shopping-cart/product-2.jpg" alt="Product"></a></td>
                                         <td class="pro-title"><a href="#">Online Student: Strategies for Effective Learning</a></td>
-                                        <td class="pro-price"><span>$67.00</span></td>
+                                        <td class="pro-price"><span>6700XOF</span></td>
                                         <td class="pro-quantity">
                                             <div class="pro-qty"><input type="number" value="1"></div>
                                         </td>
-                                        <td class="pro-subtotal"><span>$67.00</span></td>
+                                        <td class="pro-subtotal"><span>6700XOF</span></td>
                                         <td class="pro-remove"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td class="pro-thumbnail"><a href="#"><img src="assets/images/products/shopping-cart/product-3.jpg" alt="Product"></a></td>
                                         <td class="pro-title"><a href="#">Principles of Business Administration</a></td>
-                                        <td class="pro-price"><span>$52.00</span></td>
+                                        <td class="pro-price"><span>5200 XOF</span></td>
                                         <td class="pro-quantity">
                                             <div class="pro-qty"><input type="number" value="1"></div>
                                         </td>
-                                        <td class="pro-subtotal"><span>$52.00</span></td>
+                                        <td class="pro-subtotal"><span>5200 XOF</span></td>
                                         <td class="pro-remove"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
                                     </tr>
                                 </tbody>
@@ -419,16 +422,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

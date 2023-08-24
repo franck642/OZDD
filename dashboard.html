@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Checkout - MaxCoach</title>
+    <title>My Account - MaxCoach</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -74,8 +75,8 @@
                         <div class="col-xl-3 col-auto">
                             <div class="header-logo">
                                 <a href="index.html">
-                                    <img class="dark-logo" src="assets/images/logo/dark-logo.png" alt="Logo">
-                                    <img class="light-logo" src="assets/images/logo/light-logo.png" alt="Logo">
+                                    <img class="dark-logo" src="assets/images/logo/Logo_OZDD.png" alt="Logo" style="width: 40px;">
+                                    <img class="light-logo" src="assets/images/logo/Logo_OZDD.png" alt="Logo" style="width: 40px;">
                                 </a>
                             </div>
                         </div>
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="checkout.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event.html"><span class="menu-text">Fournisseurs</span></a>
-                                    </li>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
+                                    </li>                                   
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -115,7 +119,7 @@
 
                                     <!-- Header Social Start -->                            
                                     <div class="header-social d-none d-sm-flex" id="loginButton">
-                                        <a href="login-register.html"><button class="btn btn-primary btn-sm">Connexion</button></a>
+                                        <a href="login-register.html"><button class="butt btn-sm">Connexion</button></a>
                                     </div>
                                     <!-- Header Social End -->
 
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="my-account.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -174,214 +177,172 @@
         <div class="page-title-section section">
             <div class="page-title">
                 <div class="container">
-                    <h1 class="title">Formulaire Fournisseur</h1>
+                    <h1 class="title">Tableau de bord</h1>
                 </div>
             </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="current"></li>Formulaire Fournisseur</li>
+                        <li class="current">Mon compte</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Page Title Section End -->
 
-        <!--Checkout section start-->
-        <div class="checkout-section section section-padding-bottom">
+
+        <!--My Account section start-->
+        <div class="my-account-section section section-padding-bottom">
             <div class="container">
                 <div class="row">
+
                     <div class="col-12">
+                        <div class="row">
+                            <!-- My Account Tab Menu Start -->
+                            <div class="col-lg-3 col-12">
+                                <div class="myaccount-tab-menu nav" role="tablist">
+                                    <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fas fa-tachometer-alt-slow"></i>
+                                        Tableau de bord</a>
 
-                        <!-- Checkout Form Start-->
-                        <form action="#" class="checkout-form">
-                            <div class="row row-40">
+                                    <a href="#address-edit" data-bs-toggle="tab"><i class="far fa-id-badge"></i> Profile</a> 
 
-                                <div class="col-lg-7">
+                                    <a href="formulaire.html"><i class="fas fa-user-plus"></i> Devenir fournisseur</a>
 
-                                    <!-- Billing Address -->
-                                    <div id="billing-form" class="mb-10">
-                                        <h4 class="checkout-title">Enregistrement du Compte</h4>
+                                    <a href="shopping-cart.html"><i class="	fas fa-cart-plus"></i> Panier</a>                                  
 
-                                        <div class="row">
+                                    <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                                </div>
+                            </div>
+                            <!-- My Account Tab Menu End -->
 
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Prénoms*</label>
-                                                <input type="text" placeholder="Prénoms">
-                                            </div>
+                            <!-- My Account Tab Content Start -->
+                            <div class="col-lg-9 col-12">
+                                <div class="tab-content" id="myaccountContent">
+                                    <!-- Single Tab Content Start -->
+                                    <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                        <div class="myaccount-content">
+                                            <h3>Mon compte</h3>
 
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Nom*</label>
-                                                <input type="text" placeholder="Nom">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Email*</label>
-                                                <input type="email" placeholder="Adresse email">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>N° de téléphone*</label>
-                                                <input type="text" placeholder="N° de téléphone">
-                                            </div>
-
-                                            <div class="col-12 mb-20">
-                                                <label>Nom de l'entreprise</label>
-                                                <input type="text" placeholder="Nom de l'entreprise">
-                                            </div>
-
-                                            <div class="col-12 mb-20">
-                                                <label>Adresse*</label>
-                                                <input type="text" placeholder="Adresse ligne">
-                                            </div>
-
-                                            <div class="col-12 mb-20">
-                                                <label for="formFileLg" class="form-label">Saisie votre pièce d'identité*</label>
-                                                <input class="form-control form-control-lg" id="formFileLg" type="file">
-                                              </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label for="formFileLg" class="form-label">Logo de l'entreprise*</label>
-                                                <input class="form-control form-control-lg" type="file" accept="image/*" placeholder="Insérer le logo">
+                                            <div class="welcome mb-20">
+                                                <p>Bonjour, <strong>Alex Tuntuni</strong> (Si Non <strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Déconnexion</a>)</p>
                                             </div>
                                             
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>catégories*</label>
-                                                <select>
-                                                    <option>Engrais naturels</option>
-                                                    <option>Equipements et outils</option>
-                                                    <option>Compostage</option>
-                                                    <option>Désherbage écollogique</option>
-                                                    <option>Matériels et accessoires de culture</option>                                                                                             
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Pays*</label>
-                                                <input type="text" placeholder="Pays">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Ville/Commune*</label>
-                                                <input type="text" placeholder="Ville/Commune">
-                                            </div>  
-                                                                               
-                                            <div class="col-12 text-center max-mb-30">
-                                                <button class="btn btn-primary btn-hover-secondary btn-width-180 btn-height-60">Créer un compte</button>
-                                            </div>
-
                                         </div>
-
                                     </div>
+                                    <!-- Single Tab Content End -->
 
-                                    <!-- Shipping Address -->
-                                    <div id="shipping-form">
-                                        <h4 class="checkout-title">Shipping Address</h4>
+                                    <!-- Single Tab Content Start -->
+                                    <div class="tab-pane fade" id="address-edit" role="tabpanel">
+                                        <!-- Profile Section Start  -->
+                                        <div class="profile-section section section-padding-bottom">
+                                            <div class="container">
+                                                <div class="row align-items-lg-center">
+                                                    <div class="col-xl-5 col-md-6">
+                                                        <div class="profile-image">
+                                                            <img src="assets/images/profile/profile.jpeg" alt="profile">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-md-6 offset-xl-1">
+                                                        <div class="profile-info">
+                                                            <h3 class="profile-name">Maggie Strickland</h3>
+                                                            <div class="author-career">/Advanced Educator</div>
+                                                            <p class="author-bio">Maggie is a brilliant educator, whose life was spent for computer science and love of nature. Being a female, she encountered a lot of obstacles and was forbidden to work in this field by her family. With a true spirit and talented gift, she was able to succeed and set an example for others.</p>
 
-                                        <div class="row">
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>First Name*</label>
-                                                <input type="text" placeholder="First Name">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Last Name*</label>
-                                                <input type="text" placeholder="Last Name">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Email Address*</label>
-                                                <input type="email" placeholder="Email Address">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Phone no*</label>
-                                                <input type="text" placeholder="Phone number">
-                                            </div>
-
-                                            <div class="col-12 mb-20">
-                                                <label>Company Name</label>
-                                                <input type="text" placeholder="Company Name">
-                                            </div>
-
-                                            <div class="col-12 mb-20">
-                                                <label>Address*</label>
-                                                <input type="text" placeholder="Address line 1">
-                                                <input type="text" placeholder="Address line 2">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Country*</label>
-                                                <select class="nice-select">
-                                                    <option>Bangladesh</option>
-                                                    <option>China</option>
-                                                    <option>country</option>
-                                                    <option>India</option>
-                                                    <option>Japan</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Town/City*</label>
-                                                <input type="text" placeholder="Town/City">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>State*</label>
-                                                <input type="text" placeholder="State">
-                                            </div>
-
-                                            <div class="col-md-6 col-12 mb-20">
-                                                <label>Zip Code*</label>
-                                                <input type="text" placeholder="Zip Code">
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-5">
-                                    <div class="row">
-                                        <div class="col-lg-8 col-12 order-lg-2 max-mb-50">
-                                            <!-- Début du cadre du guide d'achat -->
-                                            <div class="purchase-guide-wrapper">
-                                                <div class="content">                                                
-                                                    <h3 class="title">Informations</h3>
-                                                    <p>Pour acheter un cours ou devenir membre de notre centre, les clients/apprenants doivent d'abord s'inscrire avec un compte personnel en fournissant les informations suivantes :</p>
-                                                    <ul>
-                                                        <li>Nom (obligatoire)</li>
-                                                        <li>Adresse email (obligatoire)</li>
-                                                        <li>Date de naissance (obligatoire)</li>
-                                                        <li>Numéro de passeport/ID (obligatoire)</li>
-                                                        <li>catégories (obligatoire)</li>
-                                                        <li>Numéros de téléphone portable (obligatoire)</li>
-                                                        <li>Adresse (obligatoire)</li>
-                                                        <li>Ville/Commune (obligatoire)</li>                           
-                                                        <li>Nom de l'entreprise (obligatoire)</li>
-                                                    </ul>
-                                                    <h3 class="title">Politique d'adhésion</h3>
-                                                    <p>Une fois inscrit avec succès comme membre de notre centre, les utilisateurs peuvent se connecter à leur compte à tout moment pour profiter de centaines de leçons gratuites et utiles. Lorsqu'ils achètent un cours, leur compte est crédité de quelques points. Ces points s'accumulent pour classer les utilisateurs dans notre système d'adhésion. Chaque niveau est récompensé par différents privilèges et réductions.</p>
-                                                    <p>Vous pouvez vérifier votre niveau d'adhésion <strong><a href="#">ici</a>.</strong></p>
+                                                            <h5 class="profile-contact-title">Contact</h5>
+                                                            <span class="contact-info-text">
+                                                                <span class="phone">Phone number: <strong>(+88) - 1990 - 8668</strong> </span>
+                                                            <br>
+                                                            <span class="email">Email: <strong>maggiestrickland.instructor@gmail.com</strong></span>
+                                                            </span>
+                                                            <ul class="author-social-networks">
+                                                                <li class="item">
+                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-twitter social-link-icon"></i> </a>
+                                                                </li>
+                                                                <li class="item">
+                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-facebook-f social-link-icon"></i> </a>
+                                                                </li>
+                                                                <li class="item">
+                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-instagram social-link-icon"></i> </a>
+                                                                </li>
+                                                                <li class="item">
+                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-pinterest social-link-icon"></i> </a>
+                                                                </li>
+                                                                <li class="item">
+                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-youtube social-link-icon"></i> </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- Fin du cadre du guide d'achat -->
+                                        </div>
+                                        <!-- Profile Section End  -->
+                                    </div>
+                                    <!-- Single Tab Content End -->
+
+                                    <!-- Single Tab Content Start -->
+                                    <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                        <div class="myaccount-content">
+                                            <h3>Détails du compte</h3>
+
+                                            <div class="account-details-form">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="first-name" placeholder="First Name" type="text">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="last-name" placeholder="Last Name" type="text">
+                                                        </div>
+
+                                                        <div class="col-12 mb-30">
+                                                            <input id="display-name" placeholder="Display Name" type="text">
+                                                        </div>
+
+                                                        <div class="col-12 mb-30">
+                                                            <input id="email" placeholder="Email Address" type="email">
+                                                        </div>
+
+                                                        <div class="col-12 mb-30">
+                                                            <h4>Password change</h4>
+                                                        </div>
+
+                                                        <div class="col-12 mb-30">
+                                                            <input id="current-pwd" placeholder="Current Password" type="password">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="new-pwd" placeholder="New Password" type="password">
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="confirm-pwd" placeholder="Confirm Password" type="password">
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <button class="btn btn-primary btn-hover-secondary">Save Changes</button>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- Single Tab Content End -->
                                 </div>
-                                  
                             </div>
-                        </form>
+                            <!-- My Account Tab Content End -->
+                        </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
-        <!--Checkout section end-->
+        <!--My Account section end-->
+
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
 
@@ -454,6 +415,7 @@
 
             </div>
         </div>
+
         <!-- Scroll Top Start -->
         <a href="#" class="scroll-top" id="scroll-top">
             <i class="arrow-top fal fa-long-arrow-up"></i>
@@ -461,7 +423,7 @@
         </a>
         <!-- Scroll Top End -->
     </div>
-
+    
     <div id="site-main-mobile-menu" class="site-main-mobile-menu">
         <div class="site-main-mobile-menu-inner">
             <div class="mobile-menu-header">
@@ -482,23 +444,28 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-
     <!-- JS
 ============================================ -->
 

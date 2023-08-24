@@ -13954,6 +13954,9 @@ textarea:focus {
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   background-color: #FFFFFF;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
 }
 .course-7.course-fluid .info {
   padding: 26px 0 20px;
@@ -13993,7 +13996,7 @@ textarea:focus {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0 0 12px;
-  color: #ef6f31;
+  color: #FFBF05;
 }
 .course-7 .info .price span {
   font-size: 18px;
@@ -14006,7 +14009,7 @@ textarea:focus {
   margin: 0;
 }
 .course-7 .info .title a:hover {
-  color: #ef6f31;
+  color: #FFBF05;
 }
 .course-7 .info .meta {
   font-size: 14px;

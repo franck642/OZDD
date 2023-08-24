@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>My Account - MaxCoach</title>
+    <title>Course Details Standard Sidebar - MaxCoach</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
                                     </li>
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -170,175 +173,228 @@
         </div>
         <!-- Full Screen Search End -->
 
-        <!-- Page Title Section Start -->
-        <div class="page-title-section section">
-            <div class="page-title">
-                <div class="container">
-                    <h1 class="title">Mon compte</h1>
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section overlay section-padding" data-bg-image="./assets/images/courses/formation-bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-banner-title course-banner-title">
+                            <h1 class="title">Acquérir une Expertise en Gestion des Déchets Organiques Rapidement et Efficacement</h1>
+                        </div>
+
+                        <div class="page-title-bar-meta">
+                            <div class="course-duration">
+                                <span class="meta-icon fas fa-clock"></span>
+                                <span class="meta-value">5 Jours</span>
+                            </div>
+                            <div class="course-students">
+                                <span class="meta-icon fas fa-user-alt"></span>
+                                <span class="meta-value">49 Utilisateurs</span>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- Page Banner Section End -->
+
+        <!-- Page Title Section Start -->
+        <div class="page-title-section section section-padding-top-0 section-padding-bottom-120">
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="current">Mon compte</li>
+                        <li class="current">Détaille Formation</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Page Title Section End -->
 
-
-        <!--My Account section start-->
-        <div class="my-account-section section section-padding-bottom">
+        <!-- Course Details Section Start -->
+        <div class="section">
             <div class="container">
-                <div class="row">
+                <div class="row max-mb-n50">
 
-                    <div class="col-12">
-                        <div class="row">
-                            <!-- My Account Tab Menu Start -->
-                            <div class="col-lg-3 col-12">
-                                <div class="myaccount-tab-menu nav" role="tablist">
-                                    <a href="#dashboad" class="active" data-bs-toggle="tab"><i class="fas fa-tachometer-alt-slow"></i>
-                                        Tableau de bord</a>
-
-                                    <a href="#address-edit" data-bs-toggle="tab"><i class="far fa-id-badge"></i> Profile</a> 
-
-                                    <a href="checkout.html"><i class="fas fa-user-plus"></i> Devenir fournisseur</a>
-
-                                    <a href="courses-grid-1.html"><i class="fas fa-chalkboard-teacher"></i> Formations</a>                                  
-
-                                    <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                    <div class="col-lg-8 col-12 order-lg-1 max-mb-50">
+                        <!-- Course Details Wrapper Start -->
+                        <div class="course-details-wrapper">
+                            <div class="course-nav-tab">
+                                <ul class="nav">
+                                    <li><a class="active" data-bs-toggle="tab" href="#overview">Aperçu</a></li>                                                                      
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div id="overview" class="tab-pane fade show active">
+                                    <div class="course-overview">
+                                        <h3 class="title">Description de la Formation</h3>
+                            
+                                        <p>L'objectif de cette formation est de vous emmener, vous, magnifique développeur front-end, de quelqu'un ayant très peu ou pas du tout de connaissances en jQuery ou en JavaScript, à quelqu'un qui se sent à l'aise de travailler avec et d'écrire du jQuery et du JavaScript.</p>
+                            
+                                        <p>Il existe d'autres cours disponibles, mais celui-ci est le mien. Nous ferons des erreurs en cours de route. Nous les corrigerons. Nous parlerons de théorie. Nous construirons des choses pratiques et réelles.</p>
+                            
+                                        <div class="overview-course-video">
+                                            <iframe title="Tutoriel jQuery n°1 - Tutoriel jQuery pour les débutants" src="https://www.youtube.com/embed/hMxGhHNOkCU?feature=oembed"></iframe>
+                                        </div>
+                            
+                                        <p>jQuery est monstrueusement populaire et omniprésent sur le web. Il ne fait pas tout, mais ce qu'il fait, il le fait très bien, ce qui en fait une partie intégrante de la boîte à outils de presque tous les principaux sites web.</p>
+                            
+                                        <p>Il excelle dans tout ce qui concerne le "DOM" - la sélection et la manipulation des éléments de la page. Il est excellent pour la gestion des événements. Il dispose d'une API pratique pour toutes sortes de choses - l'idée de la "chaîne" est très agréable. Il aide énormément avec Ajax. Il facilite les animations. Le monde des plugins qui l'entourent est vaste. Tout en faisant tout cela, peut-être la caractéristique la plus convaincante est qu'il gère les problèmes de compatibilité entre navigateurs pour vous.</p>
+                            
+                                        <p>Nous parlerons de tout cela et plus encore dans ce cours.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- My Account Tab Menu End -->
+                            
 
-                            <!-- My Account Tab Content Start -->
-                            <div class="col-lg-9 col-12">
-                                <div class="tab-content" id="myaccountContent">
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Tableau de bord</h3>
+                            <div class="lp-course-buttons">
+                                <!-- <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Buy Membership</a>
+                                <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Buy this course</a> -->
+                                <div class="entry-course-share mt-0">
+                                    <div class="share-media">
+                                        <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">
+                                            <div class="share-label">Partager</div>
+                                            <span class="share-icon fas fa-share-alt"></span>
+                                        </a>
 
-                                            <div class="welcome mb-20">
-                                                <p>Bonjour, <strong>Alex Tuntuni</strong> (Si Non <strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Déconnexion</a>)</p>
-                                            </div>
-                                            
+                                        <div class="share-list">
+                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Facebook" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-facebook-f"></i></a>
+
+                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Twitter" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-twitter"></i></a>
+
+                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Linkedin" target="_blank" href="JavaScript:Void(0);"><i class="fab fa-linkedin"></i></a>
+
+                                            <a class="hint--bounce hint--top hint--theme-two" aria-label="Tumblr" target="_blank" href="JavaScript:Void(0);"><i class="fa fa-instagram"></i></a>
                                         </div>
                                     </div>
-                                    <!-- Single Tab Content End -->
-
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="address-edit" role="tabpanel">
-                                        <!-- Profile Section Start  -->
-                                        <div class="profile-section section section-padding-bottom">
-                                            <div class="container">
-                                                <div class="row align-items-lg-center">
-                                                    <div class="col-xl-5 col-md-6">
-                                                        <div class="profile-image">
-                                                            <img src="assets/images/profile/profile.jpeg" alt="profile">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-6 col-md-6 offset-xl-1">
-                                                        <div class="profile-info">
-                                                            <h3 class="profile-name">Maggie Strickland</h3>
-                                                            <div class="author-career">/Advanced Educator</div>
-                                                            <p class="author-bio">Maggie is a brilliant educator, whose life was spent for computer science and love of nature. Being a female, she encountered a lot of obstacles and was forbidden to work in this field by her family. With a true spirit and talented gift, she was able to succeed and set an example for others.</p>
-
-                                                            <h5 class="profile-contact-title">Contact</h5>
-                                                            <span class="contact-info-text">
-                                                                <span class="phone">Phone number: <strong>(+88) - 1990 - 8668</strong> </span>
-                                                            <br>
-                                                            <span class="email">Email: <strong>maggiestrickland.instructor@gmail.com</strong></span>
-                                                            </span>
-                                                            <ul class="author-social-networks">
-                                                                <li class="item">
-                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-twitter social-link-icon"></i> </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-facebook-f social-link-icon"></i> </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-instagram social-link-icon"></i> </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-pinterest social-link-icon"></i> </a>
-                                                                </li>
-                                                                <li class="item">
-                                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-youtube social-link-icon"></i> </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Profile Section End  -->
-                                    </div>
-                                    <!-- Single Tab Content End -->
-
-                                    <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="account-info" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Détails du compte</h3>
-
-                                            <div class="account-details-form">
-                                                <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="first-name" placeholder="First Name" type="text">
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="last-name" placeholder="Last Name" type="text">
-                                                        </div>
-
-                                                        <div class="col-12 mb-30">
-                                                            <input id="display-name" placeholder="Display Name" type="text">
-                                                        </div>
-
-                                                        <div class="col-12 mb-30">
-                                                            <input id="email" placeholder="Email Address" type="email">
-                                                        </div>
-
-                                                        <div class="col-12 mb-30">
-                                                            <h4>Password change</h4>
-                                                        </div>
-
-                                                        <div class="col-12 mb-30">
-                                                            <input id="current-pwd" placeholder="Current Password" type="password">
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="new-pwd" placeholder="New Password" type="password">
-                                                        </div>
-
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="confirm-pwd" placeholder="Confirm Password" type="password">
-                                                        </div>
-
-                                                        <div class="col-12">
-                                                            <button class="btn btn-primary btn-hover-secondary">Save Changes</button>
-                                                        </div>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->
                                 </div>
                             </div>
-                            <!-- My Account Tab Content End -->
                         </div>
+                        <!-- Course Details Wrapper End -->
+                    </div>
 
+                    <div class="col-lg-4 col-12 order-lg-2 max-mb-50">
+                        <div class="sidebar-widget-wrapper pl-30 pl-md-0 pl-sm-0 pl-xs-0">
+                            <div class="sidebar-widget">
+                                <h3 class="sidebar-widget-title">Recherche</h3>
+                                <div class="sidebar-widget-content">
+                                    <div class="sidebar-widget-search">
+                                        <form action="#">
+                                            <input type="text" placeholder="Recherche...">
+                                            <button><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h3 class="sidebar-widget-title">Formations Récentes</h3>
+                                <div class="sidebar-widget-content">
+                                    <ul class="sidebar-widget-course">
+                                        <li class="widget-course">
+                                            <div class="thumbnail">
+                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-4.jpg" alt="Course Image"></a>
+                                            </div>
+                                            <div class="info">
+                                                <span class="price">Gratuit</span>
+                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Learning to Write as a Professional Author</a></h6>
+                                            </div>
+                                        </li>
+                                        <li class="widget-course">
+                                            <div class="thumbnail">
+                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/courses/170/course-2.jpg" alt="Course Image"></a>
+                                            </div>
+                                            <div class="info">
+                                                <span class="price">Gratuit</span>
+                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Customer-centric Info-Tech Strategies</a></h6>
+                                            </div>
+                                        </li>
+                                        <li class="widget-course">
+                                            <div class="thumbnail">
+                                                <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-5.jpg" alt="Course Image"></a>
+                                            </div>
+                                            <div class="info">
+                                                <span class="price">Gratuit</span>
+                                                <h6 class="title"><a href="course-details-standard-sidebar.html">Open Programming Courses for Everyone: Python</a></h6>
+                                            </div>
+                                        </li>                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
-        <!--My Account section end-->
+        <!-- Course Details Section End -->
+
+        <!-- Related Courses Section Start -->
+        <div class="related-courses-section section section-padding">
+            <div class="container">
+
+                <!-- Section Title Start -->
+                <div class="section-title text-center mb-35" data-aos="fade-up">
+                    <h3 class="title">Formations Compostages​</h3>
+                </div>
+                <!-- Section Title End -->
+
+                <!-- Courses Wrapper Start -->
+                <div class="courses-slider swiper-container" data-aos="fade-up">
+
+                    <div class="swiper-wrapper">
+
+                        <!-- Course Start -->
+                        <div class="swiper-slide mb-30">
+                            <div class="course box-shadow">
+                                <div class="thumbnail">
+                                    <span class="badge">Gratuit</span>
+                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-4.jpg" alt="Course Image"></a>
+                                </div>
+                                <div class="info text-center">                                   
+                                    <h3 class="title"><a href="course-details-standard-sidebar.html">Guide définitif du programmeur autodidacte</a></h3>                                   
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course End -->
+
+                        <!-- Course Start -->
+                        <div class="swiper-slide mb-30">
+                            <div class="course box-shadow">
+                                <div class="thumbnail">
+                                    <span class="badge">Gratuit</span>
+                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-8.jpg" alt="Course Image"></a>
+                                </div>
+                                <div class="info text-center">
+                                    <h3 class="title"><a href="course-details-standard-sidebar.html">La source de l'apprentissage et du développement</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course End -->
+
+                        <!-- Course Start -->
+                        <div class="swiper-slide mb-30">
+                            <div class="course box-shadow">
+                                <div class="thumbnail">
+                                    <span class="badge">Gratuit</span>
+                                    <a href="course-details-standard-sidebar.html" class="image"><img src="assets/images/products/product/product-5.jpg" alt="Course Image"></a>
+                                </div>
+                                <div class="info text-center">                                 
+                                    <h3 class="title"><a href="course-details-standard-sidebar.html">L'informatique au service des décisions humaines</a></h3>                                  
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course End -->
+
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                </div>
+                <!-- Courses Wrapper End -->
+            </div>
+        </div>
+        <!-- Related Courses Section End -->
 
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
@@ -412,7 +468,6 @@
 
             </div>
         </div>
-
         <!-- Scroll Top Start -->
         <a href="#" class="scroll-top" id="scroll-top">
             <i class="arrow-top fal fa-long-arrow-up"></i>
@@ -441,16 +496,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>

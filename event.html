@@ -17,6 +17,7 @@
     <!-- Vendor CSS (Bootstrap & Icon Font) -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Plugins CSS (All Plugins Files) -->
     <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
@@ -88,21 +89,24 @@
                                     <li class="position-static">
                                         <a href="index.html"><span class="menu-text">Accueil</span></a>
                                     </li>
-                                    <li class="">
-                                        <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                                     
+                                    <li class="has-children">
+                                        <a href="#"><span class="menu-text">Nos services</span></a>
+                                        <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="sub-menu">
+                                            <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                            <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                            
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>
-                                    </li>
-                                    <li class="">
-                                        <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>
-                                    </li>
+                                        <a href="formation.html"><span class="menu-text">Formations</span></a>
+                                    </li>                                  
                                     <li class="">
                                         <a href="blog-list.html"><span class="menu-text">Blog</span></a>              
                                     </li>
-                                    <!-- <li class="">
+                                    <li class="">
                                         <a href="contact-us.html"><span class="menu-text">Contact</span></a>                                     
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -123,8 +127,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-user"></i> Mon compte</a>                                           
-                                            <a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a>
+                                            <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                                             <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -170,258 +173,268 @@
         </div>
         <!-- Full Screen Search End -->
 
-        <!-- Page Title Section Start -->
-        <div class="page-title-section section">
-            <div class="page-title">
-                <div class="container">
-                    <h1 class="title">Fournisseur</h1>
-                </div>
-            </div>
-            <div class="page-breadcrumb">
-                <div class="container">
-                    <ul class="breadcrumb">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li class="current">Fournisseurs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Page Title Section End -->
-
-        <!-- Event Section Start -->
-        <div class="section section-padding-bottom">
+        <!-- Event Page Banner Start -->
+        <div class="event-page-banner section overlay section-padding-top-200 section-padding-bottom-180" data-bg-image="./assets/images/courses/banner1.jpg">
             <div class="container">
-
-                <!-- Event Top Bar Start -->
-                <div class="row justify-content-between align-items-center max-mb-20">
-                    <div class="col-sm-auto col-12 max-mb-10">
-                        <p class="result-count">Nous avons trouvé<span>des prestataires</span> disponibles pour vous</p>
-                    </div>
-                    <div class="col-sm-auto col-12 max-mb-10">
-                        <select class="sort-by">
-                            <option selected="selected">Engrais naturels</option>
-                            <option value="popularity">Equipements et outils</option>
-                            <option value="date">Compostage</option>
-                            <option value="price">Désherbage écollogique</option>
-                            <option value="price-desc">Matériels et accessoires de culture</option>
-                        </select>
+                <div class="col-12">
+                    <div class="event-hero-content">
+                        <div class="entry-date"> Novembre 23</div>
+                        <h1 class="entry-title">Fournir plus qu'un service, une expérience 2023</h1>
+                        <div class="entry-countdown">
+                            <div class="pro-countdown-1" data-countdown="2023/10/30"></div>
+                        </div>
                     </div>
                 </div>
-                <!-- Event Top Bar End -->
-
-                <!-- Event Wrapper Start -->
-                <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 max-mb-n30">
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event1.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Nov 22, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Storytelling Workshop</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Texas, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event2.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Oct 10, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Painting Art Contest 2022</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>New York, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event3.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Nov 23, 2022</span>
-                                <h3 class="title"><a href="event-details.html">International Art Fair 2022</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Hamburg, Germany</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event4.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Dec 15, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Street Performance: Call for Artist</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Illinois, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event5.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Jul 22, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Consumer Food Safety Education Conference</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Illinois, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event6.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Aug 12, 2022</span>
-                                <h3 class="title"><a href="event-details.html">How meditation improve your mental health?</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Dubai</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event7.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Sep 18, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Dialogue for Action on Cancer Screening and Prevention</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Washington DC, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="event-details.html" class="image"><img src="assets/images/event/370/event8.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Sep 24, 2022</span>
-                                <h3 class="title"><a href="event-details.html">Workout routine and Longevity Meetup</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Hamburg, Germany</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                    <!-- Event Start -->
-                    <div class="col max-mb-30" data-aos="fade-up">
-                        <div class="event">
-                            <div class="thumbnail">
-                                <a href="#" class="image"><img src="assets/images/event/370/event9.jpg" alt="Event Image"></a>
-                                <div class="event-overlay-background"></div>
-                                <div class="event-overlay-content">
-                                    <a class="btn btn-md btn-light btn-hover-light theme-color" href="event-details.html">Get ticket</a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="date">Jul 29, 2023</span>
-                                <h3 class="title"><a href="event-details.html">Learning Counsel Digital Transition Discussion Event – Chicago</a></h3>
-                                <ul class="event-location">
-                                    <li><i class="fas fa-map-marker-alt"></i>Chicago, US</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Event End -->
-
-                </div>
-                <!-- Event Wrapper End -->
-
-                <!-- Pagination Start -->
-                <div class="row max-mt-50">
-                    <div class="col">
-
-                        <ul class="pagination center">
-                            <li><a href="#" class="prev">PREV</a></li>
-                            <li><a href="#" class="active">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#" class="next">NEXT</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <!-- Pagination End -->
-
             </div>
         </div>
-        <!-- Event Section End -->
+        <!-- Event Page Banner End -->
+
+        <!-- Team Section Start -->
+        <div class="team-section section section-padding-top mb-5">
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="section-title text-center" data-aos="fade-up">
+                    <span class="sub-title">Pionniers de l'Écologie</span>
+                    <h2 class="title fz-48">Fournisseur <span> Vert</span> de Gestion des Déchets Organiques.</h2>
+                </div>
+                <!-- Section Title End -->
+                <div class="row ht-team-member-style-two">
+                    <div class="col-lg-4 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/350/team-member-01.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h5 class="name">Merrie Lewis </h5>
+                                    <div class="position">General Director</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/350/team-member-02.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h5 class="name">Mariana Buenos </h5>
+                                    <div class="position">CEO & Chief Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/350/team-member-03.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h5 class="name">Parks Missie </h5>
+                                    <div class="position">Course Researcher</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ht-team-member-style-three max-mb-n50">
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item ">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/350/team-member-01.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h6 class="name">Smiley Fords </h6>
+                                    <div class="position">Linguistic Mentor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/350/team-member-02.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h6 class="name">Smoonz Rotley </h6>
+                                    <div class="position">Lifestyle Inspirer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/270/team-member-04.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h6 class="name">Bill Prad </h6>
+                                    <div class="position">Computer Engineer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
+                        <div class="grid-item">
+                            <div class="ht-team-member">
+                                <div class="team-image">
+                                    <a href="event-details.html">
+                                        <img class="img-fluid" src="assets/images/team/270/team-member-07.jpg" alt="">
+                                    </a>
+                                    <div class="social-networks">
+                                        <div class="inner">
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a target="_blank" href="JavaScript:Void(0);" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-info text-center">
+                                    <h6 class="name">Dora Floral </h6>
+                                    <div class="position">Graphic Designer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Team Section End -->     
+
+        <!-- Newsletter Section Start -->
+        <div class="newsletter-section section section-padding position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="newsletter-content">
+                            <h2 class="title">S'inscrire à nos <span>lettres d'information</span></h2>
+                            <p>Entrez votre adresse email pour vous inscrire à notre lettres d'information <br class="d-none d-md-block">livrée régulièrement ! </p>
+                            <div class="newsletter-form">
+                                <form action="#">
+                                    <input type="email" placeholder="E-mail">
+                                    <button class="btn btn-primary btn-hover-secondary">S'inscrire</button>
+                                </form>
+                            </div>
+    
+                            <!-- Animation Shape Start -->
+                            <div class="shape shape-1 scene">
+                                <span data-depth="4">shape 3</span>
+                            </div>
+                            <div class="shape shape-2 scene">
+                                <span data-depth="4"><img src="assets/images/shape-animation/nwesletter-shape-1.png" alt=""></span>
+                            </div>
+                            <div class="shape shape-3 scene">
+                                <span data-depth="4"><img src="assets/images/shape-animation/nwesletter-shape-2.png" alt=""></span>
+                            </div>
+                            <!-- Animation Shape End -->
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter Section End -->
+
+
 
         <div class="footer-section section" data-bg-color="#171621">
             <div class="container">
@@ -524,16 +537,22 @@
                             <a href="index.html"><span class="menu-text">Accueil</span></a>                          
                         </li>
                         <li class="has-children">
-                            <a href="courses-grid-1.html"><span class="menu-text">Produits</span></a>                          
+                            <a href="#"><span class="menu-text">Nos services</span></a>
+                            <span class="menu-toggle"><i class="fas fa-angle-down"></i></span>
+                            <ul class="sub-menu">
+                                <li><a href="product.html"><span class="menu-text">Nos Produits</span></a></li>
+                                <li><a href="event.html"><span class="menu-text">Fournisseurs</span></a></li>
+                                
+                            </ul>
                         </li>
                         <li class="has-children">
-                            <a href="shop-right-sidebar.html"><span class="menu-text">Formations</span></a>                           
-                        </li>
-                        <li class="has-children">
-                            <a href="event-details.html"><span class="menu-text">Fournisseurs</span></a>                           
-                        </li>
+                            <a href="formation.html"><span class="menu-text">Formations</span></a>                           
+                        </li>                      
                         <li class="has-children">
                             <a href="blog-list.html"><span class="menu-text">Blog</span></a>                           
+                        </li>
+                        <li class="has-children">
+                            <a href="contact-us.html"><span class="menu-text">Contact</span></a>                           
                         </li>                       
                     </ul>
                 </nav>
