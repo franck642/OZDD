@@ -13990,7 +13990,7 @@ textarea:focus {
 }
 .course-7 .info .price {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -20474,11 +20474,6 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
   font-size: 14px;
   text-align: center;
   color: #ABABAB;
-}
-.active-page .page-link {
-  background-color: #FFBF05;
-  color: white;
-  border-color: #FFBF05;
 }
 
 /*----------------------------------------*/
