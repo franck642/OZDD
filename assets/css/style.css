@@ -14044,6 +14044,25 @@ textarea:focus {
   -webkit-transform: translate(0px, -41px);
           transform: translate(0px, -41px);
 }
+/* Style des actions (icônes) au survol de l'image */
+.course-7 .actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.course-7 .action {
+  font-size: 23px;
+  color: #333;
+  margin-left: 10px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.course-7 .action:hover {
+  opacity: 1;
+}
 
 /* 08.08. Course Details CSS */
 .course-nav-tab ul {

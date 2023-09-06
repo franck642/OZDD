@@ -903,4 +903,72 @@ window.onclick = function(event) {
         const preloader = document.getElementById('preloader');
         preloader.style.display = 'none';
     });
+
+
+/*-----------login------------------*/
+
+// Récupérez les boutons et les sections
+const loginButton = document.getElementById("login-button");
+const registerButton = document.getElementById("register-button");
+const loginSection = document.getElementById("login-section");
+const registerSection = document.getElementById("register-section");
+
+// Ajoutez des gestionnaires d'événements pour les boutons
+loginButton.addEventListener("click", () => {
+    // Affiche la section de connexion et masque la section d'inscription
+    loginSection.style.display = "block";
+    registerSection.style.display = "none";
+});
+
+registerButton.addEventListener("click", () => {
+    // Affiche la section d'inscription et masque la section de connexion
+    registerSection.style.display = "block";
+    loginSection.style.display = "none";
+});
+
+// Par défaut, affiche la section de connexion (vous pouvez ajuster cela selon vos besoins)
+loginSection.style.display = "block";
+registerSection.style.display = "none";
+
+
+
+ /*--
+        Add to cart
+    -----------------------------------*/
+
+// Récupérez tous les éléments d'icônes "Add to cart"
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// Ajoutez un gestionnaire d'événements de clic à chaque bouton
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCart);
+});
+
+// Fonction pour ajouter un produit au panier
+function addToCart(event) {
+    event.preventDefault(); // Empêche la navigation vers shopping-cart.html
+
+    // Récupérez les informations du produit que vous souhaitez ajouter au panier
+    const productInfo = {
+        name: "Engrais-complet-Solabiol-1-kg",
+        price: 4000,
+        // Ajoutez d'autres informations du produit si nécessaire
+    };
+
+    // Récupérez le panier existant depuis le stockage local ou créez-en un nouveau
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Ajoutez le produit au panier
+    cart.push(productInfo);
+
+    // Enregistrez le panier mis à jour dans le stockage local
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Affichez un message de confirmation ou effectuez d'autres actions
+    alert('Le produit a été ajouté au panier.');
+
+    // Redirigez l'utilisateur vers la page du panier
+    window.location.href = "shopping-cart.html";
+}
+
     
