@@ -13283,7 +13283,7 @@ textarea:focus {
   padding: 30px 30px 40px;
 }
 .course-2 .info .price {
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1;
   position: absolute;
@@ -13337,14 +13337,11 @@ textarea:focus {
   padding-left: 0;
   list-style: none;
 }
-.course-2 .info .meta li {
+.course-2 .info .meta button {
   margin-right: 28px;
 }
 .course-2 .info .meta li:last-child {
   margin-right: 0;
-}
-.course-2 .info .meta li i {
-  margin-right: 10px;
 }
 .course-2:hover {
   background-color: #FFFFFF;
@@ -13354,6 +13351,68 @@ textarea:focus {
 .course-2:hover .thumbnail .image img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+/* partage formation */
+.course-2 .info .meta .media {
+  position: relative;
+}
+.course-2 .info .meta .media .list {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  bottom: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  width: auto;
+  padding: 0 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  white-space: nowrap;
+  opacity: 0;
+  border-radius: 5px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  -webkit-filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.06));
+          filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.06));
+}
+.course-2 .info .meta .media .list::before {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  content: "";
+  border-top: 8px solid #FFFFFF;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+}
+.course-2 .info .meta .media .list a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 12px;
+  color: #ABABAB;
+}
+.course-2 .info .meta .media .list a:hover {
+  color: #FFBF05;
+}
+.course-2 .info .meta .media:hover .button {
+  color: #FFFFFF;
+  border-color: transparent;
+  background-color: #FFBF05;
+}
+.course-2 .info .meta .media:hover .list {
+  visibility: visible;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  opacity: 1;
 }
 
 /* 08.03. Course Three CSS */
@@ -15223,38 +15282,38 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
 }
 
 /* 10.04. Event Details CSS */
-.zoom-event-details-wrapper .image {
+.zoom-event-product-wrapper .image {
   margin-bottom: 30px;
 }
-.zoom-event-details-wrapper .image img {
+.zoom-event-product-wrapper .image img {
   border-radius: 5px;
 }
-.zoom-event-details-wrapper .content .title {
+.zoom-event-product-wrapper .content .title {
   font-size: 30px;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 18px;
 }
 @media only screen and (max-width: 767px) {
-  .zoom-event-details-wrapper .content .title {
+  .zoom-event-product-wrapper .content .title {
     font-size: 26px;
   }
 }
-.zoom-event-details-wrapper .content ol {
+.zoom-event-product-wrapper .content ol {
   margin-top: 15px;
   padding-left: 30px;
 }
-.zoom-event-details-wrapper .content ol:last-child {
+.zoom-event-product-wrapper .content ol:last-child {
   margin-bottom: 0;
 }
-.zoom-event-details-wrapper .content ol li + li {
+.zoom-event-product-wrapper .content ol li + li {
   margin-top: 10px;
 }
-.zoom-event-details-wrapper .content ol li ul {
+.zoom-event-product-wrapper .content ol li ul {
   margin-top: 15px;
   padding-left: 20px;
 }
-.zoom-event-details-wrapper .content ol li ul li + li {
+.zoom-event-product-wrapper .content ol li ul li + li {
   margin-top: 10px;
 }
 
@@ -19308,6 +19367,7 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
 .cart-summary .cart-summary-button {
   overflow: hidden;
   width: 100%;
+  margin-right: 20px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .cart-summary .cart-summary-button {
@@ -20520,3 +20580,4 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
