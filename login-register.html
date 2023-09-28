@@ -208,7 +208,7 @@
                                     <form class="login-form" action="#">
                                         <div class="single-input mb-30">
                                             <label for="username">Email</label>
-                                            <input type="text" id="username" name="username" placeholder="Nom d'utilisateur ou email">
+                                            <input type="text" id="username" name="username" placeholder="Email">
                                         </div>
                                         <div class="single-input mb-30">
                                             <label for="password">Mot de passe</label>
@@ -240,14 +240,18 @@
                                 <!-- Register Form Start -->
                                 <div class="login-form-wrapper">
                                     <h3 class="title">S'inscrire</h3>
-                                    <form class="register-form" action="#">
+                                    <form class="register-form" action="#">                   
                                         <div class="single-input mb-30">
-                                            <label for="usernameOne">Nom d'utilisateur</label>
-                                            <input type="text" id="usernameOne" name="username" placeholder="Nom d'utilisateur">
+                                            <label for="lastName">Nom</label>
+                                            <input type="text" id="lastName" name="lastName" placeholder="Nom">
+                                        </div>
+                                        <div class="single-input mb-30">
+                                            <label for="firstName">Prénoms</label>
+                                            <input type="text" id="firstName" name="firstName" placeholder="Prénoms">
                                         </div>
                                         <div class="single-input mb-30">
                                             <label for="email">Email</label>
-                                            <input type="text" id="email" name="username" placeholder="Email">
+                                            <input type="text" id="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="single-input mb-30">
                                             <label for="passwordOne">Mot de passe</label>
@@ -255,7 +259,9 @@
                                             <p class="description">( Le mot de passe doit comporter au moins huit caractères, des lettres majuscules et minuscules, des chiffres. )</p>
                                         </div>
                                         <div class="single-input">
-                                            <button class="btn btn-primary btn-hover-secondary btn-width-100">S'inscrire</button>
+                                            <!-- <button class="btn btn-primary btn-hover-secondary btn-width-100" onclick="addEventListener()">S'inscrire</button> -->
+                                            <button class="btn btn-primary btn-hover-secondary btn-width-100" id="registerButton">S'inscrire</button>
+
                                         </div>
                                     </form>
                                 </div>
@@ -431,6 +437,8 @@
 
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
 
