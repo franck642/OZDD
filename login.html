@@ -118,8 +118,8 @@
                                 <div class="inner">
 
                                     <!-- Header Social Start -->                            
-                                    <div class="header-social d-none d-sm-flex" id="loginButton">
-                                        <a href="login-register.html"><button class="butt btn-sm">Connexion</button></a>
+                                    <div class="header-social d-none d-sm-flex">
+                                        <a href="login.html"><button class="butt btn-sm" id="loginButton">Connexion</button></a>
                                     </div>
                                     <!-- Header Social End -->
 
@@ -128,7 +128,7 @@
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
                                             <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
-                                            <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                                             <a href="login.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
                                     <!-- Header Login End -->
@@ -174,14 +174,7 @@
         <!-- Full Screen Search End -->
 
         <!-- Page Title Section Start -->
-        <div class="page-title-section section">
-            <div class="page-title">
-                <div class="container">
-                    <!-- <h1 class="title">Se connecter / S'inscrire</h1> -->
-                    <button class="btn btn-primary btn-sm btn-hover-secondary " id="login-button">Se connecter</button>
-                    <button class="btn btn-primary btn-sm btn-hover-secondary " id="register-button">S'inscrire</button>
-                </div>
-            </div>
+        <div class="page-title-section section">           
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
@@ -198,17 +191,16 @@
         <div class="login-register-section section section-padding-bottom">
             <div class="container">
                 <div class="row">
-
                     <div class="col-12 d-flex justify-content-center">
                         <div class="row">
                             <div class="col-xl-12 col-lg-6" id="login-section">
                                 <!-- Login Form Start -->
                                 <div class="login-form-wrapper">
                                     <h3 class="title">Connexion</h3>
-                                    <form class="login-form" action="#">
+                                    <form class="login-form" id="loginForm" action="#" method="POST">
                                         <div class="single-input mb-30">
-                                            <label for="username">Email</label>
-                                            <input type="text" id="username" name="username" placeholder="Email">
+                                            <label for="email">Email</label>
+                                            <input type="text" id="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="single-input mb-30">
                                             <label for="password">Mot de passe</label>
@@ -232,45 +224,14 @@
                                         <div class="single-input">
                                             <button class="btn btn-primary btn-hover-secondary btn-width-100">Se connecter</button>
                                         </div>
-                                    </form>
+                                    </form><br>
+                                    <p class="register-text">Besoin d'un compte? <a href="register.html">S'inscrire</a></p>
                                 </div>
                                 <!-- Login Form End -->
-                            </div>
-                            <div class="col-lg-8 col-lg-6 mx-auto" id="register-section">
-                                <!-- Register Form Start -->
-                                <div class="login-form-wrapper">
-                                    <h3 class="title">S'inscrire</h3>
-                                    <form class="register-form" action="#">                   
-                                        <div class="single-input mb-30">
-                                            <label for="lastName">Nom</label>
-                                            <input type="text" id="lastName" name="lastName" placeholder="Nom">
-                                        </div>
-                                        <div class="single-input mb-30">
-                                            <label for="firstName">Prénoms</label>
-                                            <input type="text" id="firstName" name="firstName" placeholder="Prénoms">
-                                        </div>
-                                        <div class="single-input mb-30">
-                                            <label for="email">Email</label>
-                                            <input type="text" id="email" name="email" placeholder="Email">
-                                        </div>
-                                        <div class="single-input mb-30">
-                                            <label for="passwordOne">Mot de passe</label>
-                                            <input type="text" id="passwordOne" name="password" placeholder="Mot de passe">
-                                            <p class="description">( Le mot de passe doit comporter au moins huit caractères, des lettres majuscules et minuscules, des chiffres. )</p>
-                                        </div>
-                                        <div class="single-input">
-                                            <!-- <button class="btn btn-primary btn-hover-secondary btn-width-100" onclick="addEventListener()">S'inscrire</button> -->
-                                            <button class="btn btn-primary btn-hover-secondary btn-width-100" id="registerButton">S'inscrire</button>
-
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- Register Form End -->
-                            </div>
+                            </div>                           
                         </div>
-
                     </div>
-
+                    
                 </div>
             </div>
         </div>
@@ -438,7 +399,7 @@
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 

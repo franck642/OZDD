@@ -79,22 +79,27 @@
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index-2.html">
+                             <a>
+                                    <i class="fa fa-dashboard"></i>
+                                    <span class="mini-click-non">Tableau de bord</span>
+                                </a>
+                            <li class="active">
+                                 <a class="has-arrow" href="index-2.html">
 								   <i class="fa fa-user"></i>
 								   <span class="mini-click-non">Utilisateurs</span>
 								</a>
-                            <ul class="submenu-angle" aria-expanded="true">                              
-                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Liste produits</span></a></li>
-                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Créer produit</span></a></li>
-                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Détails produit</span></a></li>
-                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Panier produit</span></a></li>
-                                <li><a title="Product Edit" href="formation-edit.html"><span class="mini-sub-pro">Créer formation</span></a></li>
-                                <li><a title="Product Edit" href="formation-list.html"><span class="mini-sub-pro">Liste formation</span></a></li>
-                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">Gestionnaire fichiers</span></a></li>
-                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
-                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Détails Blog</span></a></li>
-                                <li><a title="Blog Edit" href="blog-edit.html"><span class="mini-sub-pro">Créer Blog</span></a></li>                               
-                            </ul>
+                                <ul class="submenu-angle" aria-expanded="true">                              
+                                    <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Liste produits</span></a></li>
+                                    <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Créer produit</span></a></li>
+                                    <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Détails produit</span></a></li>
+                                    <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Panier produit</span></a></li>
+                                    <li><a title="Product Edit" href="formation-edit.html"><span class="mini-sub-pro">Créer formation</span></a></li>
+                                    <li><a title="Product Edit" href="formation-list.html"><span class="mini-sub-pro">Liste formation</span></a></li>
+                                    <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">Gestionnaire fichiers</span></a></li>
+                                    <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
+                                    <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Détails Blog</span></a></li>
+                                    <li><a title="Blog Edit" href="blog-edit.html"><span class="mini-sub-pro">Créer Blog</span></a></li>                               
+                                </ul>
                             </li>
                             <li class="active">
                                 <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa fa-user-plus"></i> <span class="mini-click-non">Fournisseurs</span></a>
@@ -278,11 +283,6 @@
                                                         <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" placeholder="Aperçu">
                                                     </div>
-                                                    <!-- Quantité -->
-                                                    <div class="input-group mg-b-pro-edt">
-                                                        <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Quantité">
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -300,8 +300,14 @@
                                                     <!-- Catégorie -->
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Catégorie">
-                                                    </div>                                                   
+                                                        <select class="form-control" id="categorieSelect" name="categorie">
+                                                            <option value="" disabled selected>Sélectionnez une catégorie</option>
+                                                            <option value="categorie1">Catégorie 1</option>
+                                                            <option value="categorie2">Catégorie 2</option>
+                                                            <option value="categorie3">Catégorie 3</option>
+                                                            <!-- Ajoutez d'autres options selon vos besoins -->
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

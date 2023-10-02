@@ -859,24 +859,6 @@
 
 })(jQuery);
 
-
-// Supposons que cette variable est définie en fonction de l'état de connexion de l'utilisateur
-var isUserLoggedIn = false; // Changez cette valeur selon l'état de connexion de l'utilisateur
-
-// Cachez ou affichez les éléments en fonction de l'état de connexion de l'utilisateur
-function updateUI() {
-    if (isUserLoggedIn) {
-        document.getElementById('loginButton').style.display = 'none';
-        document.getElementById('userIcon').style.display = 'block';
-    } else {
-        document.getElementById('loginButton').style.display = 'block';
-        document.getElementById('userIcon').style.display = 'none';
-    }
-}
-
-// Appelez la fonction pour mettre à jour l'interface utilisateur lorsque la page est chargée
-updateUI();
-
 // Votre fonction toggleDropdown() existante
 function toggleDropdown() {
     var dropdown = document.getElementById("userDropdown");
@@ -904,34 +886,7 @@ window.onclick = function(event) {
         preloader.style.display = 'none';
     });
 
-
-/*-----------login------------------*/
-
-// Récupérez les boutons et les sections
-const loginButton = document.getElementById("login-button");
-const registerButton = document.getElementById("register-button");
-const loginSection = document.getElementById("login-section");
-const registerSection = document.getElementById("register-section");
-
-// Ajoutez des gestionnaires d'événements pour les boutons
-loginButton.addEventListener("click", () => {
-    // Affiche la section de connexion et masque la section d'inscription
-    loginSection.style.display = "block";
-    registerSection.style.display = "none";
-});
-
-registerButton.addEventListener("click", () => {
-    // Affiche la section d'inscription et masque la section de connexion
-    registerSection.style.display = "block";
-    loginSection.style.display = "none";
-});
-
-// Par défaut, affiche la section de connexion (vous pouvez ajuster cela selon vos besoins)
-loginSection.style.display = "block";
-registerSection.style.display = "none";
-
-
-
+    
  /*--
         Add to cart
     -----------------------------------*/
