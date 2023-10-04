@@ -1040,7 +1040,7 @@ margin: 0 auto; }
 	top:auto;
 	font-size: 11px;
 	font-weight:normal;
-	background: #333333;
+	background: #1adbcb;
 	-webkit-transition: margin 0.6s, opacity 0.6s;
 	-moz-transition: margin 0.6s, opacity 0.6s;
 	-ms-transition: margin 0.6s, opacity 0.6s;
@@ -1059,7 +1059,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-left:after {
 	top:12px;
 	left: 100%;
-	border-left: 8px solid #333333;
+	border-left: 8px solid #1adbcb;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;
 }
@@ -1077,7 +1077,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-right:after {
 	top:12px;
 	right: 100%;
-	border-right: 8px solid #333333;
+	border-right: 8px solid #1adbcb;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;	
 }
@@ -1091,7 +1091,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-right-top:after {
 	top: 100%;
 	right: 12px;
-	border-top: 8px solid #333333;
+	border-top: 8px solid #1adbcb;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;
 }
@@ -1109,7 +1109,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-left-top:after {
 	top: 100%;
 	left: 12px;
-	border-top: 8px solid #333333;
+	border-top: 8px solid #1adbcb;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;
 }
@@ -1127,7 +1127,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-right-bottom:after {
 	right: 12px;
 	bottom: 100%;
-	border-bottom: 8px solid #333333;
+	border-bottom: 8px solid #1adbcb;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;
 }
@@ -1145,7 +1145,7 @@ margin: 0 auto; }
 .themesaller-forms .tip-left-bottom:after {
 	left: 12px;
 	bottom: 100%;
-	border-bottom: 8px solid #333333;
+	border-bottom: 8px solid #1adbcb;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;
 }
@@ -1511,7 +1511,7 @@ margin: 0 auto; }
 	position: absolute;
 	text-align: center;
 	font: 10pt Tahoma, Arial, sans-serif ;
-	background: #333333;
+	background: #1adbcb;
 	padding:10px;
 	color: #fff;
 }
@@ -1522,7 +1522,7 @@ margin: 0 auto; }
 	position: absolute; 
 	top: 98%;
 	left: 35%;
-	border-top: 8px solid #333333;
+	border-top: 8px solid #1adbcb;
 	border-right: 8px solid transparent;
 	border-left: 8px solid transparent;	
 }
@@ -1533,7 +1533,7 @@ margin: 0 auto; }
 	position: absolute;
 	top:30%;
 	right: 98%;
-	border-right: 8px solid #333333;
+	border-right: 8px solid #1adbcb;
 	border-top: 8px solid transparent;
 	border-bottom: 8px solid transparent;	
 }
@@ -1877,7 +1877,7 @@ margin: 0 auto; }
 
 /* @captcha refresh button themes
 -------------------------------------------------- */
-.themesaller-forms .refresh-black    { background:#505558; border-color: #333333; }
+.themesaller-forms .refresh-black    { background:#505558; border-color: #1adbcb; }
 .themesaller-forms .refresh-blue     { background:#00acee; border-color: #0087bb; }
 .themesaller-forms .refresh-green    { background:#0E993C; border-color: #0B792F; }
 .themesaller-forms .refresh-purple   { background:#9464e2; border-color: #7639da; }

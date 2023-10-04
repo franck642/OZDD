@@ -104,7 +104,7 @@
 /*--------------------------
  image
 ---------------------------- */	
-const imageUpload = document.getElementById("image-upload");
+const imageUpload = document.getElementById("image");
     const previewImage = document.getElementById("preview-image");
 
     imageUpload.addEventListener("change", function (e) {
@@ -120,5 +120,68 @@ const imageUpload = document.getElementById("image-upload");
         }
     });
 
+/*--------------------------
+ CATEGORIE
+---------------------------- */	
+document.addEventListener('DOMContentLoaded', () => {
+	// Récupérez la référence de la liste déroulante
+	const selectElement = document.getElementById('categorie');
+	// Récupérez les données depuis votre API
+	fetch('http://192.168.0.66:3000/categories')
+		.then(response => response.json())
+		.then(data => {
+			// Parcourez les données et ajoutez-les comme options dans la liste déroulante
+			data.forEach(category => {
+				const option = document.createElement('option');
+				option.value = category._id; // Remplacez 'value' par le nom de votre champ
+				option.textContent = category.categorie; // Remplacez 'label' par le nom de votre champ
+				selectElement.appendChild(option);
+				console.log(data)
+			});
+		})
+		
+		.catch(error => {
+			console.error('Erreur lors de la récupération des catégories depuis l\'API:', error);
+		});
+});
 
+/*--------------------------
+ CREER PRODUIT
+---------------------------- */	
+$(document).ready(function() {
+    $("#btnCreateProduct").click(function() {
+        // Récupérer les données depuis les champs du formulaire
+        var titre = $("#titre").val();
+        var description = $("#description").val();
+        var image = $("#image").val();
+        var prix = $("#prix").val();
+        var apercu = $("#apercu").val();
+        var categorie = $("#categorie").val();
 
+        // Créer l'objet de données à envoyer
+        var data = {
+            titre: titre,
+            description: description,
+            image: image,
+            prix: prix,
+            apercu: apercu,
+            categorie: categorie
+        };
+			console.log(data)
+        // Envoyer la requête POST vers votre API
+        $.ajax({
+            url: "http://192.168.0.66:3000/produitsAdmin",
+            type: "POST",
+            data: JSON.stringify(data), // Convertir les données en format JSON
+            contentType: "application/json",
+            success: function(response) {
+                // Gérer la réponse de l'API ici
+                console.log("Réponse de l'API :", response);
+            },
+            error: function(error) {
+                // Gérer les erreurs ici
+                console.error("Erreur lors de la requête à l'API :", error);
+            }
+        });
+    });
+});

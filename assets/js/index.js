@@ -85,17 +85,71 @@ $(document).ready(function() {
 /*--
         CACHER BUTTON
     -----------------------------------*/
-// // Définissez votre condition ici (true pour afficher, false pour cacher)
-// var condition = false;
+// Fonction pour afficher l'icône de l'utilisateur connecté ou le bouton de connexion
+function toggleUserIcon() {
+  const userIcon = document.getElementById("userIcon");
+  const loginButton = document.getElementById("loginButton");
 
-// // Récupérez une référence vers l'élément du bouton
-// var bouton = document.getElementById("loginButton");
-// var icon = document.getElementById("userIcon");
+  // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
+  const userData = {
+      "success": true, // Remplacez ceci par la valeur appropriée
+  };
 
-// // Vérifiez la condition et masquez ou affichez le bouton en conséquence
-// if (condition== true) {
-//     bouton.style.display = "block"; // Affiche le bouton
-// } else {
-//     bouton.style.display = "none";  // Cache le bouton
-//   }
+  if (userData.success) {
+      // L'utilisateur est connecté, affiche l'icône
+      userIcon.style.display = "block";
+      loginButton.style.display = "none";
+  } else {
+      // L'utilisateur n'est pas connecté, affiche le bouton de connexion
+      userIcon.style.display = "none";
+      loginButton.style.display = "inline-block";
+  }
+}
 
+// Fonction pour simuler un clic sur l'icône de l'utilisateur
+function toggleDropdown() {
+  const userDropdown = document.getElementById("userDropdown");
+  userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
+}
+
+// Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
+toggleUserIcon();
+
+/*--
+        AFFICHER PRODUIT
+    -----------------------------------*/
+document.addEventListener('DOMContentLoaded', () => {
+    const productsContainer = document.getElementById('products-container');
+
+    // Récupérez les données depuis votre API
+    fetch('http://192.168.0.66:3000/produitsAdmin')
+        .then(response => response.json())
+        .then(data => {
+            // Parcourez les données et ajoutez-les à la page
+            data.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('col', 'max-mb-30');
+                productDiv.setAttribute('data-aos', 'fade-up');
+                productDiv.innerHTML = `                  
+                        <div class="course-7 course-fluid">
+                            <div class="thumbnail">
+                                <a href="product-details.html" class="image" id="image">
+                                    <img src="${product.image}" alt="Course Image">
+                                </a>
+                                <div class="actions">                                   
+                                    <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                                 
+                                </div>
+                            </div>
+                            <div class="info text-center">  
+                                <span class="price" id="prix">${product.prix} XOF</span>                             
+                                <h3 class="title" id="titre"><a href="product-details.html">${product.titre}</a></h3>                             
+                            </div>
+                        </div>                    
+                `;
+                productsContainer.appendChild(productDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des produits depuis l\'API:', error);
+        });
+});

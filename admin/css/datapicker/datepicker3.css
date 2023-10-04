@@ -778,7 +778,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   background-clip: padding-box;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
-  color: #333333;
+  color: #1adbcb;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.428571429;

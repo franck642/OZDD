@@ -80,7 +80,7 @@
                     <ul class="metismenu" id="menu1">
                         <li class="active">
                              <a>
-                                    <i class="fa fa-dashboard"></i>
+                                    <i class="icon nalika-home"></i>
                                     <span class="mini-click-non">Tableau de bord</span>
                                 </a>
                             <li class="active">
@@ -104,6 +104,8 @@
                             <li class="active">
                                 <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa fa-user-plus"></i> <span class="mini-click-non">Fournisseurs</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Fournisseur" href="fournisseur.html"><span class="mini-sub-pro">Fournisseur</span></a></li>
+                                    <li><a title="Fournisseur Detail" href="fournisseur-detail.html"><span class="mini-sub-pro">Détails Fournisseur</span></a></li>                                   
                                     <li><a title="Product Edit" href="product-edit-fournisseur.html"><span class="mini-sub-pro">Créer produit Fournisseur</span></a></li>
                                     <li><a title="Product List" href="product-list-fournisseur.html"><span class="mini-sub-pro">Liste produit Fournisseur</span></a></li>                                   
                                 </ul>
@@ -207,6 +209,8 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#others" href="#">Fournisseur <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
+                                                <li><a href="fournisseur.html">Fournisseur</a></li>
+                                                <li><a href="fournisseur detail.html">Détails Fournisseur</a></li> 
                                                 <li><a href="product-edit-fournisseur.html">Créer produit Fournisseur</a></li>
                                                 <li><a href="product-list-fournisseur.html">Liste produit Fournisseur</a></li> 
                                             </ul> 
@@ -273,7 +277,7 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">                                                  
-                                                    <!-- Titre du produit -->
+                                                    <!-- Titre du blog -->
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" placeholder="Titre du Produit">
@@ -287,16 +291,18 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">                                                  
-                                                    <!-- Description du produit -->
+                                                    <!-- Description du blog -->
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" placeholder="Description du Produit">
-                                                    </div>                                                   
-                                                    <!-- Catégorie -->
+                                                    </div>   
+                                                    <!-- Description du blog -->                                                
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Catégorie">
-                                                    </div>                                                   
+                                                        <select class="form-control" id="categorie" name="categorie">
+                                                            <option value="" disabled selected>Sélectionnez une catégorie</option>
+                                                        </select>
+                                                    </div>                                                  
                                                 </div>
                                             </div>
                                         </div>
