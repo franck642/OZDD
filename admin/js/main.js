@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Récupérez la référence de la liste déroulante
 	const selectElement = document.getElementById('categorie');
 	// Récupérez les données depuis votre API
-	fetch('http://192.168.0.66:3000/categories')
+	fetch('http://192.168.0.61:3000/categories')
 		.then(response => response.json())
 		.then(data => {
 			// Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -148,40 +148,32 @@ document.addEventListener('DOMContentLoaded', () => {
 /*--------------------------
  CREER PRODUIT
 ---------------------------- */	
-$(document).ready(function() {
-    $("#btnCreateProduct").click(function() {
-        // Récupérer les données depuis les champs du formulaire
-        var titre = $("#titre").val();
-        var description = $("#description").val();
-        var image = $("#image").val();
-        var prix = $("#prix").val();
-        var apercu = $("#apercu").val();
-        var categorie = $("#categorie").val();
+document.getElementById('btnCreateProduct').addEventListener('click', async () => {
+    const titre = document.getElementById('titre').value;
+    const description = document.getElementById('description').value;
+    const prix = parseFloat(document.getElementById('prix').value);
+    const apercu = document.getElementById('apercu').value;
+    const categorie = document.getElementById('categorie').value;
+    const image = document.getElementById('image').files[0]; // Récupère le fichier d'image
 
-        // Créer l'objet de données à envoyer
-        var data = {
-            titre: titre,
-            description: description,
-            image: image,
-            prix: prix,
-            apercu: apercu,
-            categorie: categorie
-        };
-			console.log(data)
-        // Envoyer la requête POST vers votre API
-        $.ajax({
-            url: "http://192.168.0.66:3000/produitsAdmin",
-            type: "POST",
-            data: JSON.stringify(data), // Convertir les données en format JSON
-            contentType: "application/json",
-            success: function(response) {
-                // Gérer la réponse de l'API ici
-                console.log("Réponse de l'API :", response);
-            },
-            error: function(error) {
-                // Gérer les erreurs ici
-                console.error("Erreur lors de la requête à l'API :", error);
-            }
+    const formData = new FormData();
+    formData.append('titre', titre);
+    formData.append('description', description);
+    formData.append('prix', prix);
+    formData.append('apercu', apercu);
+    formData.append('categorie', categorie);
+    formData.append('image', image); // Ajoute le fichier d'image à FormData
+
+    try {
+        const response = await fetch('http://192.168.0.61:3000/produitsAdmin', {
+            method: 'POST',
+            body: formData
         });
-    });
+
+        const data = await response.json();
+        console.log('Produit créé:', data);
+        // Réalisez les actions nécessaires après la création du produit (par exemple, actualisez l'affichage des produits)
+    } catch (error) {
+        console.error('Erreur lors de la création du produit:', error);
+    }
 });

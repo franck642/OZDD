@@ -118,11 +118,50 @@ toggleUserIcon();
 /*--
         AFFICHER PRODUIT
     -----------------------------------*/
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const productsContainer = document.getElementById('products-container');
+    
+    //     fetch('http://192.168.0.61:3000/produitsAdmin')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(response.json());
+    //             data.forEach(product => {
+    //                 const productDiv = document.createElement('div');
+    //                 productDiv.classList.add('col', 'max-mb-30');
+    //                 productDiv.setAttribute('data-aos', 'fade-up');
+    
+    //                 // Convertissez le Buffer en une URL d'image (format base64)
+    //                 const imageSrc = `data:image/png;base64,${product.image.toString('base64')}`;
+    
+    //                 productDiv.innerHTML = `                  
+    //                     <div class="course-7 course-fluid">
+    //                         <div class="thumbnail">
+    //                             <a href="product-details.html" class="image" id="image">
+    //                                 <img src="${imageSrc}" alt="Course Image"> <!-- Utilisez l'URL d'image ici -->
+    //                             </a>
+    //                             <div class="actions">                                   
+    //                                 <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                                 
+    //                             </div>
+    //                         </div>
+    //                         <div class="info text-center">  
+    //                             <span class="price" id="prix">${product.prix} XOF</span>                             
+    //                             <h3 class="title" id="titre"><a href="product-details.html">${product.titre}</a></h3>                             
+    //                         </div>
+    //                     </div>                    
+    //                 `;
+    //                 productsContainer.appendChild(productDiv);
+    //             });
+    //         })
+    //         .catch(error => {
+    //             console.error('Erreur lors de la récupération des produits depuis l\'API:', error);
+    //         });
+    // });
+    
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
 
     // Récupérez les données depuis votre API
-    fetch('http://192.168.0.66:3000/produitsAdmin')
+    fetch('http://192.168.0.61:3000/produitsAdmin')
         .then(response => response.json())
         .then(data => {
             // Parcourez les données et ajoutez-les à la page
