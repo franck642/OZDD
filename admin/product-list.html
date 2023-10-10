@@ -270,31 +270,17 @@
                                 <a href="product-edit.html">Ajouter un produit</a>
                             </div>
                             <table>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Titre du produit</th>
-                                    <th>Statut</th>
-                                    <th>Achats</th>
-                                    <th>Ventes du produit</th>
-                                    <th>Stock</th>
-                                    <th>Prix</th>
-                                    <th>Paramètres</th>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
-                                    <td>Titre du produit 1</td>
-                                    <td>
-                                        <button class="pd-setting">Actif</button>
-                                    </td>
-                                    <td>50</td>
-                                    <td>$750</td>
-                                    <td>Épuisé</td>
-                                    <td>$15</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Titre du produit</th>                       
+                                        <th>Prix</th>
+                                        <th>Paramètres</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productTableBody">
+                                    <!-- Les produits seront ajoutés ici via JavaScript -->
+                                </tbody>
                             </table>
                             <div class="custom-pagination">
                                 <ul class="pagination">
@@ -371,6 +357,7 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 
 </html>

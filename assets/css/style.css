@@ -18820,7 +18820,7 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
   display: block;
 }
 .single-product-image img {
-  width: 100%;
+  width: 80%;
 }
 .single-product-image .product-badges {
   position: absolute;
@@ -20573,7 +20573,7 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
 
 #loader-logo {
   width: 100px; /* Ou la taille que vous préférez */
-  animation: spin 6s infinite linear; /* Rotation continue */
+  animation: spin 2s infinite linear; /* Rotation continue */
 }
 
 @keyframes spin {
@@ -20581,3 +20581,15 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
   100% { transform: rotate(360deg); }
 }
 
+/* Style pour la liste déroulante */
+.custom-select {
+  background-color: #f0f0f0; /* Couleur de fond */
+  color: #333; /* Couleur du texte */
+  border: 1px solid #ccc;
+}
+
+/* Style pour les options de la liste déroulante */
+/* .custom-select option {
+  background-color: #FFBF05; 
+  color: #fff; 
+} */

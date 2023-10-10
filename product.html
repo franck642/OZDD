@@ -28,6 +28,10 @@
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
     <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    
+
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -196,22 +200,13 @@
             <div class="container">
 
                 <!-- Course Top Bar Start -->
-                <div class="row justify-content-between align-items-center max-mb-20">
-                    <!-- <div class="col-sm-auto col-12 max-mb-10">
-                        <p class="result-count">We found <span>22</span> courses available for you</p>
-                    </div> -->
+                <div class="row justify-content-between align-items-center max-mb-20 col-md-4">
                     <div class="col-sm-auto col-12 max-mb-10">
-                        <select class="sort-by">
-                            <option selected="selected">Engrais Naturels</option>
-                            <option value="popularity">Améliorants du Sol</option>
-                            <option value="popularity">Aménagement du Jardin</option>
-                            <option value="popularity">Matériels et Accessoires de Culture</option>
-                            <option value="popularity">compostage</option>
-                            <option value="popularity">Désherbage écollogique</option>
-                            <option value="popularity">Equipements et outils</option>
+                        <select class="custom-select" id="categorie" name="categorie" onchange="fetchProductsByCategory()">
+                            <option value="" disabled selected>Sélectionnez une catégorie</option>                           
                         </select>
                     </div>
-                </div>
+                </div> 
                 <!-- Course Top Bar End -->
 
                 <!-- Course Wrapper Start -->

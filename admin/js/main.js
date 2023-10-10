@@ -105,8 +105,10 @@
  image
 ---------------------------- */	
 const imageUpload = document.getElementById("image");
-    const previewImage = document.getElementById("preview-image");
+const previewImage = document.getElementById("preview-image");
 
+if (imageUpload !== null && typeof imageUpload !== "undefined") {
+    // La variable imageUpload est définie et différente de null, vous pouvez l'utiliser en toute sécurité
     imageUpload.addEventListener("change", function (e) {
         const file = e.target.files[0];
         if (file) {
@@ -119,15 +121,19 @@ const imageUpload = document.getElementById("image");
             reader.readAsDataURL(file);
         }
     });
+} else {
+    // La variable imageUpload est null ou undefined, faites quelque chose d'autre ou affichez un message d'erreur
+    console.error("La variable imageUpload est null ou undefined.");
+}
 
 /*--------------------------
- CATEGORIE
+ CATEGORIE PRODUIT
 ---------------------------- */	
 document.addEventListener('DOMContentLoaded', () => {
 	// Récupérez la référence de la liste déroulante
 	const selectElement = document.getElementById('categorie');
 	// Récupérez les données depuis votre API
-	fetch('http://192.168.0.61:3000/categories')
+	fetch('http://192.168.0.10:3000/categories')
 		.then(response => response.json())
 		.then(data => {
 			// Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -144,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.error('Erreur lors de la récupération des catégories depuis l\'API:', error);
 		});
 });
+
 
 /*--------------------------
  CREER PRODUIT
@@ -165,15 +172,48 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
     formData.append('image', image); // Ajoute le fichier d'image à FormData
 
     try {
-        const response = await fetch('http://192.168.0.61:3000/produitsAdmin', {
+        const response = await fetch('http://192.168.0.10:3000/produitsAdmin', {
             method: 'POST',
             body: formData
         });
 
         const data = await response.json();
         console.log('Produit créé:', data);
+		alert('Produit Créer avec succès.');
         // Réalisez les actions nécessaires après la création du produit (par exemple, actualisez l'affichage des produits)
     } catch (error) {
         console.error('Erreur lors de la création du produit:', error);
     }
 });
+
+/*--------------------------
+ AFFICHER PRODUIT
+---------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+	const productTableBody = document.getElementById('productTableBody');
+
+	// Récupérez les données depuis votre API
+	fetch('http://192.168.0.10:3000/produitsAdmin')
+		.then(response => response.json())
+		.then(data => {
+			console.log(data)
+			// Parcourez les données et ajoutez-les au tableau
+			data.forEach(product => {
+				const newRow = document.createElement('tr');
+				newRow.innerHTML = `
+					<td><img src="${product.image}" alt="" /></td>
+					<td>${product.titre}</td>				
+					<td>${product.prix}</td>
+					<td>
+						<button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+						<button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+					</td>
+				`;
+				productTableBody.appendChild(newRow);
+			});
+		})
+		.catch(error => {
+			console.error('Erreur lors de la récupération des produits depuis l\'API:', error);
+		});
+});
+
