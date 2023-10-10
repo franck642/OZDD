@@ -66,3 +66,56 @@ $(document).ready(function () {
 
     // Vous pouvez ajouter d'autres gestionnaires d'événements pour éditer et supprimer des blogs.
 });
+
+/*--------------------------
+ AFFICHER BLOG
+---------------------------- */
+ // Fonction pour récupérer et afficher les blogs
+ function getBlogs() {
+    $.ajax({
+        url: 'http://192.168.0.10:3000/blogs',
+        type: 'GET',
+        success: function (data) {
+            // Manipuler les données et les ajouter au conteneur de blog
+            displayBlogs(data);
+        },
+        error: function (error) {
+            console.error('Erreur lors de la récupération des blogs:', error);
+        }
+    });
+}
+
+// Fonction pour afficher les blogs dans le conteneur
+function displayBlogs(blogs) {
+    var blogContainer = $('#blog-container');
+
+    // Effacer le contenu actuel du conteneur
+    blogContainer.empty();
+
+    // Parcourir chaque blog et l'ajouter au conteneur
+    blogs.forEach(function (blog) {
+        var blogHtml = `
+                <div class="panel-body blog-pra">
+                    <div class="blog-img">
+                        <img src="${blog.image}" alt="" />
+                        <a href="blog_details.html">
+                            <h4>${blog.titre}</h4>
+                        </a>
+                    </div>
+                    <p>${blog.content}</p>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>
+                    <i class="fa fa-eye"> </i>142 views
+                </div>
+        `;
+
+        // Ajouter le blog au conteneur
+        blogContainer.append(blogHtml);
+    });
+}
+
+// Appeler la fonction pour récupérer et afficher les blogs au chargement de la page
+$(document).ready(function () {
+    getBlogs();
+});
