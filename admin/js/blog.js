@@ -2,7 +2,6 @@
  CATEGORIE BLOG
 ---------------------------- */	
 document.addEventListener('DOMContentLoaded', () => {
-	console.log("toni");
     const categoriesDropdown = document.getElementById('categorieBlog');
 
     // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
