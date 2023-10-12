@@ -4,7 +4,7 @@
 $(document).ready(function () {
     // Faites une requête GET pour récupérer les blogs depuis l'API
     $.ajax({
-        url: "http://192.168.0.10:3000/blogs",
+        url: "http://192.168.0.11:3000/blogs",
         type: "GET",
         success: function (data) {
             // Parcourez les données des blogs et affichez-les dans le conteneur
@@ -16,14 +16,14 @@ $(document).ready(function () {
                         <div class="row row-cols-lg-2 row-cols-1 max-mb-n30">
                             <div class="col max-mb-30">
                                 <div class="thumbnail">
-                                    <a href="blog-details.html" class="image">
-                                        <img src="${blog.image}" alt="Blog Image">
+                                    <a href="blog-details.html?id=${blog._id}" class="image">
+                                        <img src="${blog.image}" alt="Blog Image" style="width: 400px; height: 400px;">
                                     </a>
                                 </div>
                             </div>
                             <div class="col max-mb-30">
                                 <div class="info pt-0">
-                                    <h3 class="title"><a href="blog-details.html">${blog.titre}</a></h3>
+                                    <h3 class="title"><a href="blog-details.html?id=${blog._id}">${blog.titre}</a></h3>
                                     <ul class="meta">
                                         <li><i class="fas fa-calendar"></i>Apr 06, 2022</li>
                                         <li><i class="fas fa-eye"></i>70 views</li>
@@ -33,7 +33,7 @@ $(document).ready(function () {
                                     </div>
                                     <div class="row justify-content-between max-mt-30">
                                         <div class="col-auto">
-                                            <a href="blog-details.html" class="btn btn-primary btn-hover-secondary">En savoir plus</a>
+                                            <a href="blog-details.html?id=${blog._id}" class="btn btn-primary btn-hover-secondary">En savoir plus</a>
                                         </div>
                                         <div class="col-auto">
                                             <div class="post-share">
@@ -63,3 +63,28 @@ $(document).ready(function () {
         }
     });
 });
+
+/*--
+        AFFICHER DETAILS BLOG
+    -----------------------------------*/ 
+    var url = window.location.href;
+    var idMatch = url.match(/[?&]id=([^&]*)/);
+    
+    if (idMatch) {
+        var id = idMatch[1];
+    
+        // Utiliser l'ID dans la requête AJAX
+        var settings = {
+            "url": "http://192.168.0.11:3000/blogs/blog/" + id,
+            "method": "GET",
+            "timeout": 0,
+        };
+    
+        // Effectuer la requête AJAX
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    } else {
+        console.log("ID non trouvé dans l'URL");
+    }
+    

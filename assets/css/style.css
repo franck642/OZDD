@@ -17787,7 +17787,8 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
   display: block;
 }
 .blog-3 .thumbnail .image img {
-  width: 100%;
+  /* width: 100%;
+  height: 400px; */
   -webkit-transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
   transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
 }

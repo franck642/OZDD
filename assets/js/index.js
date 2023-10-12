@@ -122,7 +122,7 @@ $(document).ready(function() {
 const categoriesDropdown = document.getElementById('categorie');
 
 // Récupérez les données depuis votre API
-    fetch('http://192.168.0.10:3000/categories')
+    fetch('http://192.168.0.11:3000/categories')
     .then(response => response.json())
     .then(data => {
         // Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
 
     // Récupérez les données depuis votre API
-    fetch('http://192.168.0.10:3000/produitsAdmin')
+    fetch('http://192.168.0.11:3000/produitsAdmin')
         .then(response => response.json())
         .then(data => {
             // Parcourez les données et ajoutez-les à la page
@@ -152,22 +152,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('col', 'max-mb-30');
                 productDiv.setAttribute('data-aos', 'fade-up');
-                productDiv.innerHTML = `                  
-                        <div class="course-7 course-fluid">
-                            <div class="thumbnail">
-                                <a href="product-details.html" class="image" id="image">
-                                    <img src="${product.image}" alt="Course Image">
-                                </a>
-                                <div class="actions">                                   
-                                    <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                                 
+                productDiv.innerHTML = `
+                            <div class="course-7 course-fluid">
+                                <div class="thumbnail">
+                                    <a href="product-details.html?id=${product._id}" class="image" id="image">
+                                        <img src="${product.image}" alt="Course Image">
+                                    </a>
+                                    <div class="actions">
+                                        <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
+                                    </div>
+                                </div>
+                                <div class="info text-center">
+                                    <span class="price" id="prix">${product.prix} XOF</span>
+                                    <h3 class="title" id="titre"><a href="product-details.html?id=${product._id}">${product.titre}</a></h3>
+                                    <div> ${product._id}</div>
                                 </div>
                             </div>
-                            <div class="info text-center">  
-                                <span class="price" id="prix">${product.prix} XOF</span>                             
-                                <h3 class="title" id="titre"><a href="product-details.html">${product.titre}</a></h3>                             
-                            </div>
-                        </div>                    
-                `;
+                        `;
+
                 productsContainer.appendChild(productDiv);
             });
         })
@@ -185,7 +187,7 @@ function fetchProductsByCategory() {
 
     // Effectuez une requête AJAX pour récupérer les produits par catégorie
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://192.168.0.10:3000/produitsAdmin/categories/${categorieId}`, true);
+    xhr.open("GET", `http://192.168.0.11:3000/produitsAdmin/categories/${categorieId}`, true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -205,7 +207,7 @@ function fetchProductsByCategory() {
                     <div class="col max-mb-30" data-aos="fade-up">
                         <div class="course-7 course-fluid">
                             <div class="thumbnail">
-                                <a href="product-details.html" class="image">
+                                <a href="product-details.html?id=${produit._id}" class="image" id="image">
                                     <img src="${produit.image}" alt="Course Image">
                                 </a>
                                 <div class="actions">                                   
@@ -214,7 +216,7 @@ function fetchProductsByCategory() {
                             </div>
                             <div class="info text-center">
                                 <span class="price">${produit.prix} XOF</span>
-                                <h3 class="title"><a href="product-details.html">${produit.nom}</a></h3>
+                                <h3 class="title" id="titre"><a href="product-details.html?id=${produit._id}">${produit.titre}</a></h3>
                             </div>
                         </div>
                     </div>
@@ -234,54 +236,34 @@ function fetchProductsByCategory() {
 /*--
         AFFICHER DETAILS PRODUIT
     -----------------------------------*/ 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const productLinks = document.querySelectorAll('.product-link');
-    
-    //     productLinks.forEach(productLink => {
-    //         productLink.addEventListener('click', function (event) {
-    //             event.preventDefault(); // Empêche la navigation par défaut
-    
-    //             const productId = this.getAttribute('data-product-id');
-    
-    //             // Effectuez une requête AJAX pour récupérer les détails du produit par son ID
-    //             fetch(`http://192.168.0.61:3000/produitsAdmin/produit/${productId}`)
-    //                 .then(response => {
-    //                     response.json()
-    //                     console.log("ouaissssssssssssssssssssssssssssssssssss",response);
-    //                 }
-                    
-    //                 )
-    //                 .then(productDetails => {
-    //                     // Mettez à jour la page avec les détails du produit (par exemple, en remplaçant le contenu actuel)
-    //                     updateProductDetails(productDetails);
+var url = window.location.href;
+var idMatch = url.match(/[?&]id=([^&]*)/);
 
-    //                 })
-    //                 .catch(error => {
-    //                     console.error('Erreur lors de la récupération des détails du produit:', error);
-    //                 });
-    //         });
-    //     });
-    
-    //     // // Fonction pour mettre à jour la page avec les détails du produit
-    //     // function updateProductDetails(productDetails) {
-    //     //     const productName = document.querySelector('.single-product-content h3.title');
-    //     //     const productPrice = document.querySelector('.prices .price-new');
-    //     //     const productImage = document.querySelector('.single-product-image img');
-    //     //     const productCategory = document.querySelector('.meta-content a');
-    //     //     const productDescription = document.querySelector('.description-list ul');
+if (idMatch) {
+    var id = idMatch[1];
 
-    //     //     // Mettez à jour les éléments avec les détails du produit
-    //     //     productName.textContent = productDetails.titre;
-    //     //     productPrice.textContent = productDetails.prix + ' XOF';
-    //     //     productImage.src = productDetails.image;
-    //     //     productCategory.textContent = productDetails.categorie;
-            
-    //     //     // Mettez à jour la description du produit (remplacez le contenu actuel)
-    //     //     productDescription.innerHTML = `
-    //     //         <li>${productDetails.description}</li>
-    //     //     `;
-            
-    //     //     // Mettez à jour d'autres éléments si nécessaire
-    //     // }
-    // });
-    
+    // Utiliser l'ID dans la requête AJAX
+    var settings = {
+        "url": "http://192.168.0.11:3000/produitsAdmin/produit/" + id,
+        "method": "GET",
+        "timeout": 0,
+    };
+
+    // Effectuer la requête AJAX
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+} else {
+    console.log("ID non trouvé dans l'URL");
+}
+
+$.ajax(settings).done(function (response) {
+    // Mettez à jour les éléments HTML avec les données du produit
+    $('.single-product-image img').attr('src', response.image);
+    $('.single-product-content h3.title').text(response.titre);
+    $('.single-product-content .price-new').text(response.prix + ' XOF');
+    $('.single-product-content .meta-content').text(response.categorie);
+    $('.description-list ul li:first-child').text(response.description);
+
+    // Mettez à jour d'autres propriétés du produit si nécessaire
+});
