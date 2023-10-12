@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesDropdown = document.getElementById('categorieBlog');
 
     // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
-    fetch('http://192.168.0.10:3000/categoriesblog')
+    fetch('http://192.168.0.11:3000/categoriesblog')
         .then(response => response.json())
         .then(data => {
             // Parcourez les catégories récupérées et ajoutez-les au menu déroulant
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
         // Envoyer une requête POST vers l'API pour enregistrer le blog
         $.ajax({
-            url: "http://192.168.0.10:3000/blogs",
+            url: "http://192.168.0.11:3000/blogs",
             type: "POST",
             data: formData,
             processData: false,

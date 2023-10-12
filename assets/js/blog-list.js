@@ -88,3 +88,13 @@ $(document).ready(function () {
         console.log("ID non trouvé dans l'URL");
     }
     
+    $.ajax(settings).done(function (response) {
+        // Mettez à jour le contenu HTML de la page avec les données du produit
+        $(".blog-3.blog-details .thumbnail img").attr("src", response.image);
+        $(".blog-3.blog-details .category").text(response.categorieBlog);
+        $(".blog-3.blog-details .title").text(response.titre);
+        // $(".blog-3.blog-details .meta li:eq(0)").html(`<i class="fas fa-calendar"></i>${response.date}`);
+        // $(".blog-3.blog-details .meta li:eq(1)").html(`<i class="fas fa-eye"></i>${response.views} views`);
+        $(".blog-3.blog-details .desc").html(response.description);
+        // Mettez à jour d'autres propriétés du  si nécessaire
+    });
