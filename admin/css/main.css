@@ -278,3 +278,32 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
+.list-content{
+    min-height:300px;
+   }
+   .list-content .list-group .title{
+     background: #152036;
+     border:2px solid #DDDDDD;
+     font-weight:bold;
+     color:#FFFFFF;
+   }
+   .list-group-item img {
+       height:80px; 
+       width:80px;
+   }
+   .jumbotron .btn {
+       padding: 9px 9px !important;
+       font-size: 12px !important;
+   }
+   .prj-name {
+       color:#5bc0de;    
+   }
+   .break{
+       width:100%;
+       margin:20px;
+   }
+   .name {
+       color:#5bc0de;    
+   }

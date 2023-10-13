@@ -96,20 +96,20 @@ function displayBlogs(blogs) {
     blogs.forEach(function (blog) {
         var blogHtml = `
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                <div class="panel-body blog-pra">
-                    <div class="blog-img">
-                        <img src="${blog.image}" alt="" />
-                        <a href="blog_details.html">
-                            <h4>${blog.titre}</h4>
-                        </a>
-                    </div>
-                    <p>${blog.content}</p>
+            <div class="panel-body blog-pra">
+                <div class="blog-img">
+                    <img src="${blog.image}" alt="" />
+                    <a href="blog-details.html?id=${blog._id}">
+                        <h4>${blog.titre}</h4>
+                    </a>
                 </div>
-                <div class="panel-footer">
-                    <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>
-                    <i class="fa fa-eye"> </i>142 views
-                </div>
+                <p>${blog.content}</p>
             </div>
+            <div class="panel-footer">
+                <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>
+                <i class="fa fa-eye"> </i>142 views
+            </div>
+        </div>
         `;
 
         // Ajouter le blog au conteneur
@@ -121,3 +121,36 @@ function displayBlogs(blogs) {
 $(document).ready(function () {
     getBlogs();
 });
+
+/*--
+        AFFICHER DETAILS BLOG
+    -----------------------------------*/ 
+    var url = window.location.href;
+    var idMatch = url.match(/[?&]id=([^&]*)/);
+    
+    if (idMatch) {
+        var id = idMatch[1];
+    
+        // Utiliser l'ID dans la requête AJAX
+        var settings = {
+            "url": "http://192.168.0.11:3000/blogs/blog/" + id,
+            "method": "GET",
+            "timeout": 0,
+        };
+    
+        // Effectuer la requête AJAX
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    } else {
+        console.log("ID non trouvé dans l'URL");
+    }
+    
+    $.ajax(settings).done(function (response) {
+        // Mettez à jour le contenu HTML de la page avec les données du billet de blog
+        $(".blog-image a img").attr("src", response.image);
+        $(".blog-date .blog-day").text(response.date);
+        $(".blog-details .blog-ht").text(response.titre);
+        $(".blog-details p").text(response.description);
+    });
+    
