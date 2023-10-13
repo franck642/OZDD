@@ -73,7 +73,7 @@ $(document).ready(function () {
  // Fonction pour récupérer et afficher les blogs
  function getBlogs() {
     $.ajax({
-        url: 'http://192.168.0.10:3000/blogs',
+        url: 'http://192.168.0.11:3000/blogs',
         type: 'GET',
         success: function (data) {
             // Manipuler les données et les ajouter au conteneur de blog
@@ -95,6 +95,7 @@ function displayBlogs(blogs) {
     // Parcourir chaque blog et l'ajouter au conteneur
     blogs.forEach(function (blog) {
         var blogHtml = `
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
                 <div class="panel-body blog-pra">
                     <div class="blog-img">
                         <img src="${blog.image}" alt="" />
@@ -108,6 +109,7 @@ function displayBlogs(blogs) {
                     <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>
                     <i class="fa fa-eye"> </i>142 views
                 </div>
+            </div>
         `;
 
         // Ajouter le blog au conteneur

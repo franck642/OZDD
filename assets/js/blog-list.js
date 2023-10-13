@@ -17,7 +17,7 @@ $(document).ready(function () {
                             <div class="col max-mb-30">
                                 <div class="thumbnail">
                                     <a href="blog-details.html?id=${blog._id}" class="image">
-                                        <img src="${blog.image}" alt="Blog Image" style="width: 400px; height: 400px;">
+                                        <img src="${blog.image}" alt="Blog Image" style="width: 450px; height: 300px;">
                                     </a>
                                 </div>
                             </div>
