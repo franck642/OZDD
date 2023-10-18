@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesDropdown = document.getElementById('categorieBlog');
 
     // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
-    fetch('http://192.168.0.11:3000/categoriesblog')
+    fetch('http://192.168.0.44:3000/categoriesblog')
         .then(response => response.json())
         .then(data => {
             // Parcourez les catégories récupérées et ajoutez-les au menu déroulant
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
         // Envoyer une requête POST vers l'API pour enregistrer le blog
         $.ajax({
-            url: "http://192.168.0.11:3000/blogs",
+            url: "http://192.168.0.44:3000/blogs",
             type: "POST",
             data: formData,
             processData: false,
@@ -73,7 +73,7 @@ $(document).ready(function () {
  // Fonction pour récupérer et afficher les blogs
  function getBlogs() {
     $.ajax({
-        url: 'http://192.168.0.11:3000/blogs',
+        url: 'http://192.168.0.44:3000/blogs',
         type: 'GET',
         success: function (data) {
             // Manipuler les données et les ajouter au conteneur de blog
@@ -133,7 +133,7 @@ $(document).ready(function () {
     
         // Utiliser l'ID dans la requête AJAX
         var settings = {
-            "url": "http://192.168.0.11:3000/blogs/blog/" + id,
+            "url": "http://192.168.0.44:3000/blogs/blog/" + id,
             "method": "GET",
             "timeout": 0,
         };

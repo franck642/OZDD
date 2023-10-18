@@ -307,3 +307,37 @@ textarea {
    .name {
        color:#5bc0de;    
    }
+
+
+   /* Couleur jaune pour le bouton */
+   .btn-valider {
+    background-color: #FFBF05;
+    color: black; /* Couleur du texte */
+    border: 1px solid #FFBF05; /* Couleur de la bordure jaune */
+}
+
+
+
+/* Style pour le statut */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 80px;
+    /* margin-right: 10px; */
+}
+
+/* Style pour un statut actif */
+.status-active {
+    background-color: #5cb85c; /* Couleur verte */
+    color: #fff; /* Texte blanc */
+}
+
+/* Style pour un statut inactif */
+.status-inactive {
+    background-color: #d9534f; /* Couleur rouge */
+    color: #fff; /* Texte blanc */
+}

@@ -129,7 +129,7 @@
                                     <div class="header-login" id="userIcon">
                                         <a href="javascript:void(0);" onclick="toggleDropdown()"><i class="far fa-user-circle"></i></a>
                                         <div class="dropdown-menu" id="userDropdown">
-                                            <a href="my-account.html"><i class="fa fa-dashboard"></i> Dashboard</a>                                           
+                                            <a href="my-account.html"><i class="fa fa-home"></i> Dashboard</a>                                           
                                              <a href="login.html"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
                                         </div>
                                     </div>
@@ -306,11 +306,10 @@
                                                         <div class="col-lg-6 mb-30">
                                                             <input id="email" placeholder="Email Address" type="email">
                                                         </div>
-
-                                                        <div class="col-lg-6 col-12 mb-30">                                               
-                                                            <input id="profile-image" type="file" accept="image/*">
-                                                            <!-- Ajoutez un champ de fichier pour télécharger l'image -->
-                                                        </div>
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="profile-image" type="file" accept="image/*" class="circular-input" onchange="displayImage()">
+                                                            <div id="image-preview" class="image-preview"></div>
+                                                        </div>                                                                                                                
                                                         
                                                         <div class="col-lg-6 col-12 mb-30">                                    
                                                             <input id="profession" placeholder="Profession" type="text">

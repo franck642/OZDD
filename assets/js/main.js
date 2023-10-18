@@ -926,4 +926,22 @@ function addToCart(event) {
     window.location.href = "shopping-cart.html";
 }
 
-    
+ /*--
+        IMAGE PROFILE
+    -----------------------------------*/
+function displayImage() {
+    const input = document.getElementById('profile-image');
+    const imagePreview = document.getElementById('image-preview');
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            imagePreview.style.backgroundImage = `url(${e.target.result})`;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        imagePreview.style.backgroundImage = '';
+    }
+}

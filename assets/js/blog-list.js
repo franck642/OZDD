@@ -4,7 +4,7 @@
 $(document).ready(function () {
     // Faites une requête GET pour récupérer les blogs depuis l'API
     $.ajax({
-        url: "http://192.168.0.11:3000/blogs",
+        url: "http://192.168.0.44:3000/blogs",
         type: "GET",
         success: function (data) {
             // Parcourez les données des blogs et affichez-les dans le conteneur
@@ -75,7 +75,7 @@ $(document).ready(function () {
     
         // Utiliser l'ID dans la requête AJAX
         var settings = {
-            "url": "http://192.168.0.11:3000/blogs/blog/" + id,
+            "url": "http://192.168.0.44:3000/blogs/blog/" + id,
             "method": "GET",
             "timeout": 0,
         };
