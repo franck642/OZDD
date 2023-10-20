@@ -227,11 +227,10 @@
                                     <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
                                         <div class="myaccount-content">
                                             <h3>Mon compte</h3>
-
                                             <div class="welcome mb-20">
-                                                <p>Bonjour, <strong>Alex Tuntuni</strong> (Si Non <strong>Tuntuni !</strong><a href="login-register.html" class="logout"> Déconnexion</a>)</p>
-                                            </div>
-                                            
+
+                                                <p>Bonjour, <strong id="userData">Alex Tuntuni</strong> (Si Non <a href="login.html" class="logout"> Déconnexion</a>)</p>
+                                            </div>                                 
                                         </div>
                                     </div>
                                     <!-- Single Tab Content End -->
@@ -292,6 +291,15 @@
                                                 <form action="#">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-12 mb-30">
+                                                            <input id="profile-image" type="file" accept="image/*" class="circular-input" onchange="displayImage()">
+                                                            <div id="image-preview" class="image-preview"></div>
+                                                        </div>
+                                                        
+                                                        <div class="col-lg-6 mb-30">
+                                                            <input id="email" placeholder="Email Address" type="email">
+                                                        </div> 
+
+                                                        <div class="col-lg-6 col-12 mb-30">
                                                             <input id="first-name" placeholder="First Name" type="text">
                                                         </div>
 
@@ -301,15 +309,7 @@
 
                                                         <div class="col-lg-6 mb-30">
                                                             <input id="phone" placeholder="Téléphone" type="text">
-                                                        </div>
-
-                                                        <div class="col-lg-6 mb-30">
-                                                            <input id="email" placeholder="Email Address" type="email">
-                                                        </div>
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="profile-image" type="file" accept="image/*" class="circular-input" onchange="displayImage()">
-                                                            <div id="image-preview" class="image-preview"></div>
-                                                        </div>                                                                                                                
+                                                        </div>                                                                                                                                                                                                      
                                                         
                                                         <div class="col-lg-6 col-12 mb-30">                                    
                                                             <input id="profession" placeholder="Profession" type="text">
