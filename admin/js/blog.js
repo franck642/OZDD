@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesDropdown = document.getElementById('categorieBlog');
 
     // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
-    fetch('http://192.168.0.44:3000/categoriesblog')
+    fetch('http://192.168.31.145:3000/categoriesblog')
         .then(response => response.json())
         .then(data => {
             // Parcourez les catégories récupérées et ajoutez-les au menu déroulant
@@ -34,7 +34,7 @@ $(document).ready(function () {
         var titre = $("#titre").val();
         var apercu = $("#apercu").val();
         var description = $("#description").val();
-        var categorieBlog = $("#categorieBlog").val();
+        // var categorieBlog = $("#categorieBlog").val();
         var image = $("#image")[0].files[0];
 
         // Créer un objet FormData pour envoyer les données au serveur
@@ -42,12 +42,12 @@ $(document).ready(function () {
         formData.append("titre", titre);
         formData.append("apercu", apercu);
         formData.append("description", description);
-        formData.append("categorieBlog", categorieBlog);
+        // formData.append("categorieBlog", categorieBlog);
         formData.append("image", image);
 
         // Envoyer une requête POST vers l'API pour enregistrer le blog
         $.ajax({
-            url: "http://192.168.0.44:3000/blogs",
+            url: "http://192.168.31.145:3000/blogs",
             type: "POST",
             data: formData,
             processData: false,
@@ -56,7 +56,13 @@ $(document).ready(function () {
                 // Le blog a été enregistré avec succès, effectuez ici les actions nécessaires
                 console.log("Blog enregistré avec succès");
                 alert('Blog Créer avec succès.');
-            },
+
+                // Actualiser la page après un court délai (par exemple, 1 seconde)
+                setTimeout(function() {
+                    location.reload();
+                }, 1000); // 1000 millisecondes équivalent à 1 seconde
+                        },
+
             error: function (error) {
                 // Gérer les erreurs en cas de problème avec la requête
                 console.error("Erreur lors de l'enregistrement du blog : " + error);
@@ -73,7 +79,7 @@ $(document).ready(function () {
  // Fonction pour récupérer et afficher les blogs
  function getBlogs() {
     $.ajax({
-        url: 'http://192.168.0.44:3000/blogs',
+        url: 'http://192.168.31.145:3000/blogs',
         type: 'GET',
         success: function (data) {
             // Manipuler les données et les ajouter au conteneur de blog
@@ -133,7 +139,7 @@ $(document).ready(function () {
     
         // Utiliser l'ID dans la requête AJAX
         var settings = {
-            "url": "http://192.168.0.44:3000/blogs/blog/" + id,
+            "url": "http://192.168.31.145:3000/blogs/blog/" + id,
             "method": "GET",
             "timeout": 0,
         };

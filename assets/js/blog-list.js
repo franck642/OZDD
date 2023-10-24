@@ -4,7 +4,7 @@
 $(document).ready(function () {
     // Faites une requête GET pour récupérer les blogs depuis l'API
     $.ajax({
-        url: "http://192.168.31.145:3000/blogs",
+        url: "http://192.168.1.25:3000/blogs",
         type: "GET",
         success: function (data) {
             // Parcourez les données des blogs et affichez-les dans le conteneur
@@ -75,7 +75,7 @@ $(document).ready(function () {
     
         // Utiliser l'ID dans la requête AJAX
         var settings = {
-            "url": "http://192.168.31.145:3000/blogs/blog/" + id,
+            "url": "http://192.168.1.25:3000/blogs/blog/" + id,
             "method": "GET",
             "timeout": 0,
         };
@@ -91,7 +91,7 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
         // Mettez à jour le contenu HTML de la page avec les données du produit
         $(".blog-3.blog-details .thumbnail img").attr("src", response.image);
-        $(".blog-3.blog-details .category").text(response.categorieBlog);
+        // $(".blog-3.blog-details .category").text(response.categorieBlog);
         $(".blog-3.blog-details .title").text(response.titre);
         // $(".blog-3.blog-details .meta li:eq(0)").html(`<i class="fas fa-calendar"></i>${response.date}`);
         // $(".blog-3.blog-details .meta li:eq(1)").html(`<i class="fas fa-eye"></i>${response.views} views`);

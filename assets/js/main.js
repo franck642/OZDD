@@ -878,6 +878,20 @@ window.onclick = function(event) {
     }
 }
 
+function previewImage() {
+    var input = document.getElementById('id_profile_photo');
+    var preview = document.getElementById('avatar-preview');
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
  /*--
         preLoader
     -----------------------------------*/
@@ -924,24 +938,4 @@ function addToCart(event) {
 
     // Redirigez l'utilisateur vers la page du panier
     window.location.href = "shopping-cart.html";
-}
-
- /*--
-        IMAGE PROFILE
-    -----------------------------------*/
-function displayImage() {
-    const input = document.getElementById('profile-image');
-    const imagePreview = document.getElementById('image-preview');
-
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            imagePreview.style.backgroundImage = `url(${e.target.result})`;
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    } else {
-        imagePreview.style.backgroundImage = '';
-    }
 }

@@ -82,7 +82,6 @@ $(document).ready(function() {
         userDataDiv.innerHTML = connDataResult.firstName;
     }
     
-
     $(document).ready(function() {
         $('#loginForm').submit(function(event) {
             event.preventDefault(); // Empêche le rechargement de la page

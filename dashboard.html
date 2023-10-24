@@ -228,7 +228,6 @@
                                         <div class="myaccount-content">
                                             <h3>Mon compte</h3>
                                             <div class="welcome mb-20">
-
                                                 <p>Bonjour, <strong id="userData">Alex Tuntuni</strong> (Si Non <a href="login.html" class="logout"> Déconnexion</a>)</p>
                                             </div>                                 
                                         </div>
@@ -289,16 +288,20 @@
 
                                             <div class="account-details-form">
                                                 <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <input id="profile-image" type="file" accept="image/*" class="circular-input" onchange="displayImage()">
-                                                            <div id="image-preview" class="image-preview"></div>
-                                                        </div>
+                                                    <div class="row"> 
                                                         
-                                                        <div class="col-lg-6 mb-30">
-                                                            <input id="email" placeholder="Email Address" type="email">
-                                                        </div> 
-
+                                                        <div class="mb-3">
+                                                            <label for="id_profile_photo" class="form-label">Avatar</label>
+                                                            <br>
+                                                            <div id="avatar-container">
+                                                                <img id="avatar-preview" src="/assets/images/profile/profile.jpeg" class="img-fluid rounded-circle" alt="Avatar" style="width: 100px;">
+                                                                <label id="avatar-icon" for="id_profile_photo">
+                                                                    <input type="file" name="profile_photo" class="form-control-file d-none" accept="image/*" id="id_profile_photo" onchange="previewImage()">
+                                                                    <img src="/assets/images/profile/edit.png" alt="Edit" style="width: 20px;">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                     
                                                         <div class="col-lg-6 col-12 mb-30">
                                                             <input id="first-name" placeholder="First Name" type="text">
                                                         </div>
@@ -306,6 +309,10 @@
                                                         <div class="col-lg-6 col-12 mb-30">
                                                             <input id="last-name" placeholder="Last Name" type="text">
                                                         </div>
+
+                                                        <div class="col-lg-6 mb-30">
+                                                            <input id="email" placeholder="Email Address" type="email">
+                                                        </div> 
 
                                                         <div class="col-lg-6 mb-30">
                                                             <input id="phone" placeholder="Téléphone" type="text">

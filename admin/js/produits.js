@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Récupérez la référence de la liste déroulante
 	const selectElement = document.getElementById('categorie');
 	// Récupérez les données depuis votre API
-	fetch('http://192.168.0.11:3000/categories')
+	fetch('http://192.168.31.145:3000/categories')
 		.then(response => response.json())
 		.then(data => {
 			// Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -41,9 +41,9 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
     formData.append('apercu', apercu);
     formData.append('categorie', categorie);
     formData.append('image', image); // Ajoute le fichier d'image à FormData
-
+	console.log("zzzzzzzzzzzzzzzz", formData)
     try {
-        const response = await fetch('http://192.168.0.11:3000/produitsAdmin', {
+        const response = await fetch('http://192.168.31.145:3000/produitsAdmin', {
             method: 'POST',
             body: formData
         });
@@ -51,7 +51,12 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
         const data = await response.json();
         console.log('Produit créé:', data);
 		alert('Produit Créer avec succès.');
-        // Réalisez les actions nécessaires après la création du produit (par exemple, actualisez l'affichage des produits)
+        
+		// Actualiser la page après un court délai (par exemple, 1 seconde)
+		setTimeout(function() {
+			location.reload();
+		}, 1000); // 1000 millisecondes équivalent à 1 seconde
+
     } catch (error) {
         console.error('Erreur lors de la création du produit:', error);
     }
@@ -64,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const productTableBody = document.getElementById('productTableBody');
 
 	// Récupérez les données depuis votre API
-	fetch('http://192.168.0.11:3000/produitsAdmin')
+	fetch('http://192.168.31.145:3000/produitsAdmin')
 		.then(response => response.json())
 		.then(data => {
 			console.log(data)

@@ -5,7 +5,7 @@
 const categoriesDropdown = document.getElementById('categorie');
 
 // Récupérez les données depuis votre API
-    fetch('http://192.168.0.11:3000/categories')
+    fetch('http://192.168.1.25:3000/categories')
     .then(response => response.json())
     .then(data => {
         // Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
 
     // Récupérez les données depuis votre API
-    fetch('http://192.168.0.11:3000/produitsAdmin')
+    fetch('http://192.168.1.25:3000/produitsAdmin')
         .then(response => response.json())
         .then(data => {
             // Parcourez les données et ajoutez-les à la page
@@ -69,7 +69,7 @@ function fetchProductsByCategory() {
 
     // Effectuez une requête AJAX pour récupérer les produits par catégorie
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://192.168.0.11:3000/produitsAdmin/categories/${categorieId}`, true);
+    xhr.open("GET", `http://192.168.1.25:3000/produitsAdmin/categories/${categorieId}`, true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -93,7 +93,7 @@ function fetchProductsByCategory() {
                                     <img src="${produit.image}" alt="Course Image">
                                 </a>
                                 <div class="actions">                                   
-                                    <a href="shopping-cart.html" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
+                                    <a href="shopping-cart.html" id="add-to-cart" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
                                 </div>
                             </div>
                             <div class="info text-center">
@@ -126,7 +126,7 @@ if (idMatch) {
 
     // Utiliser l'ID dans la requête AJAX
     var settings = {
-        "url": "http://192.168.0.11:3000/produitsAdmin/produit/" + id,
+        "url": "http://192.168.1.25:3000/produitsAdmin/produit/" + id,
         "method": "GET",
         "timeout": 0,
     };
@@ -144,8 +144,98 @@ $.ajax(settings).done(function (response) {
     $('.single-product-image img').attr('src', response.image);
     $('.single-product-content h3.title').text(response.titre);
     $('.single-product-content .price-new').text(response.prix + ' XOF');
-    $('.single-product-content .meta-content').text(response.categorie);
+    $('.single-product-content .meta-content').text(response.categorie.categorie);
     $('.description-list ul li:first-child').text(response.description);
 
     // Mettez à jour d'autres propriétés du produit si nécessaire
 });
+
+
+
+// Initialisation du panier (tableau vide)
+var cart = [];
+
+// Fonction pour mettre à jour l'affichage du panier
+function updateCart() {
+    var cartItems = document.getElementById("cart-items");
+    var cartSubtotal = document.getElementById("cart-subtotal");
+    var cartTotal = document.getElementById("cart-total");
+
+    // Effacer le contenu actuel du panier
+    cartItems.innerHTML = "";
+    
+    var subtotal = 0;
+
+    // Parcourir les articles dans le panier
+    for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        var total = item.prix * item.quantity;
+        
+        subtotal += total;
+
+        // Créer une ligne pour l'article
+        var cartItemRow = document.createElement("tr");
+        cartItemRow.innerHTML = `
+            <td class="pro-thumbnail"><img src="${item.image}" alt="${item.titre}"></td>
+            <td class="pro-title">${item.titre}</td>
+            <td class="pro-price">${item.prix} XOF</td>
+            <td class="pro-quantity">
+                <div class="pro-qty">${item.quantity}</div>
+            </td>
+            <td class="pro-subtotal">${total} XOF</td>
+            <td class="pro-remove">
+                <a href="#" class="btSupprimer" data-product-name="${item.name}">Retirer</a>
+            </td>
+        `;
+
+        // Ajouter la ligne au panier
+        cartItems.appendChild(cartItemRow);
+    }
+
+    // Mettre à jour les totaux
+    cartSubtotal.textContent = subtotal.toFixed(2) + " XOF";
+    cartTotal.textContent = subtotal.toFixed(2) + " XOF";
+}
+
+// Gestionnaire d'événements pour ajouter un produit au panier
+document.addEventListener("click", function (event) {
+    if (event.target && event.target.classList.contains("add-to-cart")) {
+        var productName = event.target.getAttribute("data-product-name");
+        var productPrice = parseFloat(event.target.getAttribute("data-product-price"));
+        var productImage = event.target.getAttribute("data-product-image");
+
+        // Vérifier si le produit est déjà dans le panier
+        var existingItem = cart.find(item => item.name === productName);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            // Ajouter un nouvel article au panier
+            cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+        }
+
+        // Mettre à jour l'affichage du panier
+        updateCart();
+    }
+});
+
+// Gestionnaire d'événements pour supprimer un produit du panier
+document.addEventListener("click", function (event) {
+    if (event.target && event.target.classList.contains("btSupprimer")) {
+        var productName = event.target.getAttribute("data-product-name");
+
+        // Trouver l'index de l'article dans le panier
+        var itemIndex = cart.findIndex(item => item.name === productName);
+
+        if (itemIndex !== -1) {
+            // Supprimer l'article du panier
+            cart.splice(itemIndex, 1);
+
+            // Mettre à jour l'affichage du panier
+            updateCart();
+        }
+    }
+});
+
+// Appel initial pour mettre à jour l'affichage du panier (au cas où des produits seraient déjà dans le panier)
+updateCart();
