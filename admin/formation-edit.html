@@ -229,33 +229,24 @@
         <!-- Single pro tab start-->
         <div class="single-product-tab-area mg-b-30">
             
-            <div class="container">
-                <h2>Formulaire de Création de Formation</h2>
-                <form method="post" enctype="multipart/form-data">
-                  <label for="titre_formation">Titre de la Formation</label>
-                  <input type="text" id="titre" name="titre" required>
-              
-                  <label for="prix_formation">Prix</label>
-                  <input type="text" id="prix" name="prix" required>
-              
-                  <label for="image_formation">Image de la Formation</label>
-                  <input type="file" id="image" name="image" accept="image/*" required>
-              
-                  <label for="pdf_formation">Fichier PDF (pour la description)</label>
-                  <input type="file" id="documentfournirId" name="documentfournirId" accept=".pdf" required>
-              
-                  <label for="categorie">Catégorie de Formation</label>
-                  <select id="categorie" name="categorie" required>
-                      <option value="informatique">Informatique</option>
-                      <option value="marketing">Marketing</option>
-                      <option value="gestion">Gestion</option>
-                      <option value="autre">Autre</option>
-                  </select>
-              
-                  <!-- Ajout du bouton "Créer la Formation" -->
-                  <button type="button" id="formFormation">Créer la Formation</button>
-              </form>              
-            </div>
+          <div class="container">
+            <h2>Formulaire de Création de Formation</h2>
+            <form id="formationForm">
+                <label for="titre_formation">Titre de la Formation</label>
+                <input type="text" id="titre" name="titre" required>
+    
+                <label for="prix_formation">Prix</label>
+                <input type="text" id="prix" name="prix" required>
+    
+                <label for="image_formation">Image de la Formation</label>
+                <input type="file" id="imagePath" name="imagePath" accept="image/*" required>
+    
+                <label for="pdf_formation">Fichier PDF (pour la description)</label>
+                <input type="file" id="documentfournirId" name="documentfournirId" accept=".pdf" required>
+    
+                <button type="submit">Créer la Formation</button>
+            </form>
+        </div>
             
         </div>
         <div class="footer-copyright-area">

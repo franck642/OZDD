@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <img src="${product.image}" alt="Course Image">
                                     </a>
                                     <div class="actions">
-                                        <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
+                                        <a href="shopping-cart.html" id="add-to-cart" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
                                     </div>
                                 </div>
                                 <div class="info text-center">
@@ -93,7 +93,7 @@ function fetchProductsByCategory() {
                                     <img src="${produit.image}" alt="Course Image">
                                 </a>
                                 <div class="actions">                                   
-                                    <a href="shopping-cart.html" id="add-to-cart" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
+                                    <a href="shopping-cart.html" id="" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
                                 </div>
                             </div>
                             <div class="info text-center">
@@ -151,91 +151,147 @@ $.ajax(settings).done(function (response) {
 });
 
 
-
-// Initialisation du panier (tableau vide)
-var cart = [];
-
-// Fonction pour mettre à jour l'affichage du panier
-function updateCart() {
-    var cartItems = document.getElementById("cart-items");
-    var cartSubtotal = document.getElementById("cart-subtotal");
-    var cartTotal = document.getElementById("cart-total");
-
-    // Effacer le contenu actuel du panier
-    cartItems.innerHTML = "";
-    
-    var subtotal = 0;
-
-    // Parcourir les articles dans le panier
-    for (var i = 0; i < cart.length; i++) {
-        var item = cart[i];
-        var total = item.prix * item.quantity;
-        
-        subtotal += total;
-
-        // Créer une ligne pour l'article
-        var cartItemRow = document.createElement("tr");
-        cartItemRow.innerHTML = `
-            <td class="pro-thumbnail"><img src="${item.image}" alt="${item.titre}"></td>
-            <td class="pro-title">${item.titre}</td>
-            <td class="pro-price">${item.prix} XOF</td>
-            <td class="pro-quantity">
-                <div class="pro-qty">${item.quantity}</div>
-            </td>
-            <td class="pro-subtotal">${total} XOF</td>
-            <td class="pro-remove">
-                <a href="#" class="btSupprimer" data-product-name="${item.name}">Retirer</a>
-            </td>
-        `;
-
-        // Ajouter la ligne au panier
-        cartItems.appendChild(cartItemRow);
-    }
-
-    // Mettre à jour les totaux
-    cartSubtotal.textContent = subtotal.toFixed(2) + " XOF";
-    cartTotal.textContent = subtotal.toFixed(2) + " XOF";
-}
-
-// Gestionnaire d'événements pour ajouter un produit au panier
-document.addEventListener("click", function (event) {
-    if (event.target && event.target.classList.contains("add-to-cart")) {
-        var productName = event.target.getAttribute("data-product-name");
-        var productPrice = parseFloat(event.target.getAttribute("data-product-price"));
-        var productImage = event.target.getAttribute("data-product-image");
-
-        // Vérifier si le produit est déjà dans le panier
-        var existingItem = cart.find(item => item.name === productName);
-        
-        if (existingItem) {
-            existingItem.quantity++;
-        } else {
-            // Ajouter un nouvel article au panier
-            cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
-        }
-
-        // Mettre à jour l'affichage du panier
-        updateCart();
-    }
-});
-
-// Gestionnaire d'événements pour supprimer un produit du panier
-document.addEventListener("click", function (event) {
-    if (event.target && event.target.classList.contains("btSupprimer")) {
-        var productName = event.target.getAttribute("data-product-name");
-
-        // Trouver l'index de l'article dans le panier
-        var itemIndex = cart.findIndex(item => item.name === productName);
-
-        if (itemIndex !== -1) {
-            // Supprimer l'article du panier
-            cart.splice(itemIndex, 1);
-
-            // Mettre à jour l'affichage du panier
-            updateCart();
-        }
-    }
-});
-
-// Appel initial pour mettre à jour l'affichage du panier (au cas où des produits seraient déjà dans le panier)
-updateCart();
+// var shoppingCart = (function () {
+//     var cart = [];
+  
+//     function Item(id, name, price, count) {
+//         this.id = id;
+//         this.name = name;
+//         this.price = price;
+//         this.count = count;
+//     }
+  
+//     function saveCart() {
+//         localStorage.setItem('shoppingCart', JSON.stringify(cart));
+//     }
+  
+//     function loadCart() {
+//         cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+//     }
+  
+//     if (localStorage.getItem("shoppingCart") != null) {
+//         loadCart();
+//     }
+  
+//     var obj = {};
+  
+//     obj.addItemToCart = function (id, name, price, count) {
+//         for (var i in cart) {
+//             if (cart[i].id === id) {
+//                 cart[i].count += count;
+//                 saveCart();
+//                 return;
+//             }
+//         }
+//         var item = new Item(id, name, price, count);
+//         cart.push(item);
+//         saveCart();
+//     }
+  
+//     obj.removeItemFromCart = function (id) {
+//         for (var i in cart) {
+//             if (cart[i].id === id) {
+//                 cart[i].count--;
+//                 if (cart[i].count === 0) {
+//                     cart.splice(i, 1);
+//                 }
+//                 break;
+//             }
+//         }
+//         saveCart();
+//     }
+  
+//     obj.removeItemFromCartAll = function (id) {
+//         for (var i in cart) {
+//             if (cart[i].id === id) {
+//                 cart.splice(i, 1);
+//                 break;
+//             }
+//         }
+//         saveCart();
+//     }
+  
+//     obj.clearCart = function () {
+//         cart = [];
+//         saveCart();
+//     }
+  
+//     obj.totalCount = function () {
+//         var totalCount = 0;
+//         for (var i in cart) {
+//             totalCount += cart[i].count;
+//         }
+//         return totalCount;
+//     }
+  
+//     obj.totalCart = function () {
+//         var totalCart = 0;
+//         for (var i in cart) {
+//             totalCart += cart[i].price * cart[i].count;
+//         }
+//         return Number(totalCart.toFixed(2));
+//     }
+  
+//     obj.listCart = function () {
+//         var cartCopy = [];
+//         for (i in cart) {
+//             item = cart[i];
+//             itemCopy = {};
+//             for (p in item) {
+//                 itemCopy[p] = item[p];
+//             }
+//             itemCopy.total = Number(item.price * item.count).toFixed(2);
+//             cartCopy.push(itemCopy)
+//         }
+//         return cartCopy;
+//     }
+  
+//     return obj;
+//   })();
+  
+//   document.addEventListener('DOMContentLoaded', () => {
+//     const productsContainer = document.getElementById('products-container');
+  
+//     fetch('http://192.168.1.25:3000/produitsAdmin')
+//         .then(response => response.json())
+//         .then(data => {
+//             data.forEach(product => {
+//                 const productDiv = document.createElement('div');
+//                 productDiv.classList.add('col', 'max-mb-30');
+//                 productDiv.setAttribute('data-aos', 'fade-up');
+//                 productDiv.innerHTML = `
+//                             <div class="course-7 course-fluid">
+//                                 <div class="thumbnail">
+//                                     <a href="product-details.html?id=${product._id}" class="image" id="image">
+//                                         <img src="${product.image}" alt="Course Image">
+//                                     </a>
+//                                     <div class="actions">
+//                                         <a href="javascript:void(0);" class="action hintT-left hintT-primary add-to-cart" data-id="${product._id}" data-name="${product.titre}" data-price="${product.prix}" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
+//                                     </div>
+//                                 </div>
+//                                 <div class="info text-center">
+//                                     <span class="price" id="prix">${product.prix} XOF</span>
+//                                     <h3 class="title" id="titre"><a href="product-details.html?id=${product._id}">${product.titre}</a></h3>
+//                                 </div>
+//                             </div>
+//                         `;
+  
+//                 productsContainer.appendChild(productDiv);
+//             });
+  
+//            // Ajouter un écouteur d'événements à chaque bouton "Ajouter au panier"
+//         document.querySelectorAll('.add-to-cart').forEach(addToCartButton => {
+//           addToCartButton.addEventListener('click', event => {
+//             const id = event.target.dataset._id;
+//             const name = event.target.dataset.titre;
+//             const price = Number(event.target.dataset.prix);
+//             const image = event.target.dataset.image;
+  
+//             shoppingCart.addItemToCart(id, name, price, 1, image);
+//             displayCart(); // Mettez à jour l'affichage du panier après l'ajout d'un produit
+//           });
+//         });
+//       });
+  
+//     // ... (votre code existant)
+//   });
