@@ -1,7 +1,7 @@
 /*--------------------------
  AFFICHER FORMATION
 ---------------------------- */
-fetch('http://192.168.0.28:3000/formations')
+fetch('http://192.168.31.147:3000/formations')
   .then(response => response.json())
   .then(data => {
     let formationsContainer = document.getElementById('formationsContainer');
