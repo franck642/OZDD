@@ -26,7 +26,7 @@ $(document).ready(function() {
       // Effectuez une requête POST vers votre API
       $.ajax({
           type: 'POST',
-          url: 'http://192.168.31.145:3000/users/sinscrire',
+          url: 'http://192.168.0.53:3000/users/sinscrire',
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
@@ -101,7 +101,7 @@ $(document).ready(function() {
             // Effectuez une requête POST vers votre API
             $.ajax({
                 type: 'POST',
-                url: 'http://192.168.31.145:3000/users/connexion',
+                url: 'http://192.168.0.53:3000/users/connexion',
                 data: JSON.stringify(formData),
                 contentType: 'application/json',
                 success: function(response) {

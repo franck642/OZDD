@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
 
 
     <!-- Main Style CSS -->
@@ -200,42 +201,42 @@
                     <div class="col-12">
 
                         <!-- Checkout Form Start-->
-                        <form action="#" class="checkout-form">
+                        <form class="checkout-form">
                             <div class="row row-40">
                                 <div class="col-lg-7">
 
                                     <!-- Billing Address -->
-                                    <div id="billing-form" class="mb-10">
+                                    <div  class="mb-10">
                                         <h4 class="checkout-title">Enregistrement du Compte</h4>
                                         <div class="row">
                                             
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>N° de téléphone*</label>
-                                                <input type="text" placeholder="N° de téléphone">
+                                                <input type="text" id="numeroTel" placeholder="N° de téléphone" required>
                                             </div>
 
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>Nom de l'entreprise</label>
-                                                <input type="text" placeholder="Nom de l'entreprise">
+                                                <input type="text" id="nomEntreprise" placeholder="Nom de l'entreprise" required>
                                             </div>  
                                             
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label for="formFileLg" class="form-label">Logo de l'entreprise*</label>
-                                                <input class="form-control form-control-lg" type="file" accept="image/*" placeholder="Insérer le logo">
+                                                <input class="form-control form-control-lg" id="logoEntreprise" type="file" accept="image/*" placeholder="Insérer le logo" required>
                                             </div>
                                            
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>Pays* /Ville*</label>
-                                                <input type="text" placeholder="Ville/Commune">
+                                                <input type="text" id="pays" placeholder="Ville/Commune" required>
                                             </div>  
 
                                             <div class="col-12 mb-20">
                                                 <label for="formFileLg" class="form-label">Saisie votre pièce d'identité*</label>
-                                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                                <input class="form-control form-control-lg" id="pieceIdentite" type="file" required>
                                               </div>                                         
                                                                                
                                             <div class="col-12 text-center max-mb-30">
-                                                <button class="btn btn-primary btn-hover-secondary btn-width-180 btn-height-60">Créer un compte</button>
+                                                <button class="btn btn-primary btn-hover-secondary btn-width-180 btn-height-60" id="billing-form">Créer un compte</button>
                                             </div>
 
                                         </div>
@@ -429,6 +430,7 @@
     <script src="assets/js/plugins/svg-inject.min.js"></script>
     <script src="assets/js/plugins/swiper.min.js"></script>
     <script src="assets/js/plugins/vivus.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <!-- <script src="assets/js/vendor/vendor.min.js"></script>

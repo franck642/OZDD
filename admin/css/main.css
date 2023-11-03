@@ -341,3 +341,64 @@ textarea {
     background-color: #d9534f; /* Couleur rouge */
     color: #fff; /* Texte blanc */
 }
+
+
+
+/* Style pour les cartes */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.card-img-top {
+    max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-img-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: -40px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton d'action */
+.btn-outline-primary {
+    color: hsl(63, 100%, 50%);
+    border-color: hsl(64, 100%, 50%);
+}
+
+/* Marge entre les cartes */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Centrer le contenu dans les cartes */
+.text-center {
+    text-align: center;
+}
