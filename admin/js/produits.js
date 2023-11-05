@@ -50,15 +50,30 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
 
         const data = await response.json();
         console.log('Produit créé:', data);
-		alert('Produit Créer avec succès.');
-        
-		// Actualiser la page après un court délai (par exemple, 1 seconde)
-		setTimeout(function() {
-			location.reload();
-		}, 1000); // 1000 millisecondes équivalent à 1 seconde
+
+        // Remplacez l'alerte par un popup
+        Swal.fire({
+            title: 'Succès!',
+            text: 'Produit Créer avec succès.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            // Actualisez la page lorsque l'utilisateur clique sur le bouton OK
+            if (result.isConfirmed) {
+                location.reload();
+            }
+        });
 
     } catch (error) {
         console.error('Erreur lors de la création du produit:', error);
+
+        // Affichez un popup d'erreur
+        Swal.fire({
+            title: 'Erreur!',
+            text: 'Une erreur s\'est produite lors de la création du produit.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
     }
 });
 

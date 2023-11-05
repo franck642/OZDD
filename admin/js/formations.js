@@ -15,13 +15,34 @@ form.addEventListener('submit', function(e) {
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    alert('Formation créée avec succès!');
-    location.reload();
+
+    // Remplacez l'alerte par un popup
+    Swal.fire({
+        title: 'Succès!',
+        text: 'Formation créée avec succès!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        // Actualisez la page lorsque l'utilisateur clique sur le bouton OK
+        if (result.isConfirmed) {
+            location.reload();
+        }
+    });
+
   })
   .catch((error) => {
     console.error('Error:', error);
+
+    // Affichez un popup d'erreur
+    Swal.fire({
+        title: 'Erreur!',
+        text: 'Une erreur s\'est produite lors de la création de la formation.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
   });
 });
+
 
 /*--------------------------
  AFFICHER FORMATION

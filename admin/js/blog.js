@@ -55,17 +55,32 @@ $(document).ready(function () {
             success: function (data) {
                 // Le blog a été enregistré avec succès, effectuez ici les actions nécessaires
                 console.log("Blog enregistré avec succès");
-                alert('Blog Créer avec succès.');
 
-                // Actualiser la page après un court délai (par exemple, 1 seconde)
-                setTimeout(function() {
-                    location.reload();
-                }, 1000); // 1000 millisecondes équivalent à 1 seconde
-                        },
+                // Remplacez l'alerte par un popup
+                Swal.fire({
+                    title: 'Succès!',
+                    text: 'Blog Créer avec succès.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    // Actualisez la page lorsque l'utilisateur clique sur le bouton OK
+                    if (result.isConfirmed) {
+                        location.reload();
+                    }
+                });
 
+            },
             error: function (error) {
                 // Gérer les erreurs en cas de problème avec la requête
                 console.error("Erreur lors de l'enregistrement du blog : " + error);
+
+                // Affichez un popup d'erreur
+                Swal.fire({
+                    title: 'Erreur!',
+                    text: 'Une erreur s\'est produite lors de l\'enregistrement du blog.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
             }
         });
     });
