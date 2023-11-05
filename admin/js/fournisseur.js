@@ -61,3 +61,69 @@ $(document).ready(function() {
     // Call the function to get the suppliers when the page loads
     getFournisseurs();
 });
+
+
+/*--
+        AFFICHER LES NOM DE ENTREPRISE DESFOURNISSEURS TRUE
+    -------------------------------------------------------------------*/ 
+document.addEventListener('DOMContentLoaded', () => {
+    // Récupérez la référence de la liste déroulante
+    const selectElement = document.getElementById('fournisseursValides');
+  
+    // Récupérez les données depuis l'API des fournisseurs validés
+    fetch('http://192.168.31.147:3000/fournisseurs/valides')
+      .then(response => response.json())
+      .then(data => {
+        // Parcourez les données et ajoutez-les comme options dans la liste déroulante
+        data.forEach(fournisseur => {
+          const option = document.createElement('option');
+          option.value = fournisseur._id; // Remplacez 'value' par le nom de votre champ
+          option.textContent = fournisseur.fournisseur; // Remplacez 'label' par le nom de votre champ
+          selectElement.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des fournisseurs validés depuis l\'API:', error);
+      });
+  });
+
+
+  /*--
+        CREER LES PRODUITS FOURNISSEURS TRUE
+    ----------------------------------------------*/ 
+    document.getElementById('btnCreateProductFournisseur').addEventListener('click', async () => {
+        const titre = document.getElementById('titre').value;
+        const description = document.getElementById('description').value;
+        const prix = parseFloat(document.getElementById('prix').value);
+        const apercu = document.getElementById('apercu').value;
+        const fournisseur = document.getElementById('fournisseur').value;
+        const image = document.getElementById('image').files[0]; // Récupère le fichier d'image
+    
+        const formData = new FormData();
+        formData.append('titre', titre);
+        formData.append('description', description);
+        formData.append('prix', prix);
+        formData.append('apercu', apercu);
+        formData.append('categorie', fournisseur);
+        formData.append('image', image); // Ajoute le fichier d'image à FormData
+        console.log("hhhhhhhhhhhhhhhhhhhhh", formData)
+        // try {
+        //     const response = await fetch('http://192.168.31.147:3000/produitsFournisseurs', {
+        //         method: 'POST',
+        //         body: formData
+        //     });
+    
+        //     const data = await response.json();
+        //     console.log('Produit créé:', data);
+        //     alert('Produit fournisseur Créer avec succès.');
+            
+        //     // Actualiser la page après un court délai (par exemple, 1 seconde)
+        //     setTimeout(function() {
+        //         location.reload();
+        //     }, 1000); // 1000 millisecondes équivalent à 1 seconde
+    
+        // } catch (error) {
+        //     console.error('Erreur lors de la création du produit:', error);
+        // }
+    });
+  

@@ -65,48 +65,51 @@ console.log("fffffffffffffff")
 /*--
         AFFICHER LES FOURNISSEURS TRUE
     -----------------------------------*/ 
-    $(document).ready(function() {
-      $.ajax({
-          url: 'http://192.168.0.53:3000/fournisseurs/valides',
-          type: 'GET',
-          dataType: 'json',
-          success: function(data) {
-              // Loop over the data
-              data.forEach(function(fournisseur) {
-                  // Create a new grid item for each fournisseur
-                  var gridItem = `
-                      <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
-                          <div class="grid-item ">
-                              <div class="ht-team-member">
-                                  <div class="team-image">
-                                      <a href="event-product.html">
-                                          <img class="img-fluid" src="${fournisseur.logoEntreprise}" alt="">
-                                      </a>
-                                      <div class="social-networks">
-                                          <div class="inner">
-                                              <a target="_blank" href="${fournisseur.facebook}" class=" hint--bounce hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                              <a target="_blank" href="${fournisseur.twitter}" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                              <a target="_blank" href="${fournisseur.instagram}" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                              <a target="_blank" href="${fournisseur.youtube}" class=" hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="team-info text-center">
-                                      <h6 class="name">${fournisseur.nomEntreprise}</h6>
-                                      <div class="position">${fournisseur.pays}</div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  `;
-  
-                  // Append the new grid item to the container
-                  $('#fournisseurs-container').append(gridItem);
-              });
-          },
-          error: function(error) {
-              console.log('Error when retrieving valid suppliers', error);
-          }
-      });
-  });
-  
+ // Fonction pour récupérer les fournisseurs depuis l'API
+//  function getFournisseurs() {
+//   fetch("http://192.168.31.147:3000/fournisseurs/valides")
+//     .then(response => response.json())
+//     .then(data => {
+//       // Traitement des données reçues de l'API
+//       if (data && data.length > 0) {
+//         data.forEach(function (fournisseur) {
+//           var fournisseurElement = `
+//             <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50">
+//               <div class="grid-item">
+//                 <div class="ht-team-member">
+//                   <div class="team-image">
+//                     <a href="event-product.html">
+//                       <img class="img-fluid" src="${fournisseur.image_url}" alt="">
+//                     </a>
+//                     <div class="social-networks">
+//                       <div class="inner">
+//                         <a target="_blank" href="${fournisseur.facebook_url}" class="hint--bounce hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+//                         <a target="_blank" href="${fournisseur.twitter_url}" class="hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+//                         <a target="_blank" href="${fournisseur.instagram_url}" class="hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+//                         <a target="_blank" href="${fournisseur.youtube_url}" class="hint--bounce hint--top hint--theme-two" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+//                       </div>
+//                     </div>
+//                   </div>
+//                   <div class="team-info text-center">
+//                     <h6 class="name">${fournisseur.name}</h6>
+//                     <div class="position">${fournisseur.location}</div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           `;
+
+//           // Ajouter l'élément du fournisseur au conteneur
+//           document.getElementById("fournisseurs-container").innerHTML += fournisseurElement;
+//         });
+//       }
+//     })
+//     .catch(error => {
+//       console.error("Une erreur s'est produite lors de la récupération des fournisseurs :", error);
+//     });
+// }
+
+// // Appeler la fonction pour afficher les fournisseurs
+// getFournisseurs();
+
+
