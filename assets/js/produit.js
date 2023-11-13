@@ -5,7 +5,7 @@
 const categoriesDropdown = document.getElementById('categorie');
 
 // Récupérez les données depuis votre API
-    fetch('http://192.168.1.25:3000/categories')
+    fetch('http://192.168.31.147:3000/categories')
     .then(response => response.json())
     .then(data => {
         // Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.getElementById('products-container');
 
     // Récupérez les données depuis votre API
-    fetch('http://192.168.1.25:3000/produitsAdmin')
+    fetch('http://192.168.31.147:3000/produitsAdmin')
         .then(response => response.json())
         .then(data => {
             // Parcourez les données et ajoutez-les à la page
@@ -69,7 +69,7 @@ function fetchProductsByCategory() {
 
     // Effectuez une requête AJAX pour récupérer les produits par catégorie
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://192.168.1.25:3000/produitsAdmin/categories/${categorieId}`, true);
+    xhr.open("GET", `http://192.168.31.147:3000/produitsAdmin/categories/${categorieId}`, true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -126,7 +126,7 @@ if (idMatch) {
 
     // Utiliser l'ID dans la requête AJAX
     var settings = {
-        "url": "http://192.168.1.25:3000/produitsAdmin/produit/" + id,
+        "url": "http://192.168.31.147:3000/produitsAdmin/produit/" + id,
         "method": "GET",
         "timeout": 0,
     };

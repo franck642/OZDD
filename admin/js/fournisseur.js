@@ -5,7 +5,7 @@ $(document).ready(function() {
     // Function to get suppliers from the API
     function getFournisseurs() {
         $.ajax({
-            url: 'http://192.168.0.53:3000/fournisseurs',
+            url: 'http://192.168.31.146:3000/fournisseurs',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectElement = document.getElementById('nomEntreprise');
   
     // Récupérez les données depuis l'API des fournisseurs validés
-    fetch('http://192.168.31.147:3000/fournisseurs/valides')
+    fetch('http://192.168.31.146:3000/fournisseurs/valides')
       .then(response => response.json())
       .then(data => {
         // Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('image', image); // Ajoute le fichier d'image à FormData
         console.log("hhhhhhhhhhhhhhhhhhhhh", formData)
         try {
-            const response = await fetch('http://192.168.31.147:3000/produitsFournisseurs', {
+            const response = await fetch('http://192.168.31.146:3000/produitsFournisseurs', {
                 method: 'POST',
                 body: formData
             });

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Récupérez la référence de la liste déroulante
 	const selectElement = document.getElementById('categorie');
 	// Récupérez les données depuis votre API
-	fetch('http://192.168.31.145:3000/categories')
+	fetch('http://192.168.31.147:3000/categories')
 		.then(response => response.json())
 		.then(data => {
 			// Parcourez les données et ajoutez-les comme options dans la liste déroulante
@@ -43,7 +43,7 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
     formData.append('image', image); // Ajoute le fichier d'image à FormData
 	console.log("zzzzzzzzzzzzzzzz", formData)
     try {
-        const response = await fetch('http://192.168.31.145:3000/produitsAdmin', {
+        const response = await fetch('http://192.168.31.147:3000/produitsAdmin', {
             method: 'POST',
             body: formData
         });
