@@ -1,7 +1,7 @@
 /*--------------------------
  AFFICHER FORMATION
 ---------------------------- */
-fetch('http://192.168.0.23:3000/formations')
+fetch('https://ozdd.onrender.com/formations')
   .then(response => response.json())
   .then(data => {
     let formationsContainer = document.getElementById('formationsContainer');

@@ -4,7 +4,7 @@
 $(document).ready(function () {
     // Faites une requête GET pour récupérer les blogs depuis l'API
     $.ajax({
-        url: "http://192.168.1.25:3000/blogs",
+        url: "https://ozdd.onrender.com/blogs",
         type: "GET",
         success: function (data) {
             // Parcourez les données des blogs et affichez-les dans le conteneur
@@ -75,7 +75,7 @@ $(document).ready(function () {
     
         // Utiliser l'ID dans la requête AJAX
         var settings = {
-            "url": "http://192.168.1.25:3000/blogs/blog/" + id,
+            "url": "https://ozdd.onrender.com/blogs/blog/" + id,
             "method": "GET",
             "timeout": 0,
         };

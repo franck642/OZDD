@@ -8,7 +8,7 @@ form.addEventListener('submit', function(e) {
 
   let formData = new FormData(this);
 
-  fetch('http://192.168.0.28:3000/formations', {
+  fetch('https://ozdd.onrender.com/formations', {
     method: 'POST',
     body: formData
   })

@@ -26,7 +26,7 @@ $(document).ready(function() {
       // Effectuez une requête POST vers votre API
       $.ajax({
           type: 'POST',
-          url: 'http://192.168.31.144:3000/users/sinscrire',
+          url: 'https://ozdd.onrender.com/users/sinscrire',
           data: JSON.stringify(formData),
           contentType: 'application/json',
           success: function(response) {
@@ -108,7 +108,7 @@ $(document).ready(function() {
           // Effectuez une requête POST vers votre API
           $.ajax({
             type: "POST",
-            url: "http://192.168.31.146:3000/users/connexion",
+            url: "https://ozdd.onrender.com/users/connexion",
             data: JSON.stringify(formData),
             contentType: "application/json",
             success: function (response) {
@@ -204,33 +204,32 @@ $(document).ready(function() {
 /*--
         CACHER BUTTON
     -----------------------------------*/
-// Fonction pour afficher l'icône de l'utilisateur connecté ou le bouton de connexion
-// function toggleUserIcon() {
-//   const userIcon = document.getElementById("userIcon");
-//   const loginButton = document.getElementById("loginButton");
+function toggleUserIcon() {
+  const userIcon = document.getElementById("userIcon");
+  const loginButton = document.getElementById("loginButton");
 
-//   // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
-//   const userData = {
-//       "success": true, // Remplacez ceci par la valeur appropriée
-//   };
+  // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
+  const userData = {
+      "success": true, // Remplacez ceci par la valeur appropriée
+  };
 
-//   if (userData.success) {
-//       // L'utilisateur est connecté, affiche l'icône
-//       userIcon.style.display = "block";
-//       loginButton.style.display = "none";
-//   } else {
-//       // L'utilisateur n'est pas connecté, affiche le bouton de connexion
-//       userIcon.style.display = "none";
-//       loginButton.style.display = "inline-block";
-//   }
-// }
+  if (userData.success) {
+      // L'utilisateur est connecté, affiche l'icône
+      userIcon.style.display = "block";
+      loginButton.style.display = "none";
+  } else {
+      // L'utilisateur n'est pas connecté, affiche le bouton de connexion
+      userIcon.style.display = "none";
+      loginButton.style.display = "inline-block";
+  }
+}
 
-// // Fonction pour simuler un clic sur l'icône de l'utilisateur
-// function toggleDropdown() {
-//   const userDropdown = document.getElementById("userDropdown");
-//   userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
-// }
+// Fonction pour simuler un clic sur l'icône de l'utilisateur
+function toggleDropdown() {
+  const userDropdown = document.getElementById("userDropdown");
+  userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
+}
 
-// // Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
-// toggleUserIcon();
+// Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
+toggleUserIcon();
 

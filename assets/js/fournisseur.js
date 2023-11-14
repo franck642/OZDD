@@ -4,7 +4,7 @@ console.log("fffffffffffffff")
     -----------------------------------*/ 
 
 var settings = {
-  "url": "http://192.168.31.146:3000/fournisseurs/valides",
+  "url": "https://ozdd.onrender.com/fournisseurs/valides",
   "method": "GET",
   "timeout": 0,
 };
@@ -38,8 +38,7 @@ $.ajax(settings).done(function (response) {
                   <div class="member-info text-center">
                       <h6 class="member-name">${fournisseur.nomEntreprise}</h6>
                       <div class="member-position">${fournisseur.pays}</div>
-                      <div>
-                          <a href="event-product.html"><button class="services-button">Services</button></a>
+                      <div><a href="event-product.html?id=${fournisseur._id}" data-id="${fournisseur._id}" class="services-button">Services</a>
                       </div>
                   </div>
               </div>
@@ -94,7 +93,7 @@ $.ajax(settings).done(function (response) {
       console.log(formData);
     
       // Effectuez une requête POST vers l'API
-      fetch('http://192.168.31.146:3000/fournisseurs', {
+      fetch('https://ozdd.onrender.com/fournisseurs', {
         method: 'POST',
         body: formData
       })
@@ -127,5 +126,57 @@ $.ajax(settings).done(function (response) {
 /*--
         AFFICHER LES FOURNISSEURS TRUE
     -----------------------------------*/ 
-  
-  
+    var url = window.location.href;
+    var idMatch = url.match(/[?&]id=([^&]*)/);
+    
+    if (idMatch) {
+        var entrepriseId = idMatch[1];
+    
+        // Utiliser l'ID dans la requête AJAX pour récupérer les produits
+        var productsSettings = {
+            "url": "https://ozdd.onrender.com/produitsFournisseurs?nomEntreprise=" + entrepriseId,
+            "method": "GET",
+            "timeout": 0,
+        };
+    
+        // Effectuer la requête AJAX pour récupérer les produits de l'entreprise
+        $.ajax(productsSettings).done(function (products) {
+            console.log(products);
+    
+            // Manipuler la réponse ici et afficher les produits dans votre HTML
+            displayProducts(products);
+        });
+    } else {
+        console.log("ID de l'entreprise non trouvé dans l'URL");
+    }
+    
+    function displayProducts(products) {
+        // Sélectionnez l'élément HTML où vous souhaitez afficher les produits
+        var container = $("#productsContainer");
+    
+        // Parcourez les produits et générez le HTML correspondant
+        products.forEach(function (product) {
+            var productHtml = `
+                <div class="col max-mb-30" data-aos="fade-up">
+                    <div class="course-7 course-fluid">
+                        <div class="thumbnail">
+                            <a href="product-details.html" class="image">
+                                <img src="${product.image}" alt="Course Image">
+                            </a>
+                            <div class="actions">                                   
+                                <a href="shopping-cart.html" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                                 
+                            </div>
+                        </div>
+                        <div class="info text-center">
+                            <span class="price">${product.prix} XOF</span>                              
+                            <h3 class="title"><a href="product-details.html">${product.titre}</a></h3>                              
+                        </div>
+                    </div>
+                </div>`;
+    
+            // Ajoutez le HTML du produit au conteneur
+            container.append(productHtml);
+        });
+    }
+    
+    
