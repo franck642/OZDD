@@ -204,32 +204,60 @@ $(document).ready(function() {
 /*--
         CACHER BUTTON
     -----------------------------------*/
-function toggleUserIcon() {
-  const userIcon = document.getElementById("userIcon");
-  const loginButton = document.getElementById("loginButton");
+// function toggleUserIcon() {
+//   const userIcon = document.getElementById("userIcon");
+//   const loginButton = document.getElementById("loginButton");
 
-  // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
-  const userData = {
-      "success": true, // Remplacez ceci par la valeur appropriée
-  };
+//   // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
+//   const userData = {
+//       "success": true, // Remplacez ceci par la valeur appropriée
+//   };
 
-  if (userData.success) {
-      // L'utilisateur est connecté, affiche l'icône
-      userIcon.style.display = "block";
-      loginButton.style.display = "none";
-  } else {
-      // L'utilisateur n'est pas connecté, affiche le bouton de connexion
-      userIcon.style.display = "none";
-      loginButton.style.display = "inline-block";
+//   if (userData.success) {
+//       // L'utilisateur est connecté, affiche l'icône
+//       userIcon.style.display = "block";
+//       loginButton.style.display = "none";
+//   } else {
+//       // L'utilisateur n'est pas connecté, affiche le bouton de connexion
+//       userIcon.style.display = "none";
+//       loginButton.style.display = "inline-block";
+//   }
+// }
+
+// // Fonction pour simuler un clic sur l'icône de l'utilisateur
+// function toggleDropdown() {
+//   const userDropdown = document.getElementById("userDropdown");
+//   userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
+// }
+
+// // Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
+// toggleUserIcon();
+
+$(document).ready(function () {
+  // Votre URL d'API
+  const apiUrl = "https://ozdd.onrender.com/users/connexion";
+
+  // Fonction pour effectuer une requête à l'API
+  function getUserData() {
+     $.ajax({
+        url: apiUrl,
+        method: "GET",
+        success: function (response) {
+           // Vérifier si la connexion a réussi
+           if (response.success) {
+              // Cacher le bouton de connexion
+              $("#loginButton").hide();
+
+              // Afficher l'icône (remplacez "idDeLIcone" par l'ID de l'élément que vous souhaitez afficher)
+              $("#userIcon").show();
+           }
+        },
+        error: function (error) {
+           console.error("Erreur lors de la requête à l'API:", error);
+        }
+     });
   }
-}
 
-// Fonction pour simuler un clic sur l'icône de l'utilisateur
-function toggleDropdown() {
-  const userDropdown = document.getElementById("userDropdown");
-  userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
-}
-
-// Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
-toggleUserIcon();
-
+  // Appeler la fonction lors du chargement de la page
+  getUserData();
+});

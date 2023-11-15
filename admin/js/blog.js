@@ -124,7 +124,7 @@ function displayBlogs(blogs) {
                         <h4>${blog.titre}</h4>
                     </a>
                 </div>
-                <p>${blog.content}</p>
+                <p>${blog.createdAt}</p>
             </div>
             <div class="panel-footer">
                 <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>

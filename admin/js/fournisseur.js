@@ -23,7 +23,7 @@ $(document).ready(function() {
                                     <div class="text-muted">${fournisseur.pays}</div>
                                 </div>
                                 <div class="ml-auto"> <!-- This "ml-auto" class will align the button to the right -->
-                                <button class="btn btn-primary" onclick="changerStatut('${fournisseur._id}')">Changer Statut</button>
+                                <button class="btn btn-primary" onclick="changerStatut('${fournisseur._id}')">details</button>                               
                             </div>
                             </div>
                         </li>

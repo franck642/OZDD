@@ -91,11 +91,9 @@
                                 <ul class="submenu-angle" aria-expanded="true">                              
                                     <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Liste produits</span></a></li>
                                     <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Créer produit</span></a></li>
-                                    <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Détails produit</span></a></li>
                                     <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Panier produit</span></a></li>
                                     <li><a title="Product Edit" href="formation-edit.html"><span class="mini-sub-pro">Créer formation</span></a></li>
                                     <li><a title="Product Edit" href="formation-list.html"><span class="mini-sub-pro">Liste formation</span></a></li>
-                                    <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">Gestionnaire fichiers</span></a></li>
                                     <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
                                     <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Détails Blog</span></a></li>
                                     <li><a title="Blog Edit" href="blog-edit.html"><span class="mini-sub-pro">Créer Blog</span></a></li>                               
@@ -114,9 +112,7 @@
                                 <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">Divers</span></a>
                                 <ul class="submenu-angle" aria-expanded="false">                                  
                                     <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
-                                    <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>                                  
-                                    <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Récupérer mot de pass</span></a></li>
-                                    <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Indicateur mot de pass</span></a></li>                             
+                                    <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
                                 </ul>
                             </li>
                         </li>                                                                      
@@ -189,11 +185,9 @@
                                             <ul class="collapse dropdown-header-top">                                                
                                                 <li><a href="product-list.html">Liste produits</a></li>
                                                 <li><a href="product-edit.html">Créer produit</a></li>
-                                                <li><a href="product-detail.html">Détails du produit</a></li>
                                                 <li><a href="product-cart.html">Panier produit</a></li> 
                                                 <li><a href="formation-edit.html">Créer formation</a></li>
                                                 <li><a href="formation-list.html">Liste formation</a></li> 
-                                                <li><a href="file-manager.html">Gestionnaire de fichiers</a></li>
                                                 <li><a href="blog.html">Blog</a></li>
                                                 <li><a href="blog-details.html">Détails blog</a></li>  
                                                 <li><a href="blog-edit.html">Créer Blog</a></li>                                                                                            
@@ -210,9 +204,7 @@
                                         <li><a data-toggle="collapse" data-target="#others" href="#">Fournisseur <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">                                       
                                                 <li><a href="404.html">Page 404</a></li>
-                                                <li><a href="500.html">Page 500</a></li>                                               
-                                                <li><a href="password-recovery.html">Récupérer mot de pass</a></li>  
-                                                <li><a href="password-meter.html">Indicateur mot de pass</a></li>                                                                                        
+                                                <li><a href="500.html">Page 500</a></li>                                                                                       
                                             </ul> 
                                         </li>                                                                              
                                     </ul>
@@ -221,7 +213,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><br><br><br><br>
             <!-- Mobile Menu end -->
             <div class="breadcome-area">
                 <div class="container-fluid">
@@ -261,25 +253,20 @@
                             <div class="add-product">
                                 <a href="formation-edit.html">Ajouter une formation</a>
                             </div>
-                            <table>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Titre de la formation</th>                                   
-                                    <th>Pdf</th>
-                                    <th>Prix</th>
-                                    <th>Paramètres</th>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
-                                    <td>Titre de la formation 1</td>
-                                    <td>???</td>
-                                    <td>Gratuit</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                            </table>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Titre de la formation</th>  
+                                            <th>Pdf</th>                     
+                                            <th>Prix</th>
+                                            <th>Paramètres</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="formationTableBody">
+                                        
+                                    </tbody>
+                                </table>
                             <div class="custom-pagination">
                                 <ul class="pagination">
                                     <li class="page-item"><a class="page-link" href="#">Précédent</a></li>
@@ -357,6 +344,8 @@
     <script src="js/main.js"></script>
     <script src="js/blog.js"></script>
     <script src="js/produits.js"></script>
+    <script src="js/produit-list.js"></script>
+    <script src="js/formations-list.js"></script>
     <script src="js/formations.js"></script>
     <script src="js/fournisseur.js"></script>
 </body>

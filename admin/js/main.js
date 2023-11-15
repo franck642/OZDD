@@ -126,7 +126,5 @@ if (imageUpload !== null && typeof imageUpload !== "undefined") {
     console.error("La variable imageUpload est null ou undefined.");
 }
 
-/*--------------------------
- FOURNISSEURS LIST
----------------------------- */
+
 
