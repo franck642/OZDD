@@ -60,34 +60,34 @@
 /*--
         AFFICHER DETAILS PRODUIT
     -----------------------------------*/ 
-    // var url = window.location.href;
-    // var idMatch = url.match(/[?&]id=([^&]*)/);
+    var url = window.location.href;
+    var idMatch = url.match(/[?&]id=([^&]*)/);
     
-    // if (idMatch) {
-    //     var id = idMatch[1];
+    if (idMatch) {
+        var id = idMatch[1];
     
-    //     // Utiliser l'ID dans la requête AJAX
-    //     var settings = {
-    //         "url": "https://ozdd.onrender.com/produitsAdmin/produit/" + id,
-    //         "method": "GET",
-    //         "timeout": 0,
-    //     };
+        // Utiliser l'ID dans la requête AJAX
+        var settings = {
+            "url": "https://ozdd.onrender.com/produitsFournisseurs/produit/" + id,
+            "method": "GET",
+            "timeout": 0,
+        };
     
-    //     // Effectuer la requête AJAX
-    //     $.ajax(settings).done(function (response) {
-    //         console.log(response);
-    //     });
-    // } else {
-    //     console.log("ID non trouvé dans l'URL");
-    // }
+        // Effectuer la requête AJAX
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    } else {
+        console.log("ID non trouvé dans l'URL");
+    }
     
-    // $.ajax(settings).done(function (response) {
-    //     // Mettez à jour les éléments HTML avec les données du produit
-    //     $('.single-product-image img').attr('src', response.image);
-    //     $('.single-product-content h3.title').text(response.titre);
-    //     $('.single-product-content .price-new').text(response.prix + ' XOF');
-    //     $('.single-product-content .meta-content').text(response.categorie.categorie);
-    //     $('.description-list ul li:first-child').text(response.description);
+    $.ajax(settings).done(function (response) {
+        // Mettez à jour les éléments HTML avec les données du produit
+        $('.single-product-image img').attr('src', response.image);
+        $('.single-product-content h3.title').text(response.titre);
+        $('.single-product-content .price-new').text(response.prix + ' XOF');
+        $('.single-product-content .meta-content').text(response.nomEntreprise);
+        $('.description-list ul li:first-child').text(response.description);
     
-    //     // Mettez à jour d'autres propriétés du produit si nécessaire
-    // });
+        // Mettez à jour d'autres propriétés du produit si nécessaire
+    });
