@@ -82,11 +82,12 @@
     }
     
     $.ajax(settings).done(function (response) {
+        console.log(response)
         // Mettez à jour les éléments HTML avec les données du produit
         $('.single-product-image img').attr('src', response.image);
         $('.single-product-content h3.title').text(response.titre);
         $('.single-product-content .price-new').text(response.prix + ' XOF');
-        $('.single-product-content .meta-content').text(response.nomEntreprise);
+        $('.single-product-content .meta-content').text(response.nomEntreprise.nomEntreprise);
         $('.description-list ul li:first-child').text(response.description);
     
         // Mettez à jour d'autres propriétés du produit si nécessaire

@@ -127,7 +127,14 @@ $(document).ready(function() {
               //const tok = localStorage.getItem("userLastName");
               //const tok1 = localStorage.getItem("userFirstName");
               //console.log(tok1);
-              window.location.href = 'index.html';
+              // Vérifiez le statut admin
+                if (response.user.admin) {
+                    // Redirigez l'utilisateur vers la page index.html si admin est true
+                    window.location.href = 'index.html';
+                } else {
+                    // Redirigez l'utilisateur vers la page Admin/index-2.html si admin est false
+                    window.location.href = 'admin/index-2.html';
+                }
             },
             error: function (error) {
               // Gérez les erreurs de l'API (par exemple, affichez un message d'erreur)
@@ -233,31 +240,25 @@ $(document).ready(function() {
 // // Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
 // toggleUserIcon();
 
-$(document).ready(function () {
-  // Votre URL d'API
-  const apiUrl = "https://ozdd.onrender.com/users/connexion";
 
-  // Fonction pour effectuer une requête à l'API
-  function getUserData() {
-     $.ajax({
-        url: apiUrl,
-        method: "GET",
-        success: function (response) {
-           // Vérifier si la connexion a réussi
-           if (response.success) {
-              // Cacher le bouton de connexion
-              $("#loginButton").hide();
+// Fonction pour basculer le menu déroulant
+function toggleDropdown() {
+  var userDropdown = document.getElementById("userDropdown");
+  userDropdown.classList.toggle("show");
+}
 
-              // Afficher l'icône (remplacez "idDeLIcone" par l'ID de l'élément que vous souhaitez afficher)
-              $("#userIcon").show();
-           }
-        },
-        error: function (error) {
-           console.error("Erreur lors de la requête à l'API:", error);
-        }
-     });
-  }
+// Vérifier l'état de connexion
+var isConnected = localStorage.getItem("usertoken") !== null;
 
-  // Appeler la fonction lors du chargement de la page
-  getUserData();
-});
+// Cibler les éléments
+var loginButton = document.getElementById("loginButton");
+var userIcon = document.getElementById("userIcon");
+
+// Modifier la visibilité en fonction de l'état de connexion
+if (isConnected) {
+  loginButton.style.display = "none"; // Cacher le bouton de connexion
+  userIcon.style.display = "inline-block"; // Afficher l'icône d'utilisateur
+} else {
+  loginButton.style.display = "inline-block"; // Afficher le bouton de connexion
+  userIcon.style.display = "none"; // Cacher l'icône d'utilisateur
+}

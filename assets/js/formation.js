@@ -16,12 +16,12 @@ fetch('https://ozdd.onrender.com/formations')
         <div class="col max-mb-30" data-aos="fade-up">
             <div class="course-2">
                 <div class="thumbnail">
-                    <a href="#" class="image"><img src="${formation.imagePath}" alt="Course Image"></a>
+                    <a href="#" class="image"><img src="${formation.imagePath}" alt="Course Image" style="width: 200px; height: 200px;"></a>
                 </div>
                 <div class="info">
                     <span class="price">${formation.prix}</span>
                     <span class="date">${formattedDate}</span>
-                    <h3 class="title"><a href="#">${formation.titre}</a></h3>
+                    <h3 class="title" style="font-size: 18px;"><a href="#">${formation.titre}</a></h3>
                     <div class="meta"> 
                         <div class="media">
                             <button class="share-button btn-sm mb-3">Partager</button>

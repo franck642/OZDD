@@ -2,7 +2,7 @@
  AFFICHER FOURNISSEURS
 ---------------------------- */
 $(document).ready(function() {
-    // Function to get suppliers from the API
+
     function getFournisseurs() {
         $.ajax({
             url: 'https://ozdd.onrender.com/fournisseurs',
@@ -11,23 +11,42 @@ $(document).ready(function() {
             success: function(data) {
                 var fournisseurList = $('.list-group');
 
-                fournisseurList.empty(); // Remove old elements
+                fournisseurList.empty();
 
                 data.forEach(function(fournisseur) {
-                    var listItem = `
-                        <li class="list-group-item">
-                            <div class="media">
-                                <img class="rounded-circle mr-3" src="${fournisseur.logoEntreprise}" />
-                                <div class="media-body align-self-center">
-                                    <strong><a href="fournisseur detail.html">${fournisseur.nomEntreprise}</a></strong>
-                                    <div class="text-muted">${fournisseur.pays}</div>
+                    var listItem;
+
+                    if (fournisseur.fournisseur) {
+                        listItem = `
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <img class="rounded-circle mr-3" src="${fournisseur.logoEntreprise}" />
+                                    <div class="media-body align-self-center">
+                                        <strong><a href="fournisseur detail.html?id=${fournisseur._id}">${fournisseur.nomEntreprise}</a></strong>
+                                        <div class="text-muted">${fournisseur.pays}</div>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="text-success">Compte approuvé</span>
+                                    </div>
                                 </div>
-                                <div class="ml-auto"> <!-- This "ml-auto" class will align the button to the right -->
-                                <button class="btn btn-primary" onclick="changerStatut('${fournisseur._id}')">details</button>                               
-                            </div>
-                            </div>
-                        </li>
-                    `;
+                            </li>
+                        `;
+                    } else {
+                        listItem = `
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <img class="rounded-circle mr-3" src="${fournisseur.logoEntreprise}" />
+                                    <div class="media-body align-self-center">
+                                        <strong><a href="fournisseur detail.html?id=${fournisseur._id}">${fournisseur.nomEntreprise}</a></strong>
+                                        <div class="text-muted">${fournisseur.pays}</div>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <button class="btn btn-primary" id="fournisseurButton" data-id="${fournisseur._id}">Status</button>
+                                    </div>
+                                </div>
+                            </li>
+                        `;
+                    }
 
                     fournisseurList.append(listItem);
                 });
@@ -38,13 +57,76 @@ $(document).ready(function() {
         });
     }
 
-    // Call the function to get the suppliers when the page loads
     getFournisseurs();
 });
 
 
+
+/*--------------------------
+ CHANGER L'ETAT FOURNISSEURS
+---------------------------- */
+$(document).on('click', '#fournisseurButton', function() {
+    var fournisseurId = $(this).data('id');
+    console.log('Fournisseur ID: ' + fournisseurId);
+   
+    var settings = {
+      "url": "http://30.30.29.250:3000/fournisseurs/update/" + fournisseurId,
+      "method": "PUT",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify({
+        "fournisseur": true
+      }),
+    };
+   
+    var button = $(this); // Store a reference to the button
+   
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      button.hide(); // Hide the button after the AJAX request is successful
+    });
+   });
+   
+
+
+
+/*--------------------------
+ DETAILS FOURNISSEURS
+---------------------------- */
+if (idMatch) {
+    var id = idMatch[1];
+
+    // Utiliser l'ID dans la requête AJAX
+    var settings = {
+        "url": "http://30.30.29.250:3000/fournisseurs/" + id, 
+        "method": "GET",
+        "timeout": 0,
+    };
+
+    // Effectuer la requête AJAX
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+} else {
+    console.log("ID non trouvé dans l'URL");
+}
+$.ajax(settings).done(function (response) {
+    // Mettre à jour les éléments HTML avec les informations du fournisseur
+    $(".numeroTel").text(response.numeroTel);
+    $(".nomEntreprise").text(response.nomEntreprise);
+    $(".logo").attr("src", response.logoEntreprise); // Assure-toi que response.logoUrl contient l'URL du logo
+    $(".pieceIdentite").attr("src", response.pieceIdentite);
+    $(".pays").text(response.pays);
+});
+
+
+
+
+
 /*--
-        AFFICHER LES NOM DE ENTREPRISE DESFOURNISSEURS TRUE
+        AFFICHER LES NOM DE ENTREPRISE DES FOURNISSEURS VALIDES
     -------------------------------------------------------------------*/ 
 document.addEventListener('DOMContentLoaded', () => {
     // Récupérez la référence de la liste déroulante
@@ -68,9 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /*--
+/*--
         CREER LES PRODUITS FOURNISSEURS TRUE
-    ----------------------------------------------*/ 
+----------------------------------------------*/ 
     document.getElementById('btnCreateProductFournisseur').addEventListener('click', async () => {
         const titre = document.getElementById('titre').value;
         const description = document.getElementById('description').value;
@@ -121,3 +203,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+
