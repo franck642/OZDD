@@ -13260,7 +13260,8 @@ textarea:focus {
 /* 08.02. Course Two CSS */
 .course-2 {
   overflow: hidden;
-  height: 100%;
+  height: 300px;
+  width: 100%;
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius: 5px;
