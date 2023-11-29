@@ -70,7 +70,7 @@ $(document).on('click', '#fournisseurButton', function() {
     console.log('Fournisseur ID: ' + fournisseurId);
    
     var settings = {
-      "url": "http://30.30.29.250:3000/fournisseurs/update/" + fournisseurId,
+      "url": "https://ozdd.onrender.com/fournisseurs/update/" + fournisseurId,
       "method": "PUT",
       "timeout": 0,
       "headers": {
@@ -100,7 +100,7 @@ if (idMatch) {
 
     // Utiliser l'ID dans la requête AJAX
     var settings = {
-        "url": "http://30.30.29.250:3000/fournisseurs/" + id, 
+        "url": "https://ozdd.onrender.com/fournisseurs/" + id, 
         "method": "GET",
         "timeout": 0,
     };

@@ -101,14 +101,13 @@ $.ajax(settings).done(function (response) {
         if (response.status === 200) {
           // Le fournisseur a été ajouté avec succès
           Swal.fire({
-              icon: 'success',
-              title: 'Succès',
-              text: 'Fournisseur ajouté avec succès !',
-          }).then(() => {
-              // Réinitialisez le formulaire ici si nécessaire
-              form.reset();
-              location.reload();
-          });
+            icon: 'success',
+            title: 'Succès',
+            text: 'Merci d\'avoir rempli ce formulaire, votre demande sera approuvée d\'ici 24 heures !',
+        }).then(() => {
+          form.reset();
+          location.reload();
+      });       
       } else {
           Swal.fire({
               icon: 'error',
