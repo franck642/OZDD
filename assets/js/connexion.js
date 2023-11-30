@@ -62,7 +62,7 @@
           // Effectuez une requête POST vers votre API
           $.ajax({
             type: "POST",
-            url: "https://30.30.13.153:3000/users/connexion",
+            url: "https://ozdd.onrender.com/users/connexion",
             data: JSON.stringify(formData),
             contentType: "application/json",
             success: function (response) {
@@ -84,10 +84,10 @@
               // Vérifiez le statut admin
                 if (response.user.admin) {
                     // Redirigez l'utilisateur vers la page index.html si admin est true
-                    window.location.href = 'index.html';
-                } else {
-                    // Redirigez l'utilisateur vers la page Admin/index-2.html si admin est false
                     window.location.href = 'admin/index-2.html';
+                } else {
+                    // Redirigez l'utilisateur vers la page Admin/index-2.html si admin est false                    
+                    window.location.href = 'index.html';
                 }
             },
             error: function (error) {
