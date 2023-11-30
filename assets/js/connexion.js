@@ -1,16 +1,6 @@
 /*--
         CONNEXION
-    -----------------------------------*/
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + JSON.stringify(value) + expires + "; path=/";
-    }
-    
+    -----------------------------------*/   
     // Fonction pour récupérer des données depuis un cookie
     function setCookie(name, value, days) {
         var expires = "";
@@ -215,24 +205,24 @@
       
       
       // Fonction pour basculer le menu déroulant
-    //   function toggleDropdown() {
-    //     var userDropdown = document.getElementById("userDropdown");
-    //     userDropdown.classList.toggle("show");
-    //   }
+      function toggleDropdown() {
+        var userDropdown = document.getElementById("userDropdown");
+        userDropdown.classList.toggle("show");
+      }
       
-    //   // Vérifier l'état de connexion
-    //   var isConnected = localStorage.getItem("usertoken") !== null;
+      // Vérifier l'état de connexion
+      var isConnected = localStorage.getItem("usertoken") !== null;
       
-    //   // Cibler les éléments
-    //   var loginButton = document.getElementById("loginButton");
-    //   var userIcon = document.getElementById("userIcon");
+      // Cibler les éléments
+      var loginButton = document.getElementById("loginButton");
+      var userIcon = document.getElementById("userIcon");
       
-    //   // Modifier la visibilité en fonction de l'état de connexion
-    //   if (isConnected) {
-    //     loginButton.style.display = "none"; // Cacher le bouton de connexion
-    //     userIcon.style.display = "inline-block"; // Afficher l'icône d'utilisateur
-    //   } else {
-    //     loginButton.style.display = "inline-block"; // Afficher le bouton de connexion
-    //     userIcon.style.display = "none"; // Cacher l'icône d'utilisateur
-    //   }
+      // Modifier la visibilité en fonction de l'état de connexion
+      if (isConnected) {
+        loginButton.style.display = "none"; // Cacher le bouton de connexion
+        userIcon.style.display = "inline-block"; // Afficher l'icône d'utilisateur
+      } else {
+        loginButton.style.display = "inline-block"; // Afficher le bouton de connexion
+        userIcon.style.display = "none"; // Cacher l'icône d'utilisateur
+      }
       
