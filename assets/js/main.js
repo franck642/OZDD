@@ -902,40 +902,10 @@ function previewImage() {
 
     
  /*--
-        Add to cart
+        CACHER ICON
     -----------------------------------*/
-
-// Récupérez tous les éléments d'icônes "Add to cart"
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-// Ajoutez un gestionnaire d'événements de clic à chaque bouton
-addToCartButtons.forEach(button => {
-    button.addEventListener('click', addToCart);
+ // JavaScript code to hide the user icon
+ document.addEventListener("DOMContentLoaded", function () {
+    var userIcon = document.getElementById("userIcon");
+    userIcon.style.display = "none"; // Hide the user icon
 });
-
-// Fonction pour ajouter un produit au panier
-function addToCart(event) {
-    event.preventDefault(); // Empêche la navigation vers shopping-cart.html
-
-    // Récupérez les informations du produit que vous souhaitez ajouter au panier
-    const productInfo = {
-        name: "Engrais-complet-Solabiol-1-kg",
-        price: 4000,
-        // Ajoutez d'autres informations du produit si nécessaire
-    };
-
-    // Récupérez le panier existant depuis le stockage local ou créez-en un nouveau
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Ajoutez le produit au panier
-    cart.push(productInfo);
-
-    // Enregistrez le panier mis à jour dans le stockage local
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Affichez un message de confirmation ou effectuez d'autres actions
-    alert('Le produit a été ajouté au panier.');
-
-    // Redirigez l'utilisateur vers la page du panier
-    window.location.href = "shopping-cart.html";
-}

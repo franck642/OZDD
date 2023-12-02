@@ -14,7 +14,7 @@ fetch('https://ozdd.onrender.com/formations')
       let formationDiv = document.createElement('div');
       formationDiv.innerHTML = `
         <div class="col max-mb-30" data-aos="fade-up">
-            <div class="course-2">
+            <div class="course-2" style=" height: 300px;">
                 <div class="thumbnail">
                     <a href="#" class="image"><img src="${formation.imagePath}" alt="Course Image"></a>
                 </div>

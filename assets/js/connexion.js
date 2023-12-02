@@ -92,24 +92,31 @@
             },
           });
         });
+        
+          var userToken = localStorage.getItem("usertoken");
+          if (userToken) {
+            $("#loginButton").hide();
+            $("#userIcon").show();
+          } else {
+            // Si l'utilisateur n'est pas connecté, masquer l'icône et le menu utilisateur
+            $("#userIcon").hide();
+          }
+
+          // Déconnexion
+            $("#deconnect").click(function(e) {
+              e.preventDefault();
+              deconn();
+          });
+
+          function deconn() {
+              localStorage.removeItem("usertoken");
+              localStorage.removeItem("userLastName");
+              localStorage.removeItem("userFirstName");
+              localStorage.removeItem("useremail");
+              window.location.href = 'login.html';
+          }
       });
       
-      const deconnect = document.getElementById('deconnect');
-      
-      function deconn() {
-        localStorage.removeItem("usertoken");
-        localStorage.removeItem("userLastName");
-        localStorage.removeItem("userFirstName");
-        localStorage.removeItem("useremail");
-        window.location.href = 'login.html';
-      } 
-      
-      deconnect.addEventListener("click", function(e) {
-          e.preventDefault();
-          deconn();
-      })
-    
-
 
     // $(document).ready(function() {
     //     $('#loginForm').submit(function(event) {
@@ -171,58 +178,4 @@
     //     });
     // });
       
-      /*--
-              CACHER BUTTON
-          -----------------------------------*/
-      // function toggleUserIcon() {
-      //   const userIcon = document.getElementById("userIcon");
-      //   const loginButton = document.getElementById("loginButton");
-      
-      //   // Supposons que vous ayez les informations de l'utilisateur dans la variable "userData"
-      //   const userData = {
-      //       "success": true, // Remplacez ceci par la valeur appropriée
-      //   };
-      
-      //   if (userData.success) {
-      //       // L'utilisateur est connecté, affiche l'icône
-      //       userIcon.style.display = "block";
-      //       loginButton.style.display = "none";
-      //   } else {
-      //       // L'utilisateur n'est pas connecté, affiche le bouton de connexion
-      //       userIcon.style.display = "none";
-      //       loginButton.style.display = "inline-block";
-      //   }
-      // }
-      
-      // // Fonction pour simuler un clic sur l'icône de l'utilisateur
-      // function toggleDropdown() {
-      //   const userDropdown = document.getElementById("userDropdown");
-      //   userDropdown.style.display = (userDropdown.style.display === "block") ? "none" : "block";
-      // }
-      
-      // // Appel de la fonction pour afficher l'icône ou le bouton en fonction des informations de l'utilisateur
-      // toggleUserIcon();
-      
-      
-      // Fonction pour basculer le menu déroulant
-      function toggleDropdown() {
-        var userDropdown = document.getElementById("userDropdown");
-        userDropdown.classList.toggle("show");
-      }
-      
-      // Vérifier l'état de connexion
-      var isConnected = localStorage.getItem("usertoken") !== null;
-      
-      // Cibler les éléments
-      var loginButton = document.getElementById("loginButton");
-      var userIcon = document.getElementById("userIcon");
-      
-      // Modifier la visibilité en fonction de l'état de connexion
-      if (isConnected) {
-        loginButton.style.display = "none"; // Cacher le bouton de connexion
-        userIcon.style.display = "inline-block"; // Afficher l'icône d'utilisateur
-      } else {
-        loginButton.style.display = "inline-block"; // Afficher le bouton de connexion
-        userIcon.style.display = "none"; // Cacher l'icône d'utilisateur
-      }
       
