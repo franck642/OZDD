@@ -80,32 +80,32 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
 /*--------------------------
  AFFICHER PRODUIT
 ---------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-	const productTableBody = document.getElementById('productTableBody');
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const productTableBody = document.getElementById('productTableBody');
 
-	// Récupérez les données depuis votre API
-	fetch('https://ozdd.onrender.com/produitsAdmin')
-		.then(response => response.json())
-		.then(data => {
-			console.log(data)
-			// Parcourez les données et ajoutez-les au tableau
-			data.forEach(product => {
-				const newRow = document.createElement('tr');
-				newRow.innerHTML = `
-					<td><img src="${product.image}" alt="" /></td>
-					<td>${product.titre}</td>				
-					<td>${product.prix}</td>
-					<td>
-						<button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-						<button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-					</td>
-				`;
-				productTableBody.appendChild(newRow);
-			});
-		})
-		.catch(error => {
-			console.error('Erreur lors de la récupération des produits depuis l\'API:', error);
-		});
-});
+// 	// Récupérez les données depuis votre API
+// 	fetch('https://ozdd.onrender.com/produitsAdmin')
+// 		.then(response => response.json())
+// 		.then(data => {
+// 			console.log(data)
+// 			// Parcourez les données et ajoutez-les au tableau
+// 			data.forEach(product => {
+// 				const newRow = document.createElement('tr');
+// 				newRow.innerHTML = `
+// 					<td><img src="${product.image}" alt="" /></td>
+// 					<td>${product.titre}</td>				
+// 					<td>${product.prix}</td>
+// 					<td>
+// 						<button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+// 						<button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+// 					</td>
+// 				`;
+// 				productTableBody.appendChild(newRow);
+// 			});
+// 		})
+// 		.catch(error => {
+// 			console.error('Erreur lors de la récupération des produits depuis l\'API:', error);
+// 		});
+// });
 
 

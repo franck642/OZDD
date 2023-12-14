@@ -17,9 +17,6 @@
     
         // Effectuer la requête AJAX pour récupérer les produits de l'entreprise
         $.ajax(productsSettings).done(function (products) {
-            console.log(products);
-    
-            // Manipuler la réponse ici et afficher les produits dans votre HTML
             displayProducts(products);
         });
     } else {

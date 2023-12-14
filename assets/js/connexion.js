@@ -56,22 +56,22 @@
             data: JSON.stringify(formData),
             contentType: "application/json",
             success: function (response) {
+              console.log(response);
               // Gérez la réponse de l'API (par exemple, affichez un message de succès)
               connUserLastName= response.user.lastName;
               connFirstname= response.user.firstName;
               connEmail= response.user.email;
               conntoken = response.token;
+              
               // Stockez connDataResult dans un cookie
-              localStorage.setItem("userLastName", connUserLastName) // 30 jours d'expiration
-              localStorage.setItem("userFirstName", connFirstname)
-              localStorage.setItem("useremail", connEmail)
-              localStorage.setItem("usertoken", conntoken)
-      
-              // Redirigez l'utilisateur vers la page de connexion en cas de succès
-              //const tok = localStorage.getItem("userLastName");
-              //const tok1 = localStorage.getItem("userFirstName");
-              //console.log(tok1);
-              // Vérifiez le statut admin
+             // Stocker les informations dans le localStorage
+              localStorage.setItem('connUserLastName', connUserLastName);
+              localStorage.setItem('connFirstname', connFirstname);
+              localStorage.setItem('connEmail', connEmail);
+              localStorage.setItem('conntoken', conntoken);
+
+              
+       
                 if (response.user.admin) {
                     // Redirigez l'utilisateur vers la page index.html si admin est true
                     window.location.href = 'admin/index-2.html';

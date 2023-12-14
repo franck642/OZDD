@@ -7212,7 +7212,7 @@ textarea:focus {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.34;
-  color: #6ac5f1;
+  color: #FFBF05;
   margin-bottom: 20px;
 }
 .section-title-four .title {
@@ -9060,9 +9060,10 @@ textarea:focus {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #3F3A64;
+  font-size: 33px;
 }
 .intro1-content .title {
-  font-size: 63px;
+  font-size: 45px;
   line-height: 1.13;
   color: #3F3A64;
 }
@@ -20684,3 +20685,6 @@ ul.section-content .course-item .section-item-link .course-item-meta .item-meta-
 }
 
 
+#userinfoo {
+  color: #FFBF05;
+}
