@@ -93,8 +93,8 @@
           });
         });
         
-          var userToken = localStorage.getItem("usertoken");
-          if (userToken) {
+          var conntoken = localStorage.getItem("conntoken");
+          if (conntoken) {
             $("#loginButton").hide();
             $("#userIcon").show();
           } else {
