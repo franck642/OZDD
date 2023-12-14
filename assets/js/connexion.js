@@ -109,10 +109,10 @@
           });
 
           function deconn() {
-              localStorage.removeItem("usertoken");
-              localStorage.removeItem("userLastName");
-              localStorage.removeItem("userFirstName");
-              localStorage.removeItem("useremail");
+              localStorage.removeItem("conntoken");
+              localStorage.removeItem("connUserLastName");
+              localStorage.removeItem("connFirstname");
+              localStorage.removeItem("connEmail");
               window.location.href = 'login.html';
           }
       });
