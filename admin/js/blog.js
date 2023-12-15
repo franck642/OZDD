@@ -1,26 +1,26 @@
 /*--------------------------
  CATEGORIE BLOG
 ---------------------------- */	
-document.addEventListener('DOMContentLoaded', () => {
-    const categoriesDropdown = document.getElementById('categorieBlog');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const categoriesDropdown = document.getElementById('categorieBlog');
 
-    // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
-    fetch('https://ozdd.onrender.com/categoriesblog')
-        .then(response => response.json())
-        .then(data => {
-            // Parcourez les catégories récupérées et ajoutez-les au menu déroulant
-            data.forEach(category => {
-                const option = document.createElement('option');
-                option.value = category.id; // Assurez-vous que vous avez un champ "id" dans vos catégories
-                option.textContent = category.categorieBlog; // Assurez-vous que vous avez un champ "categorieBlog" dans vos catégories
-                categoriesDropdown.appendChild(option);
-                console.log(data);
-            });
-        })
-        .catch(error => {
-            console.error('Erreur lors de la récupération des catégories de blogs depuis l\'API:', error);
-        });
-});
+//     // Effectuez une requête AJAX pour récupérer les catégories depuis votre API
+//     fetch('https://ozdd.onrender.com/categoriesblog')
+//         .then(response => response.json())
+//         .then(data => {
+//             // Parcourez les catégories récupérées et ajoutez-les au menu déroulant
+//             data.forEach(category => {
+//                 const option = document.createElement('option');
+//                 option.value = category.id; // Assurez-vous que vous avez un champ "id" dans vos catégories
+//                 option.textContent = category.categorieBlog; // Assurez-vous que vous avez un champ "categorieBlog" dans vos catégories
+//                 categoriesDropdown.appendChild(option);
+//                 console.log(data);
+//             });
+//         })
+//         .catch(error => {
+//             console.error('Erreur lors de la récupération des catégories de blogs depuis l\'API:', error);
+//         });
+// });
 
 
 
@@ -128,7 +128,7 @@ function displayBlogs(blogs) {
             </div>
             <div class="panel-footer">
                 <span class="pull-right"><i class="fa fa-comments-o"> </i> 22 comments</span>
-                <i class="fa fa-eye"> </i>142 views
+                <button data-toggle="tooltip" title="Corbeille" id="deleteBlog" data-id="${blog._id}"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
             </div>
         </div>
         `;
@@ -175,3 +175,27 @@ $(document).ready(function () {
         $(".blog-details p").text(response.description);
     });
     
+
+
+    $(document).on('click', '#deleteBlog', function() {
+        var blogId = $(this).data('id');
+        // console.log('product ID: ' + productId);
+      
+        // Définissez les paramètres pour la requête AJAX DELETE
+        var settings = {
+          "url": "https://ozdd.onrender.com/blogs/blog/" + blogId,
+          "method": "DELETE",
+          "timeout": 0,
+        };
+      
+        // Effectuez la requête AJAX DELETE
+        $.ajax(settings)
+          .done(function(response) {
+            console.log('blog supprimé avec succès:', response);
+            location.reload();
+          })
+          .fail(function(error) {
+            console.error('Erreur lors de la suppression du blog:', error);
+            
+          });
+      });

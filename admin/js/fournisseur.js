@@ -67,7 +67,7 @@ $(document).ready(function() {
 ---------------------------- */
 $(document).on('click', '#fournisseurButton', function() {
     var fournisseurId = $(this).data('id');
-    console.log('Fournisseur ID: ' + fournisseurId);
+    // console.log('Fournisseur ID: ' + fournisseurId);
    
     var settings = {
       "url": "https://ozdd.onrender.com/fournisseurs/update/" + fournisseurId,

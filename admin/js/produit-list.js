@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	fetch('https://ozdd.onrender.com/produitsAdmin')
 		.then(response => response.json())
 		.then(data => {
-			console.log(data)
+			// console.log(data)
 			// Parcourez les données et ajoutez-les au tableau
 			data.forEach(product => {
 				const newRow = document.createElement('tr');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					<td>${product.prix}</td>
 					<td>
 						<button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-						<button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+						<button data-toggle="tooltip" title="Corbeille" id="deleteProduct" data-id="${product._id}" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 					</td>
 				`;
 				productTableBody.appendChild(newRow);
@@ -66,4 +66,29 @@ $.ajax(settings).done(function (response) {
 });
 
 
+
+
+$(document).on('click', '#deleteProduct', function() {
+	var productId = $(this).data('id');
+	// console.log('product ID: ' + productId);
+  
+	// Définissez les paramètres pour la requête AJAX DELETE
+	var settings = {
+	  "url": "https://ozdd.onrender.com/produitsAdmin/produit/" + productId,
+	  "method": "DELETE",
+	  "timeout": 0,
+	};
+  
+	// Effectuez la requête AJAX DELETE
+	$.ajax(settings)
+	  .done(function(response) {
+		console.log('Produit supprimé avec succès:', response);
+		location.reload();
+	  })
+	  .fail(function(error) {
+		console.error('Erreur lors de la suppression du produit:', error);
+		
+	  });
+  });
+  
 

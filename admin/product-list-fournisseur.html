@@ -91,7 +91,8 @@
                                 <ul class="submenu-angle" aria-expanded="true">                              
                                     <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Liste produits</span></a></li>
                                     <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Créer produit</span></a></li>
-                                    <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Panier produit</span></a></li>
+                                                                        <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">listes des commandes</span></a></li>
+
                                     <li><a title="Product Edit" href="formation-edit.html"><span class="mini-sub-pro">Créer formation</span></a></li>
                                     <li><a title="Product Edit" href="formation-list.html"><span class="mini-sub-pro">Liste formation</span></a></li>
                                     <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
@@ -183,7 +184,7 @@
                                             <ul class="collapse dropdown-header-top">                                                
                                                 <li><a href="product-list.html">Liste produits</a></li>
                                                 <li><a href="product-edit.html">Créer produit</a></li>
-                                                <li><a href="product-cart.html">Panier produit</a></li> 
+                                                <li><a href="product-cart.html">Liste des commandes</a></li>
                                                 <li><a href="formation-edit.html">Créer formation</a></li>
                                                 <li><a href="formation-list.html">Liste formation</a></li> 
                                                 <li><a href="blog.html">Blog</a></li>
@@ -223,7 +224,7 @@
 												<i class="icon nalika-home"></i>
 											</div>
 											<div class="breadcomb-ctn">
-												<h2>Liste des produits</h2>
+												<h2>Liste des produits fournisseur</h2>
 												<p>Bienvenue à l'OZDD <span class="bread-ntd">Admin</span></p>
 											</div>
 										</div>
@@ -247,34 +248,20 @@
                         <div class="product-status-wrap">
                             <h4>Liste des produits</h4>
                             <div class="add-product">
-                                <a href="product-edit.html">Ajouter un produit</a>
+                                <a href="product-edit-fournisseur.html">Ajouter un produit</a>
                             </div>
                             <table>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Titre du produit</th>
-                                    <th>Statut</th>
-                                    <th>Achats</th>
-                                    <th>Ventes du produit</th>
-                                    <th>Stock</th>
-                                    <th>Prix</th>
-                                    <th>Paramètres</th>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/new-product/5-small.jpg" alt="" /></td>
-                                    <td>Titre du produit 1</td>
-                                    <td>
-                                        <button class="pd-setting">Actif</button>
-                                    </td>
-                                    <td>50</td>
-                                    <td>$750</td>
-                                    <td>Épuisé</td>
-                                    <td>$15</td>
-                                    <td>
-                                        <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Titre du produit</th>                       
+                                        <th>Prix</th>
+                                        <th>Paramètres</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="">
+                                    
+                                </tbody>
                             </table>
                             <div class="custom-pagination">
                                 <ul class="pagination">

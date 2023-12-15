@@ -93,7 +93,7 @@ function fetchProductsByCategory() {
                                     <img src="${produit.image}" alt="Course Image">
                                 </a>
                                 <div class="actions">                                   
-                                    <a href="shopping-cart.html" id="" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
+                                    <a href="shopping-cart.html?id=${produit._id}" id="addToCart" class="action hintT-left hintT-primary add-to-cart" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>                               
                                 </div>
                             </div>
                             <div class="info text-center">
@@ -149,6 +149,32 @@ $.ajax(settings).done(function (response) {
 
     // Mettez à jour d'autres propriétés du produit si nécessaire
 });
+
+
+// $(document).on('click', '#addToCart', function() {
+// 	var produitId = $(this).data('id');
+// 	// console.log('product ID: ' + productId);
+  
+// 	// Définissez les paramètres pour la requête AJAX DELETE
+// 	var settings = {
+// 	  "url": "https://ozdd.onrender.com//" + produitId,
+// 	  "method": "",
+// 	  "timeout": 0,
+// 	};
+  
+// 	// Effectuez la requête AJAX DELETE
+// 	$.ajax(settings)
+// 	  .done(function(response) {
+// 		console.log('Produit supprimé avec succès:', response);
+// 		location.reload();
+// 	  })
+// 	  .fail(function(error) {
+// 		console.error('Erreur lors de la suppression du produit:', error);
+		
+// 	  });
+//   });
+
+
 
 
 // var shoppingCart = (function () {

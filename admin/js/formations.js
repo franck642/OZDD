@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>${formation.prix}</td>
           <td>
             <button data-toggle="tooltip" title="Modifier" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-            <button data-toggle="tooltip" title="Corbeille" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            <button data-toggle="tooltip" title="Corbeille" id="deleteFormation" data-id="${formation._id}" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
           </td>
         `;
         productTableBody.appendChild(newRow);
@@ -76,25 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+// $(document).on('click', '#deleteFormation', function() {
+// 	var formationId = $(this).data('id');
+// 	// console.log('formation ID: ' + formationId);
   
-//   // Fonction pour supprimer une formation via l'API
-//   function deleteFormation(formationId) {
-//     fetch(`http://192.168.31.147:3000/formations/${formationId}`, {
-//       method: 'DELETE'
-//     })
-//       .then(response => {
-//         if (response.ok) {
-//           // Formation supprimée avec succès, mettre à jour les cartes de formation
-//           getFormations();
-//         } else {
-//           console.error('Une erreur s\'est produite lors de la suppression de la formation.');
-//         }
-//       })
-//       .catch(error => {
-//         console.error('Une erreur s\'est produite lors de la suppression de la formation :', error);
-//       });
-//   }
+// 	// Définissez les paramètres pour la requête AJAX DELETE
+// 	var settings = {
+// 	  "url": "https://ozdd.onrender.com/formations/" + formationId,
+// 	  "method": "DELETE",
+// 	  "timeout": 0,
+// 	};
   
-//   // Appeler la fonction pour récupérer les formations au chargement de la page
-//   getFormations();
-  
+// 	// Effectuez la requête AJAX DELETE
+// 	$.ajax(settings)
+// 	  .done(function(response) {
+// 		console.log('formation supprimé avec succès:', response);
+// 		location.reload();
+// 	  })
+// 	  .fail(function(error) {
+// 		console.error('Erreur lors de la suppression de la formation:', error);
+		
+// 	  });
+//   });
