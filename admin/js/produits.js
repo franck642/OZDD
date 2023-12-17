@@ -74,6 +74,7 @@ document.getElementById('btnCreateProduct').addEventListener('click', async () =
             icon: 'error',
             confirmButtonText: 'OK'
         });
+        location.reload();
     }
 });
 

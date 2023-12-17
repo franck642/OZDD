@@ -40,6 +40,7 @@ form.addEventListener('submit', function(e) {
         icon: 'error',
         confirmButtonText: 'OK'
     });
+    location.reload();
   });
 });
 

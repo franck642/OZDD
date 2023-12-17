@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <img src="${product.image}" alt="Course Image">
                                     </a>
                                     <div class="actions">
-                                        <a href="shopping-cart.html" id="add-to-cart" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
+                                        <a href="shopping-cart.html?id=${product._id}" id="addToCart" class="action hintT-left hintT-primary" data-hint="Ajouter au panier"><i class="fas fa-shopping-basket"></i></a>
                                     </div>
                                 </div>
                                 <div class="info text-center">
@@ -151,28 +151,62 @@ $.ajax(settings).done(function (response) {
 });
 
 
-// $(document).on('click', '#addToCart', function() {
-// 	var produitId = $(this).data('id');
-// 	// console.log('product ID: ' + productId);
-  
-// 	// Définissez les paramètres pour la requête AJAX DELETE
-// 	var settings = {
-// 	  "url": "https://ozdd.onrender.com//" + produitId,
-// 	  "method": "",
-// 	  "timeout": 0,
-// 	};
-  
-// 	// Effectuez la requête AJAX DELETE
-// 	$.ajax(settings)
-// 	  .done(function(response) {
-// 		console.log('Produit supprimé avec succès:', response);
-// 		location.reload();
-// 	  })
-// 	  .fail(function(error) {
-// 		console.error('Erreur lors de la suppression du produit:', error);
-		
-// 	  });
-//   });
+// const addToCartButton = productDiv.querySelector('#addToCart');
+// addToCartButton.addEventListener('click', () => {
+//     addToCart(product._id);
+// });
+
+
+// function addToCart(productId) {
+//     // Vous pouvez ajuster l'URL de l'API selon vos besoins
+//     const addToCartUrl = `https://ozdd.onrender.com/panier/${productId}`;
+
+//     // Effectuez une requête POST pour ajouter le produit au panier
+//     fetch(addToCartUrl, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//             // Vous pouvez inclure d'autres données si nécessaire
+//             quantity: 1, // par exemple, la quantité à ajouter au panier
+//         }),
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             // Manipulez la réponse de l'API si nécessaire
+//             console.log('Produit ajouté au panier:', data);
+
+//             // Mettez à jour le HTML du panier
+//             updateCartView(data);
+//         })
+//         .catch(error => {
+//             console.error('Erreur lors de l\'ajout au panier:', error);
+//         });
+// }
+
+
+// function updateCartView(cartData) {
+//     const cartItemsContainer = document.getElementById('cart-items');
+//     cartItemsContainer.innerHTML = ''; // Efface le contenu actuel du panier
+
+//     cartData.forEach(item => {
+//         const cartItemRow = document.createElement('tr');
+//         cartItemRow.innerHTML = `
+//             <td class="pro-thumbnail"><a href="#"><img src="${item.image}" alt="Product"></a></td>
+//             <td class="pro-title"><a href="#">${item.titre}</a></td>
+//             <td class="pro-price"><span>${item.prix} XOF</span></td>
+//             <td class="pro-quantity">
+//                 <div class="pro-qty"><input type="number" value="${item.quantity}"></div>
+//             </td>
+//             <td class="pro-subtotal"><span>${item.total} XOF</span></td>
+//             <td class="pro-remove"><a href="#" onclick="removeFromCart('${item._id}')"><i class="fas fa-trash-alt"></i></a></td>
+//         `;
+
+//         cartItemsContainer.appendChild(cartItemRow);
+//     });
+// }
+
 
 
 
@@ -321,3 +355,8 @@ $.ajax(settings).done(function (response) {
   
 //     // ... (votre code existant)
 //   });
+
+
+
+
+fg

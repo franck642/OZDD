@@ -77,7 +77,7 @@ $.ajax(settings).done(function (response) {
       if (!numeroTel || !nomEntreprise || !logoEntreprise || !pays || !pieceIdentite) {
         Swal.fire({
           icon: 'error',
-          title: 'Erreur',
+          title: 'Oooup!',
           text: 'Veuillez remplir tous les champs.',
         });
         return;
@@ -111,7 +111,7 @@ $.ajax(settings).done(function (response) {
       } else {
           Swal.fire({
               icon: 'error',
-              title: 'Erreur',
+              title: 'Oooup!',
               text: 'Erreur lors de l\'ajout du fournisseur.',
           });
       }
