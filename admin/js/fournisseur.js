@@ -132,10 +132,27 @@ if (idMatch) {
     console.log("ID non trouvé dans l'URL");
 }
 $.ajax(settings).done(function (response) {
+    function decodeBase64ToImage(base64) {
+        var binaryString = atob(base64);
+        var len = binaryString.length;
+        var bytes = new Uint8Array(len);
+
+        for (var i = 0; i < len; ++i) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+
+        var blob = new Blob([bytes], { type: "image/jpeg" }); // Assurez-vous de définir le type correct selon votre image
+        var imageUrl = URL.createObjectURL(blob);
+
+        return imageUrl;
+    }
+
+    
+    var decodedEventImage4 = decodeBase64ToImage(response.logoEntreprise.data);
     // Mettre à jour les éléments HTML avec les informations du fournisseur
     $(".numeroTel").text(response.numeroTel);
     $(".nomEntreprise").text(response.nomEntreprise);
-    $(".logo").attr("src", response.logoEntreprise); // Assure-toi que response.logoUrl contient l'URL du logo
+    $(".logo").attr("src", decodedEventImage4); // Assure-toi que response.logoUrl contient l'URL du logo
     $(".pieceIdentite").attr("src", response.pieceIdentite);
     $(".pays").text(response.pays);
 });
