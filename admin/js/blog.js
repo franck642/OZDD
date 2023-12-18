@@ -115,11 +115,28 @@ function displayBlogs(blogs) {
 
     // Parcourir chaque blog et l'ajouter au conteneur
     blogs.forEach(function (blog) {
+        function decodeBase64ToImage(base64) {
+            var binaryString = atob(base64);
+            var len = binaryString.length;
+            var bytes = new Uint8Array(len);
+
+            for (var i = 0; i < len; ++i) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+
+            var blob = new Blob([bytes], { type: "image/jpeg" }); // Assurez-vous de définir le type correct selon votre image
+            var imageUrl = URL.createObjectURL(blob);
+
+            return imageUrl;
+        }
+
+        // Décodez l'image base64 du blog
+        var decodedBlogImage6 = decodeBase64ToImage(blog.image);
         var blogHtml = `
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
             <div class="panel-body blog-pra">
                 <div class="blog-img">
-                    <img src="${blog.image}" alt="" />
+                    <img src="${decodedBlogImage6}" alt="" />
                     <a href="blog-details.html?id=${blog._id}">
                         <h4>${blog.titre}</h4>
                     </a>
@@ -168,8 +185,25 @@ $(document).ready(function () {
     }
     
     $.ajax(settings).done(function (response) {
+        function decodeBase64ToImage(base64) {
+            var binaryString = atob(base64);
+            var len = binaryString.length;
+            var bytes = new Uint8Array(len);
+
+            for (var i = 0; i < len; ++i) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+
+            var blob = new Blob([bytes], { type: "image/jpeg" }); // Assurez-vous de définir le type correct selon votre image
+            var imageUrl = URL.createObjectURL(blob);
+
+            return imageUrl;
+        }
+
+        // Décodez l'image base64 du blog
+        var decodedBlogImage5 = decodeBase64ToImage(response.image.data);
         // Mettez à jour le contenu HTML de la page avec les données du billet de blog
-        $(".blog-image a img").attr("src", response.image);
+        $(".blog-image a img").attr("src", decodedBlogImage5);
         $(".blog-date .blog-day").text(response.date);
         $(".blog-details .blog-ht").text(response.titre);
         $(".blog-details p").text(response.description);

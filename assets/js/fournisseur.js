@@ -19,21 +19,31 @@ $.ajax(settings).done(function (response) {
 
     // Parcourez le tableau de fournisseurs et créez une carte pour chaque fournisseur
     fournisseurs.forEach(function (fournisseur) {
-      // Créer une carte pour le fournisseur
+        function decodeBase64ToImage(base64) {
+          var binaryString = atob(base64);
+          var len = binaryString.length;
+          var bytes = new Uint8Array(len);
+
+          for (var i = 0; i < len; ++i) {
+              bytes[i] = binaryString.charCodeAt(i);
+          }
+
+          var blob = new Blob([bytes], { type: "image/jpeg" }); // Assurez-vous de définir le type correct selon votre image
+          var imageUrl = URL.createObjectURL(blob);
+
+          return imageUrl;
+      }
+
+      // Décodez l'image base64 du blog
+      var decodedEventImage1 = decodeBase64ToImage(fournisseur.logoEntreprise);
       var cardHtml = `
       <div class="col-lg-3 col-md-6 col-sm-6 max-mb-50"> 
           <div class="grid-item">
               <div class="team-member-card">
                   <div class="member-image-container">
                       <a href="product-details.html?id=${fournisseur._id}">
-                          <img class="member-image img-fluid" src="${fournisseur.logoEntreprise}" alt="">
+                          <img class="member-image img-fluid" src="${decodedEventImage1}" alt="">
                       </a>
-                      <div class="social-icons">
-                          <div class="icons-container">
-                              <a target="_blank" href="JavaScript:Void(0);" class="social-icon hint--bounce hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                              <a target="_blank" href="JavaScript:Void(0);" class="social-icon hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i></a>                                          
-                          </div>
-                      </div>
                   </div>
                   <div class="member-info text-center">
                       <h6 class="member-name">${fournisseur.nomEntreprise}</h6>

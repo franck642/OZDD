@@ -1,3 +1,4 @@
+console.log("ttttttttttoooooootototototototototoofranck")
 /*--------------------------
  AFFICHER FOURNISSEURS
 ---------------------------- */
@@ -9,18 +10,36 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
             success: function(data) {
+                console.log(data)
                 var fournisseurList = $('.list-group');
 
                 fournisseurList.empty();
 
                 data.forEach(function(fournisseur) {
                     var listItem;
+                    function decodeBase64ToImage(base64) {
+                        var binaryString = atob(base64);
+                        var len = binaryString.length;
+                        var bytes = new Uint8Array(len);
+    
+                        for (var i = 0; i < len; ++i) {
+                            bytes[i] = binaryString.charCodeAt(i);
+                        }
+    
+                        var blob = new Blob([bytes], { type: "image/jpeg" }); // Assurez-vous de définir le type correct selon votre image
+                        var imageUrl = URL.createObjectURL(blob);
+    
+                        return imageUrl;
+                    }
+    
+                    // Décodez l'image base64 du blog
+                    var decodedEventImage = decodeBase64ToImage(fournisseur.logoEntreprise);
 
                     if (fournisseur.fournisseur) {
                         listItem = `
                             <li class="list-group-item">
                                 <div class="media">
-                                    <img class="rounded-circle mr-3" src="${fournisseur.logoEntreprise}" />
+                                    <img class="rounded-circle mr-3" src="${decodedEventImage}" />
                                     <div class="media-body align-self-center">
                                         <strong><a href="fournisseur detail.html?id=${fournisseur._id}">${fournisseur.nomEntreprise}</a></strong>
                                         <div class="text-muted">${fournisseur.pays}</div>
@@ -35,13 +54,13 @@ $(document).ready(function() {
                         listItem = `
                             <li class="list-group-item">
                                 <div class="media">
-                                    <img class="rounded-circle mr-3" src="${fournisseur.logoEntreprise}" />
+                                    <img class="rounded-circle mr-3" src="${decodedEventImage}" />
                                     <div class="media-body align-self-center">
                                         <strong><a href="fournisseur detail.html?id=${fournisseur._id}">${fournisseur.nomEntreprise}</a></strong>
                                         <div class="text-muted">${fournisseur.pays}</div>
                                     </div>
                                     <div class="ml-auto">
-                                        <button class="btn btn-primary" id="fournisseurButton" data-id="${fournisseur._id}">Status</button>
+                                        <button class="btn btn-primary" id="fournisseurButton" data-id="${fournisseur._id}">Approuver</button>
                                     </div>
                                 </div>
                             </li>
